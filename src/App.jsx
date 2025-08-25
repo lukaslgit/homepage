@@ -5,6 +5,7 @@
     import Homepage from './pages/Homepage';
     import Projects from './pages/Projects';
     import NotFound from './pages/NotFound';
+    import Layout from './components/Layout';
 
 
 export default function App(){
@@ -12,12 +13,12 @@ export default function App(){
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <Homepage />,
+            element: <Layout><Homepage /></Layout>,
             errorElement: <NotFound />,
         },
         {
             path: '/projects',
-            element: <Projects />
+            element: <Layout><Projects /></Layout>
         }
     ])
 
