@@ -7,6 +7,8 @@
     import NotFound from './pages/NotFound';
     import Layout from './components/Layout';
 
+    import './Styles/main.css';
+
 
 export default function App(){
 
