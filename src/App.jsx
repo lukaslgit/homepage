@@ -16,7 +16,7 @@ export default function App(){
         {
             path: '/',
             element: <Layout><Homepage /></Layout>,
-            errorElement: <NotFound />,
+            errorElement: <Layout><NotFound /></Layout>,
         },
         {
             path: '/projects',

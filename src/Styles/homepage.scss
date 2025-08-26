@@ -1,0 +1,195 @@
+@import './Variables/variables.scss';
+
+section {
+    width: 100%;
+}
+
+.content {
+    width: 70%;
+    margin: auto;
+}
+
+.top-section {
+    margin-top: 15rem;
+    font-family: Inter;
+    color: $mainColor;
+
+    h1 {
+        font-size: 3rem;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size: 3rem;
+        font-weight: 300;
+        margin: 0 0 1rem 0;
+    }
+
+    p {
+        font-weight: 300;
+        max-width: 30rem;
+        font-size: 1.2rem;
+
+        strong {
+            font-weight: 600;
+        }
+    }
+}
+
+.mid-section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: $mainColor;
+    padding-top: 100px;
+    margin-top: 150px;
+
+    .curve {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        height: 90px;
+        z-index: 1;
+    }
+
+    .curve svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .curve .shape-fill {
+        fill: rgb(255, 247, 247);
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 200px;
+        margin-bottom: 200px;
+
+        .box-content {
+            width: 400px;
+            min-height: 400px;
+            height: fit-content;
+            background-color: white;
+            border-radius: 20px;
+            position: relative;
+            text-decoration: none;
+            color: $mainColor;
+            font-family: Inter;
+
+            .icon {
+                position: absolute;
+                width: 90px;
+                height: 90px;
+                background-color: rgb(46, 46, 46);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px;
+                top: -15%;
+                left: 10%;
+
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    color: white;
+                }
+            }
+
+            .box-text {
+                padding: 50px 50px;
+
+                h2 {
+                    margin: 0;
+                    font-size: 1.5rem;
+                    min-height: 4rem;
+                }
+
+                p {
+                    margin: 0;
+                    width: 80%;
+                    min-height: 200px;
+                }
+
+                .fakeBtn {
+                    position: relative;
+                    line-height: 2rem;
+                    border-radius: 15px;
+                }
+
+                .fakeBtn::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    bottom: -6px;
+                    transform: translateX(-50%);
+                    width: 50%;
+                    border-bottom: 1px solid black;
+}
+                .fakeBtn:hover::after {
+                    width: 100%;
+                    transition: 0.3s ease;
+                }
+
+            }
+        
+            
+            &:hover {
+                background-color: $secColor;
+                transition: 0.3s ease;
+
+                .icon {
+                    background-color: rgb(98, 161, 255);
+                    transition: 0.3s ease;
+
+                    svg {
+                        color: black;
+                        transition: 0.3s ease;
+                    }
+                }
+
+                .box-text {
+                    color: white;
+
+                    .fakeBtn::after {
+                        border-color: white;
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+
+.end-section {
+    position: relative;
+
+    .curve {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+
+    .curve svg {
+        position: relative;
+        display: block;
+        width: calc(163% + 1.3px);
+        height: 252px;
+    }
+
+    .curve .shape-fill {
+        fill: $mainColor;
+    }
+}

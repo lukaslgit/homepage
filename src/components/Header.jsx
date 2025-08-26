@@ -1,9 +1,30 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import '../Styles/header.css';
 
 export default function Header(){
+
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return(
-        <header>
+        <header className={scrolled ? "scrolled" : ""}>
                 <div className="header-container">
                     <Link to={'/'} className="header-logo">Web developer</Link>
                     <nav>
