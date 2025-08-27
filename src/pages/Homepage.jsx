@@ -13,7 +13,8 @@ export default function Homepage(){
                     <h1>FRONTEND DEVELOPER</h1>
                     <p> 
                         <strong>Junior frontend developer</strong> focused on building responsive and user-friendly web applications with <strong>React</strong>.
-                        Skilled in <strong>JavaScript, TypeScript, React Router, Redux, and CSS/Sass.</strong>
+                        Skilled in <strong>JavaScript, TypeScript, CSS/Sass, REST APIs, Redux/Context, component-based architecture</strong>, with a passion for clean code, performance optimization, and modern web development best practices.
+
                     </p>
                     <p>
                         I follow best practices and enjoy creating clean, maintainable code.
@@ -72,6 +73,39 @@ export default function Homepage(){
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                         <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
                     </svg>
+                </div>
+                <div className="content">
+                    
+                    <div className="about-left">
+                        <p>SOMETHING SHORT</p>
+                        <h2>ABOUT ME</h2>
+                    </div>
+                    
+                    <div className="about-right">
+                        <ul>
+                            <li>
+                                <FontAwesomeIcon icon={faCode}/>
+                                <h2>HTML, CSS & JavaScript</h2>
+                                <p>Strong foundation in <strong>HTML5, CSS3/Sass, and JavaScript (ES6+)</strong>. Skilled in creating accessible, responsive layouts and writing clean, maintainable code following best practices.</p>
+                            </li>
+                            <li>
+                                <FontAwesomeIcon icon={faCode}/>
+                                <h2>Frontend & React</h2>
+                                <p>Proficient in building responsive and user-friendly web applications using <strong>React</strong>, React Router, and Redux/Context API. Experienced in component-based architecture, state management, and optimizing performance for modern web applications.</p>
+                            </li>
+                            <li>
+                                <FontAwesomeIcon icon={faCode}/>
+                                <h2>Backend & REST APIs</h2>
+                                <p>Experience building and integrating REST APIs using <strong>Express</strong>. Comfortable handling data flow, authentication, and connecting frontends to backend services efficiently and securely.</p>
+                            </li>
+                            <li>
+                                <FontAwesomeIcon icon={faCode}/>
+                                <h2>Languages & Communication</h2>
+                                <p>Fluent in <strong>English (B2)</strong> and <strong>German (B2)</strong>. Strong written and verbal communication skills, capable of collaborating effectively in international teams.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
                 </div>
             </section>
         </>

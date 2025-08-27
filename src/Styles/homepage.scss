@@ -2,6 +2,8 @@
 
 section {
     width: 100%;
+    animation: fadeInUp 0.8s ease forwards;
+    font-family: Inter;
 }
 
 .content {
@@ -11,7 +13,6 @@ section {
 
 .top-section {
     margin-top: 15rem;
-    font-family: Inter;
     color: $mainColor;
 
     h1 {
@@ -43,7 +44,6 @@ section {
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: $mainColor;
-    padding-top: 100px;
     margin-top: 150px;
 
     .curve {
@@ -69,9 +69,13 @@ section {
 
     .content {
         display: flex;
-        justify-content: space-between;
-        margin-top: 200px;
-        margin-bottom: 200px;
+        justify-content: center;
+        margin-top: 300px;
+        margin-bottom: 250px;
+        gap: 50px;
+        row-gap: 100px;
+        flex-wrap: wrap;
+        width: 70%;
 
         .box-content {
             width: 400px;
@@ -82,7 +86,6 @@ section {
             position: relative;
             text-decoration: none;
             color: $mainColor;
-            font-family: Inter;
 
             .icon {
                 position: absolute;
@@ -151,6 +154,8 @@ section {
 
                     svg {
                         color: black;
+                        width: 35px;
+                        height: 35px;
                         transition: 0.3s ease;
                     }
                 }
@@ -191,5 +196,102 @@ section {
 
     .curve .shape-fill {
         fill: $mainColor;
+    }
+
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 350px;
+        margin-bottom: 250px;
+
+        .about-left {
+            width: 20%;
+            text-align: center;
+            padding-top: 20px;
+
+            h2 {
+                font-size: 2rem;
+                margin: 0;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .about-right {
+            width: 80%;
+
+            ul {
+                width: 100%;
+                display: flex;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                gap: 30px;
+                list-style: none;
+                row-gap: 50px;
+                margin: 0;
+
+                li {
+                    max-width: 400px;
+                    align-self: flex-start;
+                    min-height: 300px;
+                    padding: 20px;
+                    border-radius: 20px;
+                    transition: 0.3s ease;
+
+                    svg {
+                        border: 2px solid $secColor;
+                        height: 40px;
+                        width: 40px;
+                        padding: 15px;
+                        transition: 0.3s ease;
+                    }
+
+                    h2 {
+                        margin: 20px 0;
+                    }
+
+                    p {
+                        margin: 0;
+                    }
+                }
+
+                li:hover {
+                    background-color: $secColor;
+                    transition: 0.3s ease;
+
+                    h2 {
+                        color: white
+                    }
+
+                    svg {
+                        color: white;
+                        border-color: white;
+                        border-radius: 20px;
+                        transition: 0.3s ease;
+                    }
+
+                    p {
+                        color: white;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        padding-top: 60px;
+    }
+
+    to {
+        opacity: 100%;
+        padding-top: 0;
     }
 }
