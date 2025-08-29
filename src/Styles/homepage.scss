@@ -86,6 +86,7 @@ section {
             position: relative;
             text-decoration: none;
             color: $mainColor;
+            transition: 0.3s;
 
             .icon {
                 position: absolute;
@@ -98,11 +99,13 @@ section {
                 border-radius: 20px;
                 top: -15%;
                 left: 10%;
+                transition: 0.3s;
 
                 svg {
                     width: 30px;
                     height: 30px;
                     color: white;
+                    transition: 0.3s;
                 }
             }
 
@@ -124,7 +127,6 @@ section {
                 .fakeBtn {
                     position: relative;
                     line-height: 2rem;
-                    border-radius: 15px;
                 }
 
                 .fakeBtn::after {
@@ -135,10 +137,11 @@ section {
                     transform: translateX(-50%);
                     width: 50%;
                     border-bottom: 1px solid black;
+                    transition: 0.2s ease;
 }
                 .fakeBtn:hover::after {
                     width: 100%;
-                    transition: 0.3s ease;
+                    transition: 0.2s ease;
                 }
 
             }
@@ -146,17 +149,17 @@ section {
             
             &:hover {
                 background-color: $secColor;
-                transition: 0.3s ease;
+                transition: 0.2s ease;
 
                 .icon {
-                    background-color: rgb(98, 161, 255);
-                    transition: 0.3s ease;
+                    background-color: $thirdColor;
+                    transition: 0.2s ease;
 
                     svg {
                         color: black;
                         width: 35px;
                         height: 35px;
-                        transition: 0.3s ease;
+                        transition: 0.2s ease;
                     }
                 }
 

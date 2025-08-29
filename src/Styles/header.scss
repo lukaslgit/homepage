@@ -12,11 +12,11 @@ header {
   font-family: "Inter";
   font-weight: 900;
   border-radius: 2rem;
-  box-shadow: 0px 8px 24px rgba(156, 166, 175, 0.2) ;
+  box-shadow: 0px 8px 24px rgba(156, 166, 175, 0.2);
   transition: 0.2s ease;
   z-index: 1000;
 
-  > div {
+  > .header-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -24,10 +24,67 @@ header {
     margin: auto;
     align-items: center;
     padding: 0.5rem 2rem;
+
+      .header-right {
+      display: flex;
+      gap: 1rem;
+
+        
+        .dropdown-lang {
+          position: relative;
+          align-content: center;
+
+          img {
+            height: 23px;
+            border-radius: 5px;
+            box-shadow: 0px 8px 24px rgba(156, 166, 175, 0.2);
+          }
+
+          > button {
+            font-size: 1rem;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+          }
+
+          .lang {
+            position: absolute;
+            display: none;
+
+              button {
+                display: block;
+                margin: 25px 0;
+              }
+          }
+        }
+
+        .dropdown-lang:hover {
+
+          .lang {
+            display: block;
+
+            img {
+            animation: fadeIn 0.5s ease;
+          }
+          }
+        }
+
+        button {
+          cursor: pointer;
+          border: none;
+          background-color: transparent;
+        }
+
+        svg {
+          height: 30px;
+          width: 30px;
+        }
+  }
+
   }
 
   nav {
-    width: 30%;
+    width: 40%;
   }
 
   a {
@@ -41,7 +98,36 @@ header {
     color: white;
     padding: 0 3rem;
     line-height: 3rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    min-width: 8rem;
+    text-align: center;
+
+    &:hover {
+      background-color: $thirdColor;
+      color: black;
+      transition: 0.3s;
+
+      &::before {
+        width: 100%;
+      }
+    }
   }
+
+  .header-btn::before{
+    content: '';  
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: $thirdColor;
+    z-index: -1;
+    transition: 0.3s;
+  }
+
+    
 
   ul {
     padding: 0;
@@ -49,16 +135,10 @@ header {
     list-style: none;
     justify-content: space-between;
     width: 100%;
-  }
 
-  .header-right {
-    display: flex;
-    gap: 1rem;
-
-    button {
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
+    li {
+      width: 33%;
+      text-align: center;
     }
   }
 }
@@ -69,4 +149,14 @@ header {
     transition: 0.2s ease;
     width: 100%;
     border-radius: 0;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

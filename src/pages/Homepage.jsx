@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import '../Styles/homepage.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMobileAlt, faServer, faCode } from '@fortawesome/free-solid-svg-icons';
+import { faMobileAlt, faServer, faCode, faLanguage } from '@fortawesome/free-solid-svg-icons';
+import { faReact, faHtml5 } from '@fortawesome/free-brands-svg-icons';
 
 export default function Homepage(){
     return(
@@ -26,7 +27,7 @@ export default function Homepage(){
 
                 <div className='curve'>
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="shape-fill"></path>
                     </svg>
                 </div>
 
@@ -69,9 +70,9 @@ export default function Homepage(){
                 </div>
             </section>
             <section className="end-section">
-                <div class="curve">
+                <div className="curve">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="shape-fill"></path>
                     </svg>
                 </div>
                 <div className="content">
@@ -84,22 +85,22 @@ export default function Homepage(){
                     <div className="about-right">
                         <ul>
                             <li>
-                                <FontAwesomeIcon icon={faCode}/>
+                                <FontAwesomeIcon icon={faHtml5}/>
                                 <h2>HTML, CSS & JavaScript</h2>
                                 <p>Strong foundation in <strong>HTML5, CSS3/Sass, and JavaScript (ES6+)</strong>. Skilled in creating accessible, responsive layouts and writing clean, maintainable code following best practices.</p>
                             </li>
                             <li>
-                                <FontAwesomeIcon icon={faCode}/>
+                                <FontAwesomeIcon icon={faReact}/>
                                 <h2>Frontend & React</h2>
                                 <p>Proficient in building responsive and user-friendly web applications using <strong>React</strong>, React Router, and Redux/Context API. Experienced in component-based architecture, state management, and optimizing performance for modern web applications.</p>
                             </li>
                             <li>
-                                <FontAwesomeIcon icon={faCode}/>
+                                <FontAwesomeIcon icon={faServer}/>
                                 <h2>Backend & REST APIs</h2>
                                 <p>Experience building and integrating REST APIs using <strong>Express</strong>. Comfortable handling data flow, authentication, and connecting frontends to backend services efficiently and securely.</p>
                             </li>
                             <li>
-                                <FontAwesomeIcon icon={faCode}/>
+                                <FontAwesomeIcon icon={faLanguage}/>
                                 <h2>Languages & Communication</h2>
                                 <p>Fluent in <strong>English (B2)</strong> and <strong>German (B2)</strong>. Strong written and verbal communication skills, capable of collaborating effectively in international teams.</p>
                             </li>
