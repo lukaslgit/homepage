@@ -2,6 +2,6 @@ export default {
     home: "DOMOV",
     projects: "PROJEKTY",
     contact: "KONTAKT",
-    getInTouch: "NAPÍŠTE MI",
+    getInTouch: "OZVITE SA",
     webDeveloper: "Web developer"
 };
