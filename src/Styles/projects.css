@@ -36,6 +36,7 @@
   background-size: cover;
   border-radius: 20px;
   z-index: 2;
+  background-color: white;
 }
 .top-section .content .project .wrapImg a .project-image::after {
   content: "";
