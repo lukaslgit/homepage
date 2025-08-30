@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { getItem, setItem } from "../utils/localStorage.js";
+
 import '../Styles/header.css';
 import { faSun, faX, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import england from '../assets/england.svg';
 import germany from '../assets/germany.svg';
 import slovakia from '../assets/slovakia.svg';
@@ -14,8 +17,18 @@ import svk from '../Locales/svk/translation.js';
 export default function Header(){
 
     const [scrolled, setScrolled] = useState(false);
-    const [lang, setLang] = useState('eng')
+    const [lang, setLang] = useState(() => {
+        
+    const value = getItem('lang')
+    return value ? value : 'eng' 
+    })
     const [mobileLangMenu, setMobileLangMenu] = useState(false)
+
+    const languages = {
+        'eng': england,
+        'ger': germany,
+        'svk': slovakia
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -28,18 +41,14 @@ export default function Header(){
 
         window.addEventListener("scroll", handleScroll);
 
-        
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
-
-    const languages = {
-        'eng': england,
-        'ger': germany,
-        'svk': slovakia
-    }
+    useEffect(() => {
+        setItem('lang', lang)
+    }, [lang])
 
     function mainLang(){
         return languages[lang] || england;
