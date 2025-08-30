@@ -159,6 +159,7 @@ section {
                         color: black;
                         width: 35px;
                         height: 35px;
+                        transform: rotate(-10deg);
                         transition: 0.2s ease;
                     }
                 }
@@ -305,10 +306,11 @@ section {
 
         .content {
         display: block !important;
+        padding-top: 150px;
 
         .about-left {
             width: 100%;
-            margin-bottom: 90px;
+            margin-bottom: 80px;
         }
 
         .about-right {
@@ -344,5 +346,9 @@ section {
 
     .mid-section .content .box-content .box-text {
         padding-bottom: 20px;
+    }
+
+    .curve svg {
+        height: 70px !important;
     }
 }

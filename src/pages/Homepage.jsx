@@ -18,7 +18,6 @@ export default function Homepage(){
 
                     </p>
                     <p>
-                        I follow best practices and enjoy creating clean, maintainable code.
                         I also have experience deploying projects on VPS servers using <strong>Ubuntu and Nginx</strong>, giving me a solid understanding of how code moves from development to production.
                     </p>
                 </div>
@@ -87,7 +86,7 @@ export default function Homepage(){
                             <li>
                                 <FontAwesomeIcon icon={faHtml5}/>
                                 <h2>HTML, CSS & JavaScript</h2>
-                                <p>Strong foundation in <strong>HTML5, CSS3/Sass, and JavaScript (ES6+)</strong>. Skilled in creating accessible, responsive layouts and writing clean, maintainable code following best practices.</p>
+                                <p>Strong foundation in <strong>HTML5, CSS3/Sass, and JavaScript (ES6+)</strong>. Skilled in creating accessible, responsive layouts and writing clean and maintainable code.</p>
                             </li>
                             <li>
                                 <FontAwesomeIcon icon={faReact}/>

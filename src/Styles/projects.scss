@@ -1,0 +1,168 @@
+@import './Variables/variables.scss';
+
+.top-section {
+    margin-top: 15rem;
+    width: 100%;
+    margin-bottom: 8rem;
+
+    .content {
+        width: 80%;
+
+        .title {
+            padding-bottom: 5rem;
+        }
+
+        ul {
+                padding: 0;
+            }
+
+        .project {
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+
+            .wrapImg {
+                list-style: none;
+                display: flex;
+                justify-content: space-evenly;
+                width: 40%;
+                position: relative;
+                align-items: center;
+                
+                a {
+                display: block;
+                width: 100%;
+
+                    .project-image {
+                    position: relative;
+                    width: 100%;
+                    height: 300px;
+                    background-size: cover;
+                    border-radius: 20px;
+                    z-index: 2;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        background: rgba(0,0,0,0.1);
+                        border-radius: 20px;
+                        pointer-events: none;
+                        opacity: 1;
+                        transition: 0.3s ease;
+                    }
+                    }
+                }
+
+            &:hover {
+                
+                .icon {
+                    top: -3.5rem;
+                    transition: 0.4s ease;
+                }
+
+                .project-image::after {
+                    opacity: 0;
+                    transition: 0.3s ease;
+                }
+            }
+
+            .icon {
+                position: absolute;
+                z-index: 1;
+                top: 3rem;
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                transition: 0.4s ease;
+                padding-bottom: 1rem;
+
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    background-color: $thirdColor;
+                    color: white;
+                    border-radius: 10px;
+                    padding: 10px;
+                }
+
+                h2 {
+                    margin: 0;
+                }
+                }
+            }
+
+            .project-desc {
+                align-content: center;
+
+                div {
+                    display: flex;
+                    gap: 15px;
+
+                    a {
+                        width: fit-content;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1100px) { 
+
+    .top-section {
+        margin-top: 10rem !important;
+    }
+
+
+    .content .title {
+        padding-bottom: 7rem !important;
+        text-align: center;
+    }
+
+    .project {
+        display: block !important;
+
+        .wrapImg {
+            width: 100% !important;
+            margin: auto;
+            margin-bottom: 30px;
+            
+            .icon {
+                top: -3rem !important;
+
+                svg {
+                    width: 20px !important;
+                    height: 20px !important;
+                }
+
+                h2 {
+                    font-size: 2rem;
+                }
+            }
+
+            .project-image {
+                height: 200px !important;
+            }
+
+            .project-image::after {
+                background: rgba(0,0,0,0.0) !important;
+            }
+        }
+
+        .project-desc {
+            width: 100%;
+            margin: auto;
+
+            h2 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            div {
+                justify-content: center;
+            }
+        }
+    }
+}
