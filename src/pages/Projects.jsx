@@ -28,7 +28,7 @@ export default function Projects(){
                                     Deployed on a VPS with <strong>Ubuntu</strong> and <strong>Nginx</strong>, the app demonstrates hands-on experience with full-stack development, API integration, secure backend practices, and production deployment.
                                 </p>
                                 <div>
-                                    <Link to={'/projects/weatherapp'}>LIVE</Link>
+                                    <Link to={'/projects/weatherapp/'}>LIVE</Link>
                                     <Link to={'https://github.com/lukaslgit/weatherapp'} target="_blank" rel="noopener noreferrer">GitHub</Link>
                                 </div>
                             </div>
