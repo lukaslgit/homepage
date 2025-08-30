@@ -10,7 +10,11 @@ export function getItem(key){
     try {
         const item = window.localStorage.getItem(key)
 
-        return JSON.parse(item) === ("eng" || "ger" || "svk") ? JSON.parse(item) : undefined
+        const value = JSON.parse(item)
+
+        const allowedLang = ["eng", "ger", "svk"];
+
+        return allowedLang.includes(value) ? JSON.parse(item) : undefined
     } catch (error) {
         console.log(error)
     }
