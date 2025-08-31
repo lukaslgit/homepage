@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { getItem, setItem } from "../utils/localStorage.js";
+import translationConfig from "../Locales/translation-config.js";
+import { LanguageContext } from "../utils/LanguageContext.jsx";
 
 import '../Styles/header.css';
 import { faSun, faX, faBars } from '@fortawesome/free-solid-svg-icons';
@@ -10,25 +12,20 @@ import england from '../assets/england.svg';
 import germany from '../assets/germany.svg';
 import slovakia from '../assets/slovakia.svg';
 
-import eng from '../Locales/eng/translation.js';
-import ger from '../Locales/ger/translation.js';
-import svk from '../Locales/svk/translation.js';
 
 export default function Header(){
 
     const [scrolled, setScrolled] = useState(false);
-    const [lang, setLang] = useState(() => {
-        
-    const value = getItem('lang')
-    return value ? value : 'eng' 
-    })
-    const [mobileLangMenu, setMobileLangMenu] = useState(false)
+    const { lang, setLang } = useContext(LanguageContext);
+
+    const [mobileLangMenu, setMobileLangMenu] = useState(false);
+    const t = translationConfig[lang];
 
     const languages = {
         'eng': england,
         'ger': germany,
         'svk': slovakia
-    }
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -54,13 +51,7 @@ export default function Header(){
         return languages[lang] || england;
     }
 
-    const translations = {
-        eng,
-        ger,
-        svk
-    }
-
-    const t = translations[lang];
+    
 
 
     function closeMobileNav(){

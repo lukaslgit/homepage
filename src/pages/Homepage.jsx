@@ -1,10 +1,19 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import translationConfig from "../Locales/translation-config";
+import { LanguageContext } from "../utils/LanguageContext.jsx";
+
 import '../Styles/homepage.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faServer, faCode, faLanguage } from '@fortawesome/free-solid-svg-icons';
 import { faReact, faHtml5 } from '@fortawesome/free-brands-svg-icons';
 
 export default function Homepage(){
+
+    const { lang, setLang } = useContext(LanguageContext);
+
+    const t = translationConfig[lang];
+
     return(
         <>
             <section className='top-section'>
@@ -12,14 +21,8 @@ export default function Homepage(){
                 <div className='content'>
                     <h2>Lukas Lutonsky</h2>
                     <h1>FRONTEND DEVELOPER</h1>
-                    <p> 
-                        <strong>Junior frontend developer</strong> focused on building responsive and user-friendly web applications with <strong>React</strong>.
-                        Skilled in <strong>JavaScript, TypeScript, CSS/Sass, REST APIs, Redux/Context, component-based architecture</strong>, with a passion for clean code, performance optimization, and modern web development best practices.
-
-                    </p>
-                    <p>
-                        I also have experience deploying projects on VPS servers using <strong>Ubuntu and Nginx</strong>, giving me a solid understanding of how code moves from development to production.
-                    </p>
+                    <p>{t.homepage_main1}</p>
+                    <p>{t.homepage_main2}</p>
                 </div>
             </section>
             <section className='mid-section'>
@@ -37,9 +40,9 @@ export default function Homepage(){
                         </div>
 
                         <div className="box-text">
-                            <h2>RESPONSIVE DESIGN</h2>
-                            <p>I build web applications that look great and work seamlessly across all devices and screen sizes.</p>
-                            <span className="fakeBtn">Contact Me!</span>
+                            <h2>{t.homepage_mid1_title}</h2>
+                            <p>{t.homepage_mid1_text}</p>
+                            <span className="fakeBtn">{t.contactMe}</span>
                         </div>
                     </Link>
                     <Link to={'/contact'} className='box-content'>
@@ -48,9 +51,9 @@ export default function Homepage(){
                         </div>
 
                         <div className="box-text">
-                            <h2>BACKEND INTEGRATION</h2>
-                            <p>Experience building and connecting secure APIs with Express, handling data flow efficiently between frontend and backend.</p>
-                            <span className="fakeBtn">Contact Me!</span>
+                            <h2>{t.homepage_mid2_title}</h2>
+                            <p>{t.homepage_mid2_text}</p>
+                            <span className="fakeBtn">{t.contactMe}</span>
                         </div>
                     </Link>
                     <Link to={'/contact'} className='box-content'>
@@ -59,9 +62,9 @@ export default function Homepage(){
                         </div>
 
                         <div className="box-text">
-                            <h2>MODERN TOOLS</h2>
-                            <p>Experienced in React, Redux, React Router, TypeScript, and CSS/Sass to create interactive and efficient user interfaces.</p>
-                            <span className="fakeBtn">Contact Me!</span>
+                            <h2>{t.homepage_mid3_title}</h2>
+                            <p>{t.homepage_mid3_text}</p>
+                            <span className="fakeBtn">{t.contactMe}</span>
                         </div>
 
                         
@@ -77,31 +80,31 @@ export default function Homepage(){
                 <div className="content">
                     
                     <div className="about-left">
-                        <p>SOMETHING SHORT</p>
-                        <h2>ABOUT ME</h2>
+                        <p>{t.somethingShort}</p>
+                        <h2>{t.aboutMe}</h2>
                     </div>
                     
                     <div className="about-right">
                         <ul>
                             <li>
                                 <FontAwesomeIcon icon={faHtml5}/>
-                                <h2>HTML, CSS & JavaScript</h2>
-                                <p>Strong foundation in <strong>HTML5, CSS3/Sass, and JavaScript (ES6+)</strong>. Skilled in creating accessible, responsive layouts and writing clean and maintainable code.</p>
+                                <h2>{t.homepage_end1_title}</h2>
+                                <p>{t.homepage_end1_text}</p>
                             </li>
                             <li>
                                 <FontAwesomeIcon icon={faReact}/>
-                                <h2>Frontend & React</h2>
-                                <p>Proficient in building responsive and user-friendly web applications using <strong>React</strong>, React Router, and Redux/Context API. Experienced in component-based architecture, state management, and optimizing performance for modern web applications.</p>
+                                <h2>{t.homepage_end2_title}</h2>
+                                <p>{t.homepage_end2_text}</p>
                             </li>
                             <li>
                                 <FontAwesomeIcon icon={faServer}/>
-                                <h2>Backend & REST APIs</h2>
-                                <p>Experience building and integrating REST APIs using <strong>Express</strong>. Comfortable handling data flow, authentication, and connecting frontends to backend services efficiently and securely.</p>
+                                <h2>{t.homepage_end3_title}</h2>
+                                <p>{t.homepage_end3_text}</p>
                             </li>
                             <li>
                                 <FontAwesomeIcon icon={faLanguage}/>
-                                <h2>Languages & Communication</h2>
-                                <p>Fluent in <strong>English (B2)</strong> and <strong>German (B2)</strong>. Strong written and verbal communication skills, capable of collaborating effectively in international teams.</p>
+                                <h2>{t.homepage_end4_title}</h2>
+                                <p>{t.homepage_end4_text}</p>
                             </li>
                         </ul>
                     </div>
