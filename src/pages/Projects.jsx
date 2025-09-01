@@ -3,7 +3,7 @@ import weatherApp from '../assets/weatherapp.png';
 import { Link } from "react-router-dom";
 import { faCloud, faMagnifyingGlass, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import sun from '../assets/idkwhyiamdoingthis.png'
+import sun from '../assets/weatherSun.png';
 
 export default function Projects(){
     return(
@@ -32,20 +32,78 @@ export default function Projects(){
                                             <div className='el1'>
                                                 <div>
                                                     <img src={sun}></img>
-                                                    <p>22°C</p>
+                                                    <div className='mainInfo'>
+                                                        <p>18°C</p>
+                                                        <p>9:41</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div className='el2'>
-                                                <div></div>
-                                                <div></div>
-                                                <div></div>
+                                                <div>
+                                                    <p>Humidity</p>
+                                                    <p>54%</p>
+                                                </div>
+                                                <div>
+                                                    <p>Wind</p>
+                                                    <p>6km/h</p>
+                                                </div>
+                                                <div>
+                                                    <p>Visibility</p>
+                                                    <p>10km</p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className='right'>
-                                            <div className='el1'></div>
+                                            <div className='el1'>
+                                                <div className='top'>
+                                                    <p>24H</p>
+                                                    <p>5DAYS</p>
+                                                </div>
+                                                <div className='bottom'>
+                                                    <div className='bottomEl'>
+                                                        <div>
+                                                            <img src={sun}></img>
+                                                            <p>11:00</p>
+                                                        </div>
+                                                        <div>
+                                                            <p className='celsius'>19°C</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className='bottomEl'> 
+                                                        <div>
+                                                            <img src={sun}></img>
+                                                            <p>14:00</p>
+                                                        </div>
+                                                        <div>
+                                                            <p className='celsius'>23°C</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className='bottomEl'>
+                                                        <div>
+                                                            <img src={sun}></img>
+                                                            <p>17:00</p>
+                                                        </div>
+                                                        <div>
+                                                            <p className='celsius'>21°C</p>
+                                                        </div>
+                                                    </div>
+                                                    <div className='bottomEl'>
+                                                        <div>
+                                                            <img src={sun}></img>
+                                                            <p>20:00</p>
+                                                        </div>
+                                                        <div>
+                                                            <p className='celsius'>19°C</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className='weatherFooter'></div>
+                                    <div className='weatherFooter'>
+                                        <p>Weather App</p>
+                                        <p>Lukas Lutonsky</p>
+                                    </div>
                                 </div>
                                 <div className='icon'>
                                     <FontAwesomeIcon icon={faCloud}/>
