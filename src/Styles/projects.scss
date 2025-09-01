@@ -328,11 +328,19 @@
 
         .wrapImg {
             display: block;
-            height: 300px;
+            height: 250px;
             width: 100% !important;
             max-width: 500px;
             margin: auto;
             margin-bottom: 6rem;
+
+            .icon {
+                top: -5rem !important;
+            }
+
+            .searchBar {
+                margin: 1rem !important
+            }
         }
 
         .project-desc {
