@@ -28,37 +28,214 @@
                 width: 40%;
                 position: relative;
                 align-items: center;
-                
-                a {
-                display: block;
-                width: 100%;
 
-                    .project-image {
-                    position: relative;
+                .monitorImg {
+                    position: absolute;
                     width: 100%;
-                    height: 300px;
-                    background-size: cover;
+                    height: 100%;
+                    background-color: #ddf0ff;
+                    z-index: 10;
                     border-radius: 20px;
-                    z-index: 2;
-                    background-color: white;
+                    border: 0.5rem solid $secColor;
+                    transition: 0.3s ease;
 
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        inset: 0;
-                        background: rgba(0,0,0,0.1);
-                        border-radius: 20px;
-                        pointer-events: none;
-                        opacity: 1;
-                        transition: 0.3s ease;
+                    .searchBar {
+                        width: 90%;
+                        height: 12%;
+                        background-color: white;
+                        border-radius: 10px;
+                        margin: 1.5rem auto;
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+
+                        p {
+                            font-size: 0.7rem;
+                            margin-left: 1rem;
+                        }
+
+                        .inputEl {
+                            display: flex;
+                            width: 30%;
+                            height: 60%;
+
+                            input,
+                            a {
+                                box-sizing: border-box;
+                                margin: 0;
+                                padding: 0;
+                                font: Inter;
+                                border: none;
+                                color: black;
+                            }
+
+                            input {
+                                flex: 1;
+                                border: 2px solid #ddf0ff;
+                                border-right: none;
+                                border-radius: 5px 0 0 5px;
+                                padding: 0 10px;
+                                width: 70%;
+                                border-color: #ddf0ff;
+                                height: 100%;
+                                font-size: 0.7rem;
+                                line-height: normal;
+
+                                &:focus {
+                                    outline: none;
+                                    box-shadow: none;
+                                }
+                            }
+
+                            a {
+                                display: flex;
+                                width: 20%;
+                                border: 2px solid #ddf0ff;
+                                border-left: none;
+                                border-radius: 0 5px 5px 0;
+                                background-color: #ddf0ff;
+                                cursor: pointer;
+                                font-size: 0.5rem;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                        }
+
+                        .weatherDarkMode {
+                            border: none;
+                            cursor: pointer;
+                            margin-left: auto;
+                            margin-right: 1rem;
+                            background-color: transparent;
+
+                            svg {
+                                background-color: #ddf0ff;
+                                width: 0.7rem;
+                                height: 0.7rem;
+                                border-radius: 50px;
+                                padding: 0.3rem;
+                            }
+                        }
                     }
+
+                    .weatherContent {
+                        width: 90%;
+                        height: 50%;
+                        display: flex;
+                        justify-content: space-between;
+                        margin: auto;
+                        
+
+                        .left {
+                            width: 55%;
+                            height: 100%;
+
+                            .el1 {
+                                height: 70%;
+                                width: 100%;
+                                background-color: white;
+                                border-radius: 10px;
+                                margin-bottom: 1rem;
+                                background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://cdn.pixabay.com/photo/2018/09/03/13/11/vienna-3651186_1280.jpg');
+                                background-size: cover;
+                                background-position: center;
+
+                                div {
+                                    padding: 0.5rem;
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 0.3rem;
+
+                                    img {
+                                        height: 2rem;
+                                    }
+
+                                    p {
+                                        margin: 0;
+                                        color: white;
+                                        font-size: 1rem;
+                                    }
+                                }
+                            }
+
+                            .el2 {
+                                height: 30%;
+                                width: 100%;
+                                border-radius: 10px;
+                                display: flex;
+                                justify-content: space-between;
+
+                                div {
+                                    width: 30%;
+                                    height: 100%;
+                                    background-color: white;
+                                    border-radius: 10px;
+                                }
+                            }
+                        }
+
+                        .right {
+                            width: 35%;
+                            height: 100%;
+                            background-color: white;
+                            padding-bottom: 1rem;
+                            border-radius: 10px;
+                        }
+                    }
+
+                    .weatherFooter {
+                        position: absolute;
+                        width: 90%;
+                        height: 10%;
+                        background-color: white;
+                        border-radius: 10px;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
                     }
                 }
+
+                .darkmode {
+                    background-color: $mainColor !important;
+                    transition: 0.3s ease;
+
+                    .searchBar, .el2 div, .weatherFooter, .right {
+                        background-color: rgb(56, 56, 56) !important;
+                        transition: 0.3s ease;
+                        color: white;
+                    }
+
+                    .inputEl a {
+                        background-color: $mainColor !important;
+                        color: white !important;
+                        border-color: $mainColor !important;
+                        transition: 0.3s ease;
+                    }
+
+                    .inputEl input {
+                        background-color: rgb(90, 90, 90) !important;
+                        color: white !important;
+                        border-color: $mainColor !important;
+                        transition: 0.3s ease;
+                    }
+
+                    .inputEl input::placeholder {
+                        color: rgb(221, 221, 221);
+                        transition: 0.3s ease;
+                    }
+
+                    .weatherDarkMode svg {
+                        background-color: $mainColor !important;
+                        transition: 0.3s ease;
+                        color: white;
+                    }
+                }
+                
 
             &:hover {
                 
                 .icon {
-                    top: -3.5rem;
+                    top: -4.5rem;
                     transition: 0.4s ease;
                 }
 
@@ -94,8 +271,33 @@
                 }
             }
 
+            .monitorStand {
+                position: absolute;
+                bottom: 1rem;
+
+                .leg {
+                    position: absolute;
+                    width: 1.5rem;
+                    height: 4rem;
+                    background-color: $secColor;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                .support {
+                    position: absolute;
+                    width: 5rem;
+                    height: 1rem;
+                    background-color: $secColor;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: -4rem;
+                    border-radius: 6px;
+                }
+            }
+
             .project-desc {
-                align-content: center;
+                height: fit-content;
 
                 div {
                     display: flex;
@@ -116,7 +318,6 @@
         margin-top: 10rem !important;
     }
 
-
     .content .title {
         padding-bottom: 7rem !important;
         text-align: center;
@@ -126,35 +327,22 @@
         display: block !important;
 
         .wrapImg {
+            display: block;
+            height: 300px;
             width: 100% !important;
+            max-width: 500px;
             margin: auto;
-            margin-bottom: 30px;
-            
-            .icon {
-                top: -3rem !important;
-
-                svg {
-                    width: 20px !important;
-                    height: 20px !important;
-                }
-
-                h2 {
-                    font-size: 2rem;
-                }
-            }
-
-            .project-image {
-                height: 200px !important;
-            }
-
-            .project-image::after {
-                background: rgba(0,0,0,0.0) !important;
-            }
+            margin-bottom: 6rem;
         }
 
         .project-desc {
+            display: block;
             width: 100%;
             margin: auto;
+
+            p {
+                margin: auto;
+            }
 
             h2 {
                 font-size: 2rem;
@@ -162,6 +350,7 @@
             }
 
             div {
+                margin-top: 1rem;
                 justify-content: center;
             }
         }

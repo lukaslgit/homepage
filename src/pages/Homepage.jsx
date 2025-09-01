@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import translationConfig from "../Locales/translation-config";
-import { LanguageContext } from "../utils/LanguageContext.jsx";
+import { LanguageContext } from "../utils/LanguageContext";
 
 import '../Styles/homepage.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

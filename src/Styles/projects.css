@@ -25,31 +25,188 @@
   position: relative;
   align-items: center;
 }
-.top-section .content .project .wrapImg a {
-  display: block;
-  width: 100%;
-}
-.top-section .content .project .wrapImg a .project-image {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  background-size: cover;
-  border-radius: 20px;
-  z-index: 2;
-  background-color: white;
-}
-.top-section .content .project .wrapImg a .project-image::after {
-  content: "";
+.top-section .content .project .wrapImg .monitorImg {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  background-color: #ddf0ff;
+  z-index: 10;
   border-radius: 20px;
-  pointer-events: none;
-  opacity: 1;
+  border: 0.5rem solid rgb(0, 15, 66);
   transition: 0.3s ease;
 }
+.top-section .content .project .wrapImg .monitorImg .searchBar {
+  width: 90%;
+  height: 12%;
+  background-color: white;
+  border-radius: 10px;
+  margin: 1.5rem auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.top-section .content .project .wrapImg .monitorImg .searchBar p {
+  font-size: 0.7rem;
+  margin-left: 1rem;
+}
+.top-section .content .project .wrapImg .monitorImg .searchBar .inputEl {
+  display: flex;
+  width: 30%;
+  height: 60%;
+}
+.top-section .content .project .wrapImg .monitorImg .searchBar .inputEl input,
+.top-section .content .project .wrapImg .monitorImg .searchBar .inputEl a {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: Inter;
+  border: none;
+  color: black;
+}
+.top-section .content .project .wrapImg .monitorImg .searchBar .inputEl input {
+  flex: 1;
+  border: 2px solid #ddf0ff;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  padding: 0 10px;
+  width: 70%;
+  border-color: #ddf0ff;
+  height: 100%;
+  font-size: 0.7rem;
+  line-height: normal;
+}
+.top-section .content .project .wrapImg .monitorImg .searchBar .inputEl input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.top-section .content .project .wrapImg .monitorImg .searchBar .inputEl a {
+  display: flex;
+  width: 20%;
+  border: 2px solid #ddf0ff;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #ddf0ff;
+  cursor: pointer;
+  font-size: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.top-section .content .project .wrapImg .monitorImg .searchBar .weatherDarkMode {
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 1rem;
+  background-color: transparent;
+}
+.top-section .content .project .wrapImg .monitorImg .searchBar .weatherDarkMode svg {
+  background-color: #ddf0ff;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50px;
+  padding: 0.3rem;
+}
+.top-section .content .project .wrapImg .monitorImg .weatherContent {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+.top-section .content .project .wrapImg .monitorImg .weatherContent .left {
+  width: 55%;
+  height: 100%;
+}
+.top-section .content .project .wrapImg .monitorImg .weatherContent .left .el1 {
+  height: 70%;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://cdn.pixabay.com/photo/2018/09/03/13/11/vienna-3651186_1280.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.top-section .content .project .wrapImg .monitorImg .weatherContent .left .el1 div {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.top-section .content .project .wrapImg .monitorImg .weatherContent .left .el1 div img {
+  height: 2rem;
+}
+.top-section .content .project .wrapImg .monitorImg .weatherContent .left .el1 div p {
+  margin: 0;
+  color: white;
+  font-size: 1rem;
+}
+.top-section .content .project .wrapImg .monitorImg .weatherContent .left .el2 {
+  height: 30%;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.top-section .content .project .wrapImg .monitorImg .weatherContent .left .el2 div {
+  width: 30%;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+.top-section .content .project .wrapImg .monitorImg .weatherContent .right {
+  width: 35%;
+  height: 100%;
+  background-color: white;
+  padding-bottom: 1rem;
+  border-radius: 10px;
+}
+.top-section .content .project .wrapImg .monitorImg .weatherFooter {
+  position: absolute;
+  width: 90%;
+  height: 10%;
+  background-color: white;
+  border-radius: 10px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.top-section .content .project .wrapImg .darkmode {
+  background-color: rgb(20, 20, 20) !important;
+  transition: 0.3s ease;
+}
+.top-section .content .project .wrapImg .darkmode .searchBar, .top-section .content .project .wrapImg .darkmode .el2 div, .top-section .content .project .wrapImg .darkmode .weatherFooter, .top-section .content .project .wrapImg .darkmode .right {
+  background-color: rgb(56, 56, 56) !important;
+  transition: 0.3s ease;
+  color: white;
+}
+.top-section .content .project .wrapImg .darkmode .inputEl a {
+  background-color: rgb(20, 20, 20) !important;
+  color: white !important;
+  border-color: rgb(20, 20, 20) !important;
+  transition: 0.3s ease;
+}
+.top-section .content .project .wrapImg .darkmode .inputEl input {
+  background-color: rgb(90, 90, 90) !important;
+  color: white !important;
+  border-color: rgb(20, 20, 20) !important;
+  transition: 0.3s ease;
+}
+.top-section .content .project .wrapImg .darkmode .inputEl input::-moz-placeholder {
+  color: rgb(221, 221, 221);
+  -moz-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.top-section .content .project .wrapImg .darkmode .inputEl input::placeholder {
+  color: rgb(221, 221, 221);
+  transition: 0.3s ease;
+}
+.top-section .content .project .wrapImg .darkmode .weatherDarkMode svg {
+  background-color: rgb(20, 20, 20) !important;
+  transition: 0.3s ease;
+  color: white;
+}
 .top-section .content .project .wrapImg:hover .icon {
-  top: -3.5rem;
+  top: -4.5rem;
   transition: 0.4s ease;
 }
 .top-section .content .project .wrapImg:hover .project-image::after {
@@ -78,8 +235,31 @@
 .top-section .content .project .wrapImg .icon h2 {
   margin: 0;
 }
+.top-section .content .project .monitorStand {
+  position: absolute;
+  bottom: 1rem;
+}
+.top-section .content .project .monitorStand .leg {
+  position: absolute;
+  width: 1.5rem;
+  height: 4rem;
+  background-color: rgb(0, 15, 66);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.top-section .content .project .monitorStand .support {
+  position: absolute;
+  width: 5rem;
+  height: 1rem;
+  background-color: rgb(0, 15, 66);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -4rem;
+  border-radius: 6px;
+}
 .top-section .content .project .project-desc {
-  align-content: center;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .top-section .content .project .project-desc div {
   display: flex;
@@ -102,28 +282,19 @@
     display: block !important;
   }
   .project .wrapImg {
+    display: block;
+    height: 300px;
     width: 100% !important;
+    max-width: 500px;
     margin: auto;
-    margin-bottom: 30px;
-  }
-  .project .wrapImg .icon {
-    top: -3rem !important;
-  }
-  .project .wrapImg .icon svg {
-    width: 20px !important;
-    height: 20px !important;
-  }
-  .project .wrapImg .icon h2 {
-    font-size: 2rem;
-  }
-  .project .wrapImg .project-image {
-    height: 200px !important;
-  }
-  .project .wrapImg .project-image::after {
-    background: rgba(0, 0, 0, 0) !important;
+    margin-bottom: 6rem;
   }
   .project .project-desc {
+    display: block;
     width: 100%;
+    margin: auto;
+  }
+  .project .project-desc p {
     margin: auto;
   }
   .project .project-desc h2 {
@@ -131,6 +302,7 @@
     text-align: center;
   }
   .project .project-desc div {
+    margin-top: 1rem;
     justify-content: center;
   }
 }/*# sourceMappingURL=projects.css.map */

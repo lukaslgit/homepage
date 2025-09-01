@@ -1,8 +1,9 @@
 import '../Styles/projects.css'
 import weatherApp from '../assets/weatherapp.png';
 import { Link } from "react-router-dom";
-import { faCloud } from '@fortawesome/free-solid-svg-icons';
+import { faCloud, faMagnifyingGlass, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import sun from '../assets/idkwhyiamdoingthis.png'
 
 export default function Projects(){
     return(
@@ -15,11 +16,45 @@ export default function Projects(){
                     <ul>
                         <li className='project'>
                             <div className='wrapImg'>
-                            <a href={'https://lutonsky.eu/projects/weatherapp/'}><div className='project-image' style={{ backgroundImage: `url(${weatherApp})` }}></div></a>
-                           <div className='icon'>
-                            <FontAwesomeIcon icon={faCloud}/>
-                            <h2>WeatherApp</h2>
-                           </div>
+                                <div className='monitorImg'>
+                                    <div className='searchBar'>
+                                        <p>Vienna <strong>(AT)</strong></p>
+                                        <div className='inputEl'>
+                                            <input placeholder='Try me!'></input>
+                                            <a href={'https://lutonsky.eu/projects/weatherapp/'}><FontAwesomeIcon icon={faMagnifyingGlass} /></a>
+                                        </div>
+                                        <button className='weatherDarkMode' onClick={() => {
+                                            document.querySelector('.monitorImg').classList.toggle('darkmode');
+                                        }}><FontAwesomeIcon icon={faSun} /></button>
+                                    </div>
+                                    <div className='weatherContent'>
+                                        <div className='left'>
+                                            <div className='el1'>
+                                                <div>
+                                                    <img src={sun}></img>
+                                                    <p>22°C</p>
+                                                </div>
+                                            </div>
+                                            <div className='el2'>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                        <div className='right'>
+                                            <div className='el1'></div>
+                                        </div>
+                                    </div>
+                                    <div className='weatherFooter'></div>
+                                </div>
+                                <div className='icon'>
+                                    <FontAwesomeIcon icon={faCloud}/>
+                                    <h2>WeatherApp</h2>
+                                </div>
+                                <div className='monitorStand'>
+                                    <div className='leg'></div>
+                                    <div className='support'></div>
+                                </div>
                             </div>
                             <div className='project-desc'>
                                 <h2>React + Express</h2>

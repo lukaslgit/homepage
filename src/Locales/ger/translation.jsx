@@ -54,7 +54,7 @@ export default {
   homepage_end2_text: (
     <>
       Erfahren im Erstellen responsiver und benutzerfreundlicher Webanwendungen mit
-      <strong>React</strong>, React Router und Redux/Context API. Erfahrung mit
+      <strong> React</strong>, React Router und Redux/Context API. Erfahrung mit
       komponentenbasierter Architektur, State-Management und Performance-Optimierung
       für moderne Webanwendungen.
     </>
