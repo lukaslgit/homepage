@@ -1,9 +1,9 @@
     import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-    import Homepage from './pages/Homepage';
-    import Projects from './pages/Projects';
+    import Homepage from './Pages/Homepage';
+    import Projects from './Pages/Projects';
     import Contact from "./Pages/Contact";
-    import NotFound from './pages/NotFound';
+    import NotFound from './Pages/NotFound';
     import Layout from './Components/Layout';
 
     import './Styles/main.css';
