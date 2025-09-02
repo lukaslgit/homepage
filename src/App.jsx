@@ -2,7 +2,7 @@
 
     import Homepage from './pages/Homepage';
     import Projects from './pages/Projects';
-    import Contact from "./Components/Contact";
+    import Contact from "./Pages/Contact";
     import NotFound from './pages/NotFound';
     import Layout from './Components/Layout';
 

@@ -1,6 +1,6 @@
 .top-section-contact {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 80%;
   margin: auto;
   margin-top: 15rem;
@@ -9,10 +9,11 @@
 .top-section-contact .content {
   width: 50%;
   max-width: 500px;
+  margin: 0;
 }
 .top-section-contact .content h1, .top-section-contact .content p, .top-section-contact .content h2 {
   text-align: left;
-  margin: auto 0;
+  margin: 0;
 }
 .top-section-contact .content h1 {
   font-size: 3rem;
@@ -42,10 +43,31 @@
   display: flex;
   flex-direction: column;
   max-width: 500px;
-  margin: auto;
+  margin-left: auto;
   padding: 30px;
   background-color: white;
   border-radius: 20px;
+  position: relative;
+}
+.top-section-contact .contact .contactForm .loader {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  z-index: 10;
+}
+.top-section-contact .contact .contactForm .loader .loaderElement {
+  width: 40px;
+  height: 40px;
+  border: 3px solid transparent;
+  border-top: 3px solid rgb(20, 20, 20);
+  border-bottom: 3px solid rgb(20, 20, 20);
+  border-radius: 50%;
+  animation: spin 0.8s ease infinite;
 }
 .top-section-contact .contact .contactForm label {
   margin-bottom: 5px;
@@ -112,6 +134,14 @@
   position: relative;
   z-index: 1;
 }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 @media only screen and (max-width: 1100px) {
   .top-section-contact {
     display: block !important;
@@ -121,11 +151,17 @@
     margin-top: 5rem;
     width: 100%;
   }
+  .top-section-contact .contact .contactForm {
+    margin-left: 0;
+    margin: auto;
+  }
   .top-section-contact .content {
     width: 100%;
+    margin: auto;
   }
   .top-section-contact .content h1 {
     font-size: 2rem !important;
+    text-align: center;
   }
 }
 @media (max-width: 600px) {
