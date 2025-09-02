@@ -1,16 +1,25 @@
-import '../Styles/projects.css'
-import weatherApp from '../assets/weatherapp.png';
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import translationConfig from "../Locales/translation-config";
+import { LanguageContext } from "../utils/LanguageContext";
+
+import '../Styles/projects.css'
 import { faCloud, faMagnifyingGlass, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import sun from '../assets/weatherSun.png';
 
 export default function Projects(){
+
+    const { lang, setLang } = useContext(LanguageContext);
+    
+    const t = translationConfig[lang];
+
     return(
         <section className="top-section">
             <div className='content'>
                 <div className='title'>
-                    <h1>PROJECTS</h1>
+                    <h2>{t.my}</h2>
+                    <h1>{t.projects}</h1>
                 </div>
                 <div>
                     <ul>
@@ -117,8 +126,7 @@ export default function Projects(){
                             <div className='project-desc'>
                                 <h2>React + Express</h2>
                                 <p> 
-                                    A modern weather application built with a <strong>React</strong> frontend and an <strong>Express.js</strong> backend. The backend securely manages API keys and routes calls to third-party services like <strong>OpenWeatherMap</strong> (weather & forecasts) and <strong>Pixabay</strong> (background images).
-                                    Deployed on a VPS with <strong>Ubuntu</strong> and <strong>Nginx</strong>, the app demonstrates hands-on experience with full-stack development, API integration, secure backend practices, and production deployment.
+                                    {t.projectpage_main1}
                                 </p>
                                 <div>
                                     <a href={'https://lutonsky.eu/projects/weatherapp/'}>LIVE</a>

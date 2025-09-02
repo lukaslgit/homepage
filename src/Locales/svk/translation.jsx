@@ -4,6 +4,10 @@ export default {
   contact: "KONTAKT",
   getInTouch: "KONTAKTUJ MA",
   contactMe: "Kontaktuj ma!",
+  name: "Meno",
+  email: "Email",
+  msg: "Správa",
+  send: "ODOSLAŤ",
   homepage_main1: (
     <>
       <strong>Junior frontend developer</strong>, špecializovaný na tvorbu
@@ -81,4 +85,12 @@ export default {
       schopný efektívne spolupracovať v medzinárodných tímoch.
     </>
   ),
+  my: "MOJE",
+  projectpage_main1: (
+    <>
+      Moderná aplikácia počasia s <strong>React</strong> frontendom a <strong>Express.js</strong> backendom. Backend bezpečne spravuje API kľúče a posiela požiadavky na služby tretích strán, ako sú <strong>OpenWeatherMap</strong> (počasie a predpovede) a <strong>Pixabay</strong> (pozadie obrázkov).
+      Nasadená na VPS s <strong>Ubuntu</strong> a <strong>Nginx</strong>, aplikácia ukazuje praktické skúsenosti s full-stack vývojom, integráciou API, bezpečnými backend praktikami a produkčným nasadením.
+    </>
+  ),
+  contactpage_main1: "Vždy ma teší nadviazať kontakt a diskutovať o možných kariérnych príležitostiach. Ak by ste sa chceli dozvedieť viac o mojich skúsenostiach alebo zistiť, ako by som mohol prispieť vášmu tímu, neváhajte ma kontaktovať."
 };

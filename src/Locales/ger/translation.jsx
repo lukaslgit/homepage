@@ -4,6 +4,10 @@ export default {
   contact: "KONTAKT",
   getInTouch: "SCHREIB MIR",
   contactMe: "Kontaktiere mich!",
+  name: "Name",
+  email: "E-Mail",
+  msg: "Nachricht",
+  send: "SENDEN",
   homepage_main1: (
     <>
       <strong>Junior-Frontend-Entwickler</strong>, spezialisiert auf die Erstellung
@@ -83,4 +87,12 @@ export default {
       internationalen Teams.
     </>
   ),
+  my: "MEINE",
+  projectpage_main1: (
+    <>
+      Eine moderne Wetteranwendung mit einem <strong>React</strong>-Frontend und einem <strong>Express.js</strong>-Backend. Das Backend verwaltet API-Schlüssel sicher und leitet Anfragen an Drittanbieter-Dienste wie <strong>OpenWeatherMap</strong> (Wetter & Vorhersagen) und <strong>Pixabay</strong> (Hintergrundbilder) weiter.
+      Bereitgestellt auf einem VPS mit <strong>Ubuntu</strong> und <strong>Nginx</strong>, zeigt die App praktische Erfahrung in Full-Stack-Entwicklung, API-Integration, sicheren Backend-Praktiken und Produktionsbereitstellung.
+    </>
+  ),
+  contactpage_main1: "Ich freue mich immer, in Kontakt zu treten und über mögliche Karrierechancen zu sprechen. Wenn Sie mehr über meine Erfahrungen erfahren oder herausfinden möchten, wie ich Ihr Team unterstützen könnte, können Sie mich gerne kontaktieren."
 };

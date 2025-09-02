@@ -4,6 +4,10 @@ export default {
   contact: "CONTACT",
   getInTouch: "GET IN TOUCH",
   contactMe: "Contact Me!",
+  name: "Name",
+  email: "Email",
+  msg: "Message",
+  send: "SEND",
   homepage_main1: (
     <>
       <strong>Junior frontend developer</strong> focused on building responsive
@@ -80,4 +84,12 @@ export default {
       skills, capable of collaborating effectively in international teams.
     </>
   ),
+  my: "MY",
+  projectpage_main1: (
+    <>
+      A modern weather application built with a <strong>React</strong> frontend and an <strong>Express.js</strong> backend. The backend securely manages API keys and routes calls to third-party services like <strong>OpenWeatherMap</strong> (weather & forecasts) and <strong>Pixabay</strong> (background images).
+      Deployed on a VPS with <strong>Ubuntu</strong> and <strong>Nginx</strong>, the app demonstrates hands-on experience with full-stack development, API integration, secure backend practices, and production deployment.
+    </>
+  ),
+  contactpage_main1: "I’m always pleased to connect and discuss potential career opportunities. If you would like to learn more about my experience or explore how I could contribute to your team, please feel free to get in touch."
 };

@@ -2,6 +2,7 @@
 
     import Homepage from './pages/Homepage';
     import Projects from './pages/Projects';
+    import Contact from "./Components/Contact";
     import NotFound from './pages/NotFound';
     import Layout from './Components/Layout';
 
@@ -20,6 +21,10 @@ export default function App(){
         {
             path: '/projects',
             element: <Layout><Projects /></Layout>
+        },
+        {
+            path: '/contact',
+            element: <Layout><Contact /></Layout>
         }
     ])
 

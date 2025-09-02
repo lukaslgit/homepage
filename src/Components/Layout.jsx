@@ -7,10 +7,12 @@ export default function Layout({ children }) {
   return (
     <>
     <LanguageProvider >
-      <Header />
-      <ScrollToTop />
-      <main>{children}</main>
-      <Footer />
+      <div className="layout-wrapper">
+        <Header />
+        <ScrollToTop />
+        <main className="layout-content">{children}</main>
+        <Footer />
+      </div>
     </LanguageProvider>
     </>
   );

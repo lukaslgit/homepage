@@ -3,13 +3,18 @@
 .top-section {
     margin-top: 15rem;
     width: 100%;
-    margin-bottom: 8rem;
+    margin-bottom: 15rem;
 
     .content {
         width: 80%;
 
         .title {
-            padding-bottom: 5rem;
+            padding-bottom: 8rem;
+            text-align: left;
+
+            h2, h1 {
+                margin: 0;
+            }
         }
 
         ul {
@@ -139,7 +144,7 @@
                                 background-color: white;
                                 border-radius: 10px;
                                 margin-bottom: 1rem;
-                                background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://cdn.pixabay.com/photo/2018/09/03/13/11/vienna-3651186_1280.jpg');
+                                background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://cdn.pixabay.com/photo/2018/09/03/13/11/vienna-3651186_1280.jpg');
                                 background-size: cover;
                                 background-position: center;
 
@@ -210,7 +215,7 @@
 
                         .right {
                             width: 35%;
-                            height: 100%;
+                            height: calc(100% + 1rem);
                             background-color: white;
                             border-radius: 10px;
 
@@ -228,6 +233,7 @@
                                         font-size: 0.6rem;
                                         margin: 0;
                                         font-weight: 600;
+                                        border-bottom: 1px solid transparent;
 
                                         &:first-child {
                                             border-bottom: 1px solid $mainColor;
@@ -338,7 +344,7 @@
                         color: white !important;
                     }
 
-                    .top p{
+                    .top p:first-child{
                         border-color: white !important;
                         transition: 0.3 ease;
             }
@@ -434,6 +440,11 @@
     .content .title {
         padding-bottom: 7rem !important;
         text-align: center;
+
+        h1, h2 {
+            font-size: 2rem !important;
+        }
+        
     }
 
     .project {
@@ -443,7 +454,7 @@
             display: block;
             height: 250px;
             width: 100% !important;
-            max-width: 500px;
+            max-width: 400px;
             margin: auto;
             margin-bottom: 6rem;
 
@@ -482,5 +493,9 @@
 @media (max-width: 768px) {
   .inputEl input {
     pointer-events: none;
+  }
+
+  .top-section .content .project .wrapImg .monitorImg .weatherContent .left .el2 div p {
+    font-size: 0.43rem;
   }
 }

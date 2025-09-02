@@ -1,6 +1,21 @@
 @import './fonts.css';
+html {
+  scrollbar-gutter: stable;
+}
+
 html, body {
-  padding: 0;
+  height: 100%;
   margin: 0;
+  padding: 0;
   background-color: rgb(255, 247, 247);
+}
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-content {
+  flex: 1;
 }/*# sourceMappingURL=main.css.map */

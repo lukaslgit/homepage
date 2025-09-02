@@ -1,0 +1,141 @@
+.top-section-contact {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  margin-top: 15rem;
+  margin-bottom: 15rem;
+}
+.top-section-contact .content {
+  width: 50%;
+  max-width: 500px;
+}
+.top-section-contact .content h1, .top-section-contact .content p, .top-section-contact .content h2 {
+  text-align: left;
+  margin: auto 0;
+}
+.top-section-contact .content h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.top-section-contact .content h2 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+.top-section-contact .content p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.top-section-contact .contact {
+  font-family: "Inter", sans-serif;
+  width: 50%;
+}
+.top-section-contact .contact h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: rgb(20, 20, 20);
+  font-size: 2rem;
+}
+.top-section-contact .contact .contactForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 20px;
+}
+.top-section-contact .contact .contactForm label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: rgb(20, 20, 20);
+}
+.top-section-contact .contact .contactForm input[type=text],
+.top-section-contact .contact .contactForm input[type=email],
+.top-section-contact .contact .contactForm textarea {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: 1px solid rgb(0, 15, 66);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.top-section-contact .contact .contactForm input[type=text]:focus,
+.top-section-contact .contact .contactForm input[type=email]:focus,
+.top-section-contact .contact .contactForm textarea:focus {
+  outline: none;
+  border-color: rgb(98, 161, 255);
+}
+.top-section-contact .contact .contactForm textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.top-section-contact .contact .contactForm button[type=submit] {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(0, 15, 66);
+  color: white;
+  border-radius: 3rem;
+  padding: 0 3rem;
+  line-height: 3rem;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.top-section-contact .contact .contactForm button[type=submit]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgb(98, 161, 255);
+  z-index: 0;
+  transition: width 0.3s ease;
+}
+.top-section-contact .contact .contactForm button[type=submit]:hover {
+  color: black;
+}
+.top-section-contact .contact .contactForm button[type=submit]:hover::before {
+  width: 100%;
+}
+.top-section-contact .contact .contactForm button[type=submit] > * {
+  position: relative;
+  z-index: 1;
+}
+.top-section-contact .contact .contactForm button[type=submit] span, .top-section-contact .contact .contactForm button[type=submit]::after {
+  position: relative;
+  z-index: 1;
+}
+@media only screen and (max-width: 1100px) {
+  .top-section-contact {
+    display: block !important;
+    margin: 15rem auto !important;
+  }
+  .top-section-contact .contact {
+    margin-top: 5rem;
+    width: 100%;
+  }
+  .top-section-contact .content {
+    width: 100%;
+  }
+  .top-section-contact .content h1 {
+    font-size: 2rem !important;
+  }
+}
+@media (max-width: 600px) {
+  .top-section-contact {
+    padding: 20px;
+  }
+  .top-section-contact h1 {
+    font-size: 1.5rem;
+  }
+  .top-section-contact button[type=submit] {
+    font-size: 0.9rem;
+  }
+}/*# sourceMappingURL=contact.css.map */

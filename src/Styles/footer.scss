@@ -1,0 +1,73 @@
+@import './Variables/variables.scss';
+
+
+footer {
+  background-color: $mainColor;
+  color: white;
+  display: block;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Inter;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  .footerNav {
+    display: block;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: 0.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            }
+        }
+    }
+    
+  }
+
+  .footerInfo {
+
+    margin-top: 2rem;
+    p {
+        margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            
+
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+
+                    svg {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+  
+}

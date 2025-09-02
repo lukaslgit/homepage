@@ -1,0 +1,56 @@
+footer {
+  background-color: rgb(20, 20, 20);
+  color: white;
+  display: block;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Inter;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+footer .footerNav {
+  display: block;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+}
+footer .footerNav ul {
+  list-style: none;
+  padding: 0;
+}
+footer .footerNav ul li {
+  margin-bottom: 0.5rem;
+}
+footer .footerNav ul li:last-child {
+  margin-bottom: 0;
+}
+footer .footerNav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+footer .footerInfo {
+  margin-top: 2rem;
+}
+footer .footerInfo p {
+  margin: 0;
+}
+footer .footerInfo ul {
+  list-style: none;
+  padding: 0;
+}
+footer .footerInfo ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .footerInfo ul li a {
+  text-decoration: none;
+  color: white;
+}
+footer .footerInfo ul li a svg {
+  font-size: 1.5rem;
+}/*# sourceMappingURL=footer.css.map */

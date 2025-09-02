@@ -75,7 +75,7 @@ export default function Header(){
     return(
         <header className={scrolled ? "scrolled" : ""}>
                 <div className="header-container">
-                    <Link to={'/'} className="header-logo">LOGO</Link>
+                    <Link to={'/'} className="header-logo">Lutonsky</Link>
                     <nav>
                         <ul>
                             <li><Link to={'/'}>{t.home}</Link></li>
@@ -100,7 +100,7 @@ export default function Header(){
 
                 <div className="header-container-mobile">
                     <div className="title">
-                        <Link to={'/'} className="header-logo">LOGO</Link>
+                        <Link to={'/'} className="header-logo">Lutonsky</Link>
                     </div>
                     <div className="openBtn">
                         <button onClick={() => {
