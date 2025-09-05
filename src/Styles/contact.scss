@@ -64,13 +64,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: bold;
-        font-size: 1.5rem;
         z-index: 10;
+        border-radius: 20px;
 
         .loaderElement {
-          width: 40px;
-          height: 40px;
+          width: 60px;
+          height: 60px;
+          margin-bottom: 3rem;
           border: 3px solid transparent;
           border-top: 3px solid $mainColor;
           border-bottom: 3px solid $mainColor;
@@ -164,7 +164,8 @@
 
   @media only screen and (max-width: 1100px) {
     display: block !important;
-    margin: 15rem auto !important;
+    margin: 10rem auto !important;
+    
 
     .contact {
       margin-top: 5rem;

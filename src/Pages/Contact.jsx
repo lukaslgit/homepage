@@ -3,10 +3,14 @@ import emailjs from '@emailjs/browser';
 import { useContext } from "react";
 import translationConfig from "../Locales/translation-config";
 import { LanguageContext } from "../utils/LanguageContext";
+import { useNotificationContext } from '../utils/NotificationContext';
 
 import '../Styles/contact.css';
 
 export default function Contact() {
+
+  const { showNotification } = useNotificationContext();
+
   const form = useRef();
 
   const [isLoading, setIsLoading] = useState(false)
@@ -24,12 +28,14 @@ export default function Contact() {
 
       if (!name || !email || !message) {
         console.log('ERROR: All fields must be filled!');
+        showNotification("All fields must be filled!")
         return;
       }
 
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
         console.log('ERROR: Please enter a valid email!');
+        showNotification("Please enter a valid email!")
         return;
       }
 
@@ -44,6 +50,7 @@ export default function Contact() {
             console.log('SUCCESS: Email sent!');
             form.current.reset();
             setIsLoading(false);
+            showNotification("Email sent, thank you!", "succes")
           },
           (error) => {
             console.log('FAILED: ', error.text);
@@ -77,7 +84,7 @@ export default function Contact() {
         <label>{t.name}</label>
         <input type="text" name="user_name" />
         <label>{t.email}</label>
-        <input type="email" name="user_email" />
+        <input type="text" name="user_email" />
         <label>{t.msg}</label>
         <textarea name="message" />
         <button type="submit"><span>{t.send}</span></button>
@@ -85,7 +92,6 @@ export default function Contact() {
           <div className='loaderElement'></div>
         </div>}
       </form>
-      
     </div>
     </section>
   );

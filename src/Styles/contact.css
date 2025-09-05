@@ -56,13 +56,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 1.5rem;
   z-index: 10;
+  border-radius: 20px;
 }
 .top-section-contact .contact .contactForm .loader .loaderElement {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 3rem;
   border: 3px solid transparent;
   border-top: 3px solid rgb(20, 20, 20);
   border-bottom: 3px solid rgb(20, 20, 20);
@@ -145,7 +145,7 @@
 @media only screen and (max-width: 1100px) {
   .top-section-contact {
     display: block !important;
-    margin: 15rem auto !important;
+    margin: 10rem auto !important;
   }
   .top-section-contact .contact {
     margin-top: 5rem;
