@@ -50,7 +50,7 @@ export default function Contact() {
             console.log('SUCCESS: Email sent!');
             form.current.reset();
             setIsLoading(false);
-            showNotification(t.contactpage_form_succes, "succes")
+            showNotification(t.contactpage_form_succes, "success")
           },
           (error) => {
             console.log('FAILED: ', error.text);

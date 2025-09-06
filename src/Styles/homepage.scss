@@ -2,18 +2,19 @@
 
 section {
     width: 100%;
-    animation: fadeInUp 0.8s ease forwards;
     font-family: Inter;
 }
 
 .content {
     width: 70%;
     margin: auto;
+    
 }
 
 .top-section {
     margin-top: 15rem;
     color: $mainColor;
+    animation: fadeInUp 0.8s ease forwards;
 
     h1 {
         font-size: 3rem;
@@ -291,12 +292,12 @@ section {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        padding-top: 60px;
+        transform: translateY(-4rem);
     }
 
     to {
         opacity: 100%;
-        padding-top: 0;
+        transform: translateY(0);
     }
 }
 

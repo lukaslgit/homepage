@@ -51,7 +51,7 @@ html, body {
   justify-content: space-evenly;
   align-items: center;
 }
-.notificationContainer li .succes {
+.notificationContainer li .success {
   background-color: rgb(0, 216, 0);
   color: black;
 }

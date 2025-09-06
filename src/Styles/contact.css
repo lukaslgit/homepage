@@ -5,6 +5,7 @@
   margin: auto;
   margin-top: 15rem;
   margin-bottom: 15rem;
+  animation: fadeInUp 0.8s ease;
 }
 .top-section-contact .content {
   width: 50%;

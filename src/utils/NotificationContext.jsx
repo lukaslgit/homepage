@@ -14,6 +14,10 @@ export const NotificationProvider = ({ children }) => {
     const showNotification = useCallback((msg, type, duration = 3000) => {
         const id = Date.now()
 
+        if (notification.length >= 3){
+            return
+        };
+
         setNotification((prev) => [...prev, {msg, id, type, visible: true}]);
 
         setTimeout(() => {
@@ -31,9 +35,9 @@ export const NotificationProvider = ({ children }) => {
             <ul className="notificationContainer">
                 { notification.map((element, index) => (
                     <li key={element.id} style={{top: `${(index + 1) * 4}rem`}}>
-                        <div key={element.id} className={`notification ${element.visible ? "slideIn" : "slideOut"} ${element.type === "succes" ? "succes" : ""}`}>
+                        <div key={element.id} className={`notification ${element.visible ? "slideIn" : "slideOut"} ${element.type === "success" ? "success" : ""}`}>
                             <div className="notificationContent">
-                            <FontAwesomeIcon icon={element.type === "succes" ? faCheck : faTriangleExclamation } />
+                            <FontAwesomeIcon icon={element.type === "success" ? faCheck : faTriangleExclamation } />
                             <span>{element.msg}</span>
                             </div>
                         </div>
