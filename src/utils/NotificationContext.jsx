@@ -1,5 +1,8 @@
 import { createContext, useCallback, useContext, useState } from "react";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTriangleExclamation, faCheck } from '@fortawesome/free-solid-svg-icons';
+
 const NotificationContext = createContext();
 
 export const useNotificationContext = () => useContext(NotificationContext);
@@ -8,7 +11,7 @@ export const NotificationProvider = ({ children }) => {
 
     const [notification, setNotification] = useState([]);
 
-    const showNotification = useCallback((msg, type, duration = 3500) => {
+    const showNotification = useCallback((msg, type, duration = 3000) => {
         const id = Date.now()
 
         setNotification((prev) => [...prev, {msg, id, type, visible: true}]);
@@ -29,7 +32,10 @@ export const NotificationProvider = ({ children }) => {
                 { notification.map((element, index) => (
                     <li key={element.id} style={{top: `${(index + 1) * 4}rem`}}>
                         <div key={element.id} className={`notification ${element.visible ? "slideIn" : "slideOut"} ${element.type === "succes" ? "succes" : ""}`}>
+                            <div className="notificationContent">
+                            <FontAwesomeIcon icon={element.type === "succes" ? faCheck : faTriangleExclamation } />
                             <span>{element.msg}</span>
+                            </div>
                         </div>
                     </li>
                 ))}

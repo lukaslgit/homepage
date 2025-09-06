@@ -94,5 +94,8 @@ export default {
       Bereitgestellt auf einem VPS mit <strong>Ubuntu</strong> und <strong>Nginx</strong>, zeigt die App praktische Erfahrung in Full-Stack-Entwicklung, API-Integration, sicheren Backend-Praktiken und Produktionsbereitstellung.
     </>
   ),
-  contactpage_main1: "Ich freue mich immer, in Kontakt zu treten und über mögliche Karrierechancen zu sprechen. Wenn Sie mehr über meine Erfahrungen erfahren oder herausfinden möchten, wie ich Ihr Team unterstützen könnte, können Sie mich gerne kontaktieren."
+  contactpage_main1: "Ich freue mich immer, in Kontakt zu treten und über mögliche Karrierechancen zu sprechen. Wenn Sie mehr über meine Erfahrungen erfahren oder herausfinden möchten, wie ich Ihr Team unterstützen könnte, können Sie mich gerne kontaktieren.",
+  contactpage_form_empty: "Bitte alle Felder ausfüllen!",
+  contactpage_form_wrongmail: "Ungültige E-Mail-Adresse!",
+  contactpage_form_succes: "E-Mail gesendet, danke!"
 };

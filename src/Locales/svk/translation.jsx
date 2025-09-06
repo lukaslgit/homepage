@@ -92,5 +92,8 @@ export default {
       Nasadená na VPS s <strong>Ubuntu</strong> a <strong>Nginx</strong>, aplikácia ukazuje praktické skúsenosti s full-stack vývojom, integráciou API, bezpečnými backend praktikami a produkčným nasadením.
     </>
   ),
-  contactpage_main1: "Vždy ma teší nadviazať kontakt a diskutovať o možných kariérnych príležitostiach. Ak by ste sa chceli dozvedieť viac o mojich skúsenostiach alebo zistiť, ako by som mohol prispieť vášmu tímu, neváhajte ma kontaktovať."
+  contactpage_main1: "Vždy ma teší nadviazať kontakt a diskutovať o možných kariérnych príležitostiach. Ak by ste sa chceli dozvedieť viac o mojich skúsenostiach alebo zistiť, ako by som mohol prispieť vášmu tímu, neváhajte ma kontaktovať.",
+  contactpage_form_empty: "Všetky polia musia byť vyplnené!",
+  contactpage_form_wrongmail: "Zadajte platný e-mail!",
+  contactpage_form_succes: "E-mail bol odoslaný, ďakujeme!"
 };

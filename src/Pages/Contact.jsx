@@ -28,14 +28,14 @@ export default function Contact() {
 
       if (!name || !email || !message) {
         console.log('ERROR: All fields must be filled!');
-        showNotification("All fields must be filled!")
+        showNotification(t.contactpage_form_empty)
         return;
       }
 
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
         console.log('ERROR: Please enter a valid email!');
-        showNotification("Please enter a valid email!")
+        showNotification(t.contactpage_form_wrongmail)
         return;
       }
 
@@ -50,7 +50,7 @@ export default function Contact() {
             console.log('SUCCESS: Email sent!');
             form.current.reset();
             setIsLoading(false);
-            showNotification("Email sent, thank you!", "succes")
+            showNotification(t.contactpage_form_succes, "succes")
           },
           (error) => {
             console.log('FAILED: ', error.text);

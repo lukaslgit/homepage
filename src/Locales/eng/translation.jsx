@@ -91,5 +91,8 @@ export default {
       Deployed on a VPS with <strong>Ubuntu</strong> and <strong>Nginx</strong>, the app demonstrates hands-on experience with full-stack development, API integration, secure backend practices, and production deployment.
     </>
   ),
-  contactpage_main1: "I’m always pleased to connect and discuss potential career opportunities. If you would like to learn more about my experience or explore how I could contribute to your team, please feel free to get in touch."
+  contactpage_main1: "I’m always pleased to connect and discuss potential career opportunities. If you would like to learn more about my experience or explore how I could contribute to your team, please feel free to get in touch.",
+  contactpage_form_empty: "All fields must be filled!",
+  contactpage_form_wrongmail: "Please enter a valid email!",
+  contactpage_form_succes: "Email sent, thank you!"
 };
