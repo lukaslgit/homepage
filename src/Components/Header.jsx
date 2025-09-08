@@ -7,6 +7,7 @@ import { LanguageContext } from "../utils/LanguageContext.jsx";
 import '../Styles/header.css';
 import { faSun, faX, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import logo from '../assets/lutonsky.svg';
 
 import england from '../assets/england.svg';
 import germany from '../assets/germany.svg';
@@ -75,7 +76,7 @@ export default function Header(){
     return(
         <header className={scrolled ? "scrolled" : ""}>
                 <div className="header-container">
-                    <Link to={'/'} className="header-logo">Lutonsky</Link>
+                    <Link to={'/'} className="header-logo"><img src={logo} alt="logo"></img></Link>
                     <nav>
                         <ul>
                             <li><Link to={'/'}>{t.home}</Link></li>
@@ -100,7 +101,7 @@ export default function Header(){
 
                 <div className="header-container-mobile">
                     <div className="title">
-                        <Link to={'/'} className="header-logo">Lutonsky</Link>
+                        <Link to={'/'} className="header-logo"><img src={logo} alt="logo"></img></Link>
                     </div>
                     <div className="openBtn">
                         <button onClick={() => {

@@ -11,7 +11,7 @@ header {
   font-weight: 900;
   border-radius: 2rem;
   box-shadow: 0px 8px 24px rgba(156, 166, 175, 0.2);
-  transition: 0.2s ease;
+  transition: 0.3s ease;
   z-index: 1000;
 }
 header > .header-container {
@@ -22,6 +22,15 @@ header > .header-container {
   align-items: center;
   padding: 0.5rem 2rem;
   margin: auto;
+}
+header > .header-container .header-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+header > .header-container .header-logo img {
+  height: 3rem;
+  width: auto;
 }
 header > .header-container .header-right {
   display: flex;
@@ -121,7 +130,7 @@ header ul li {
 
 .scrolled {
   top: 0;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
   width: 100%;
   border-radius: 0;
 }
@@ -160,6 +169,15 @@ header ul li {
     width: 100%;
     justify-content: space-around;
     align-items: center;
+  }
+  .header-container-mobile .header-logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .header-container-mobile .header-logo img {
+    height: 3rem;
+    width: auto;
   }
   .header-container-mobile .title {
     font-size: 2rem;

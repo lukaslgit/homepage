@@ -175,4 +175,13 @@
   .top-section-contact button[type=submit] {
     font-size: 0.9rem;
   }
+}
+
+@media (hover: none) {
+  .top-section-contact .contact .contactForm button[type=submit]:hover {
+    color: white !important;
+  }
+  .top-section-contact .contact .contactForm button[type=submit]:hover::before {
+    width: 0 !important;
+  }
 }/*# sourceMappingURL=contact.css.map */

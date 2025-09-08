@@ -298,4 +298,43 @@ section {
   .curve svg {
     height: 70px !important;
   }
+}
+@media (hover: none) {
+  .mid-section .content .box-content:hover {
+    background-color: white !important;
+    color: rgb(20, 20, 20) !important;
+  }
+  .mid-section .content .box-content:hover .icon {
+    background-color: rgb(46, 46, 46) !important;
+  }
+  .mid-section .content .box-content:hover .icon svg {
+    color: white !important;
+    transform: none !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .mid-section .content .box-content:hover .box-text {
+    color: rgb(20, 20, 20) !important;
+  }
+  .mid-section .content .box-content:hover .box-text .fakeBtn::after {
+    border-color: black !important;
+    width: 50% !important;
+  }
+  .end-section .content .about-right ul li:hover {
+    background-color: transparent !important;
+  }
+  .end-section .content .about-right ul li:hover h2, .end-section .content .about-right ul li:hover p {
+    color: inherit !important;
+  }
+  .end-section .content .about-right ul li:hover svg {
+    color: inherit !important;
+    border-color: rgb(0, 15, 66) !important;
+    border-radius: 0 !important;
+  }
+  .top-section-contact .contact .contactForm button[type=submit]:hover {
+    color: white !important;
+  }
+  .top-section-contact .contact .contactForm button[type=submit]:hover::before {
+    width: 0 !important;
+  }
 }/*# sourceMappingURL=homepage.css.map */

@@ -201,3 +201,12 @@
     }
   }
 }
+
+@media (hover: none) {
+  .top-section-contact .contact .contactForm button[type='submit']:hover {
+    color: white !important;
+    &::before {
+      width: 0 !important;
+    }
+  }
+}

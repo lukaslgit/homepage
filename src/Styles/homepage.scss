@@ -362,3 +362,51 @@ section {
         height: 70px !important;
     }
 }
+
+@media (hover: none) {
+  .mid-section .content .box-content:hover {
+    background-color: white !important;
+    color: $mainColor !important;
+
+    .icon {
+      background-color: rgb(46, 46, 46) !important;
+      svg {
+        color: white !important;
+        transform: none !important;
+        width: 30px !important;
+        height: 30px !important;
+      }
+    }
+
+    .box-text {
+      color: $mainColor !important;
+
+      .fakeBtn::after {
+        border-color: black !important;
+        width: 50% !important;
+      }
+    }
+  }
+
+  .end-section .content .about-right ul li:hover {
+    background-color: transparent !important;
+
+    h2, p {
+      color: inherit !important;
+    }
+
+    svg {
+      color: inherit !important;
+      border-color: $secColor !important;
+      border-radius: 0 !important;
+    }
+  }
+
+  .top-section-contact .contact .contactForm button[type='submit']:hover {
+    color: white !important;
+
+    &::before {
+      width: 0 !important;
+    }
+  }
+}
