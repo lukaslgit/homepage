@@ -13,7 +13,7 @@ export default {
       <strong>Junior frontend developer</strong> focused on building responsive
       and user-friendly web applications with <strong>React</strong>. Skilled in{" "}
       <strong>
-        JavaScript, TypeScript, CSS/Sass, REST APIs, Redux/Context,
+        JavaScript, CSS/Sass, REST APIs, Redux/Context,
         component-based architecture
       </strong>
       , with a passion for clean code, performance optimization, and modern web
@@ -44,7 +44,7 @@ export default {
   homepage_mid3_title: "MODERN TOOLS",
   homepage_mid3_text: (
     <>
-      Experienced in React, Redux, React Router, TypeScript, and CSS/Sass to
+      Experienced in React, Redux, React Router, and CSS/Sass to
       create interactive and efficient user interfaces.
     </>
   ),

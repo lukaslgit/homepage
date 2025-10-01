@@ -14,7 +14,7 @@ export default {
       von responsiven und benutzerfreundlichen Webanwendungen mit{" "}
       <strong>React</strong>. Erfahren in{" "}
       <strong>
-        JavaScript, TypeScript, CSS/Sass, REST-APIs, Redux/Context,
+        JavaScript, CSS/Sass, REST-APIs, Redux/Context,
         komponentenbasierter Architektur
       </strong>
       , mit einer Leidenschaft für sauberen Code, Performance-Optimierung und
@@ -46,7 +46,7 @@ export default {
   homepage_mid3_title: "MODERNE TOOLS",
   homepage_mid3_text: (
     <>
-      Erfahren in React, Redux, React Router, TypeScript und CSS/Sass zur
+      Erfahren in React, Redux, React Router und CSS/Sass zur
       Erstellung interaktiver und effizienter Benutzeroberflächen.
     </>
   ),

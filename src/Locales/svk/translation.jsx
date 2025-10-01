@@ -14,7 +14,7 @@ export default {
       responzívnych a používateľsky prívetivých webových aplikácií s{" "}
       <strong>React</strong>. Skúsenosti s{" "}
       <strong>
-        JavaScript, TypeScript, CSS/Sass, REST API, Redux/Context,
+        JavaScript, CSS/Sass, REST API, Redux/Context,
         komponentovou architektúrou
       </strong>
       , s vášňou pre čistý kód, optimalizáciu výkonu a moderné osvedčené postupy
@@ -45,7 +45,7 @@ export default {
   homepage_mid3_title: "MODERNÉ NÁSTROJE",
   homepage_mid3_text: (
     <>
-      Skúsenosti s React, Redux, React Router, TypeScript a CSS/Sass na tvorbu{" "}
+      Skúsenosti s React, Redux, React Router a CSS/Sass na tvorbu{" "}
       interaktívneho a efektívneho používateľského rozhrania.
     </>
   ),
