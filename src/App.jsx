@@ -1,33 +1,55 @@
-    import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Suspense, lazy } from "react";
 
-    import Homepage from './Pages/Homepage';
-    import Projects from './Pages/Projects';
-    import Contact from "./Pages/Contact";
-    import NotFound from './Pages/NotFound';
-    import Layout from './Components/Layout';
+import './Styles/main.css';
 
-    import './Styles/main.css';
+const Homepage = lazy(() => import('./Pages/Homepage'));
+const Projects = lazy(() => import('./Pages/Projects'));
+const Contact = lazy(() => import('./Pages/Contact'));
+const NotFound = lazy(() => import('./Pages/NotFound'));
 
-export default function App(){
+const Layout = lazy(() => import('./Components/Layout'));
 
-
+export default function App() {
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <Layout><Homepage /></Layout>,
-            errorElement: <Layout><NotFound /></Layout>,
+            element: (
+                <Suspense fallback={<></>}>
+                    <Layout>
+                        <Homepage />
+                    </Layout>
+                </Suspense>
+            ),
+            errorElement: (
+                <Suspense fallback={<></>}>
+                    <Layout>
+                        <NotFound />
+                    </Layout>
+                </Suspense>
+            ),
         },
         {
             path: '/projects',
-            element: <Layout><Projects /></Layout>
+            element: (
+                <Suspense fallback={<></>}>
+                    <Layout>
+                        <Projects />
+                    </Layout>
+                </Suspense>
+            ),
         },
         {
             path: '/contact',
-            element: <Layout><Contact /></Layout>
-        }
-    ])
+            element: (
+                <Suspense fallback={<></>}>
+                    <Layout>
+                        <Contact />
+                    </Layout>
+                </Suspense>
+            ),
+        },
+    ]);
 
-    return(
-        <RouterProvider router={router}/>
-    )
+    return <RouterProvider router={router} />;
 }
