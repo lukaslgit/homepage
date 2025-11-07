@@ -4,6 +4,8 @@ import ScrollToTop from "./ScrollToTop";
 import { LanguageProvider } from "../utils/LanguageContext";
 import { NotificationProvider } from '../utils/NotificationContext';
 
+import '../Styles/homepage.css'
+
 export default function Layout({ children }) {
   return (
     <>

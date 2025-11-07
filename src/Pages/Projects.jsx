@@ -3,7 +3,7 @@ import { useContext } from "react";
 import translationConfig from "../Locales/translation-config";
 import { LanguageContext } from "../utils/LanguageContext";
 
-import '../Styles/projects.css'
+import '../Styles/projects.css';
 import { faCloud, faMagnifyingGlass, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import sun from '../assets/weatherSun.png';

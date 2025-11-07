@@ -3,7 +3,6 @@ import { useContext } from "react";
 import translationConfig from "../Locales/translation-config";
 import { LanguageContext } from "../utils/LanguageContext";
 
-import '../Styles/homepage.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faServer, faCode, faLanguage } from '@fortawesome/free-solid-svg-icons';
 import { faReact, faHtml5 } from '@fortawesome/free-brands-svg-icons';
