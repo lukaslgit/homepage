@@ -1,13 +1,11 @@
 @import './fonts.css';
-html {
-  scrollbar-gutter: stable;
-}
 
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   background-color: rgb(255, 247, 247);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 .layout-wrapper {
