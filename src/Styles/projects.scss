@@ -25,6 +25,7 @@
             list-style: none;
             display: flex;
             justify-content: space-evenly;
+            margin-bottom: 250px;
 
             .wrapImg {
                 list-style: none;
@@ -34,6 +35,9 @@
                 position: relative;
                 align-items: center;
                 max-width: 500px;
+                min-height: 300px;
+                max-height: 350px;
+
 
                 .monitorImg {
                     position: absolute;

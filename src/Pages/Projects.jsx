@@ -4,7 +4,7 @@ import translationConfig from "../Locales/translation-config";
 import { LanguageContext } from "../utils/LanguageContext";
 
 import '../Styles/projects.css';
-import { faCloud, faMagnifyingGlass, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faCloud, faMagnifyingGlass, faSun, faTruck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import sun from '../assets/weatherSun.png';
 
@@ -126,11 +126,48 @@ export default function Projects(){
                             <div className='project-desc'>
                                 <h2>React + Express</h2>
                                 <p> 
+                                    <p>(08/2025)</p>
                                     {t.projectpage_main1}
                                 </p>
                                 <div>
                                     <a href={'https://lutonsky.eu/projects/weatherapp/'}>LIVE</a>
                                     <Link to={'https://github.com/lukaslgit/weatherapp'} target="_blank" rel="noopener noreferrer">GitHub</Link>
+                                </div>
+                            </div>
+                        </li>
+                        <li className='project'>
+                            <div className='wrapImg'>
+                                <div className='monitorImg'>
+                                    <div>
+                                        <h2>Work in progress</h2>
+                                        <a href="https://lutonsky.eu/projects/truck_managment_app/">Try it anyway!</a>
+                                        <p>Not optimized for mobile yet!</p>
+                                    </div>
+                                </div>
+                                <div className='icon'>
+                                    <FontAwesomeIcon icon={faTruck}/>
+                                    <h2>TruckManager</h2>
+                                </div>
+                                <div className='monitorStand'>
+                                    <div className='leg'></div>
+                                    <div className='support'></div>
+                                </div>
+                            </div>
+                            <div className='project-desc'>
+                                <h2>PERN Fullstack</h2>
+                                <p>
+                                    (WIP)
+                                </p>
+                                <p>
+                                    This is a work-in-progress application with separate login for managers and workers, using secure authentication (JWT) and password hashing (bcrypt). 
+                                    Managers can create tasks and manage trucks, while workers can view their assigned tasks.
+                                </p>
+                                <p>
+                                    If you want to test it, I can provide login credentials or a manager key to register your own account.
+                                </p>
+                                <div>
+                                    <a href={'https://lutonsky.eu/projects/truck_managment_app/'}>LIVE</a>
+                                    <Link to={'https://github.com/lukaslgit/truck-management-app'} target="_blank" rel="noopener noreferrer">GitHub</Link>
                                 </div>
                             </div>
                         </li>
