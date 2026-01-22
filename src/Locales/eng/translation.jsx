@@ -1,5 +1,6 @@
 export default {
   home: "HOME",
+  my: "MY",
   projects: "PROJECTS",
   contact: "CONTACT",
   getInTouch: "GET IN TOUCH",
@@ -8,90 +9,78 @@ export default {
   email: "Email",
   msg: "Message",
   send: "SEND",
+
   homepage_main1: (
     <>
-      <strong>Junior frontend developer</strong> focused on building responsive
-      and user-friendly web applications with <strong>React</strong>. Skilled in{" "}
+      <strong>Full-Stack Developer (PERN + Next.js)</strong> focused on building scalable,
+      secure, and user-friendly web applications. Experienced with{" "}
+      <strong>PostgreSQL, Express.js, Node.js, React, and Next.js</strong>, and skilled in{" "}
       <strong>
-        JavaScript, CSS/Sass, REST APIs, Redux/Context,
-        component-based architecture
-      </strong>
-      , with a passion for clean code, performance optimization, and modern web
-      development best practices.
+        JavaScript/TypeScript, Tailwind CSS, CSS/Sass, REST APIs, Redux/Context,
+        component-based architecture, server-side rendering, API design,
+        authentication with cookies and JWT, and password security using bcrypt
+      </strong>.
     </>
   ),
   homepage_main2: (
     <>
-      I also have experience deploying projects on VPS servers using{" "}
-      <strong>Ubuntu and Nginx</strong>, giving me a solid understanding of how
-      code moves from development to production.
+      Hands-on experience in <strong>Ubuntu, Nginx, Git-based deployment, and production server setup</strong>. 
+      Passionate about clean code, performance optimization, security, and modern web development best practices.
     </>
   ),
+
   homepage_mid1_title: "RESPONSIVE DESIGN",
   homepage_mid1_text: (
     <>
-      I build web applications that look great and work seamlessly across all
-      devices and screen sizes.
+      I create web applications that look great and function flawlessly across all devices and screen sizes.
     </>
   ),
-  homepage_mid2_title: "BACKEND INTEGRATION",
+  homepage_mid2_title: "SECURE BACKEND & API",
   homepage_mid2_text: (
     <>
-      Experience building and connecting secure APIs with Express, handling data
-      flow efficiently between frontend and backend.
+      Experienced in building secure and efficient REST APIs with Express and integrating them seamlessly with frontend applications.
     </>
   ),
-  homepage_mid3_title: "MODERN TOOLS",
+  homepage_mid3_title: "MODERN TOOLS & STATE MANAGEMENT",
   homepage_mid3_text: (
     <>
-      Experienced in React, Redux, React Router, and CSS/Sass to
-      create interactive and efficient user interfaces.
+      Skilled in React, Next.js, Redux/Context API, Tailwind CSS, and component-based architecture for building interactive, high-performance interfaces.
     </>
   ),
-  somethingShort: "SOMETHING SHORT",
+
   aboutMe: "ABOUT ME",
-  homepage_end1_title: "HTML, CSS & JavaScript",
+  homepage_end1_title: "Frontend & React",
   homepage_end1_text: (
     <>
-      Strong foundation in{" "}
-      <strong>HTML5, CSS3/Sass, and JavaScript (ES6+)</strong>. Skilled in
-      creating accessible, responsive layouts and writing clean and maintainable
-      code.
+      Proficient in building responsive, accessible, and user-friendly interfaces using <strong>React, Next.js, Redux/Context API, TypeScript, Tailwind CSS, and CSS/Sass</strong>.
     </>
   ),
-  homepage_end2_title: "Frontend & React",
+  homepage_end2_title: "Backend & REST APIs",
   homepage_end2_text: (
     <>
-      Proficient in building responsive and user-friendly web applications using{" "}
-      <strong>React</strong>, React Router, and Redux/Context API. Experienced
-      in component-based architecture, state management, and optimizing
-      performance for modern web applications.
+      Experienced in developing REST APIs with <strong>Express.js</strong>, PostgreSQL database integration, authentication with cookies and JWT, and secure password handling using <strong>bcrypt</strong>.
     </>
   ),
-  homepage_end3_title: "Backend & REST APIs",
+  homepage_end3_title: "Server & Deployment",
   homepage_end3_text: (
     <>
-      Experience building and integrating REST APIs using{" "}
-      <strong>Express</strong>. Comfortable handling data flow, authentication,
-      and connecting frontends to backend services efficiently and securely.
+      Comfortable with <strong>Ubuntu</strong> servers, <strong>Nginx</strong>, Git-based deployments, and production server setup to deliver stable and performant applications.
     </>
   ),
   homepage_end4_title: "Languages & Communication",
   homepage_end4_text: (
     <>
-      Fluent in <strong>English (B2)</strong> and{" "}
-      <strong>German (B2)</strong>. Strong written and verbal communication
-      skills, capable of collaborating effectively in international teams.
+      Fluent in <strong>English (B2)</strong> and <strong>German (B2)</strong>. Capable of collaborating effectively in international teams.
     </>
   ),
-  my: "MY",
   projectpage_main1: (
     <>
-      A modern weather application built with a <strong>React</strong> frontend and an <strong>Express.js</strong> backend. The backend securely manages API keys and routes calls to third-party services like <strong>OpenWeatherMap</strong> (weather & forecasts) and <strong>Pixabay</strong> (background images).
-      Deployed on a VPS with <strong>Ubuntu</strong> and <strong>Nginx</strong>, the app demonstrates hands-on experience with full-stack development, API integration, secure backend practices, and production deployment.
+      A modern full-stack web application built with <strong>React</strong> frontend and <strong>Express.js</strong> backend. 
+      The backend manages secure API integration and data flow. Deployed on a VPS with <strong>Ubuntu</strong> and <strong>Nginx</strong>, demonstrating hands-on experience with full-stack development, API integration, server-side rendering, and production deployment.
     </>
   ),
-  contactpage_main1: "I’m always pleased to connect and discuss potential career opportunities. If you would like to learn more about my experience or explore how I could contribute to your team, please feel free to get in touch.",
+
+  contactpage_main1: "I’m always pleased to connect and discuss potential career opportunities. Feel free to reach out to learn more about my experience or explore collaboration.",
   contactpage_form_empty: "All fields must be filled!",
   contactpage_form_wrongmail: "Please enter a valid email!",
   contactpage_form_succes: "Email sent, thank you!"

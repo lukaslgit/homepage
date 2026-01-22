@@ -6,9 +6,8 @@ section {
 }
 
 .content {
-    width: 70%;
     margin: auto;
-    
+    width: 80%;
 }
 
 .top-section {
@@ -30,7 +29,7 @@ section {
 
     p {
         font-weight: 300;
-        max-width: 30rem;
+        max-width: 40rem;
         font-size: 1.2rem;
 
         strong {
@@ -76,7 +75,7 @@ section {
         gap: 50px;
         row-gap: 100px;
         flex-wrap: wrap;
-        width: 70%;
+        width: 80%;
 
         .box-content {
             width: 400px;

@@ -19,7 +19,7 @@ export default function Homepage(){
 
                 <div className='content'>
                     <h2>Lukas Lutonsky</h2>
-                    <h1>FRONTEND DEVELOPER</h1>
+                    <h1>Full-Stack Developer</h1>
                     <p>{t.homepage_main1}</p>
                     <p>{t.homepage_main2}</p>
                 </div>

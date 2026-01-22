@@ -126,10 +126,10 @@ export default function Projects(){
                             <div className='project-desc'>
                                 <h2>React + Express</h2>
                                 <p> 
-                                    <p>(08/2025)</p>
+                                    <a>(08/2025)</a>
                                     {t.projectpage_main1}
                                 </p>
-                                <div>
+                                <div className="project-links">
                                     <a href={'https://lutonsky.eu/projects/weatherapp/'}>LIVE</a>
                                     <Link to={'https://github.com/lukaslgit/weatherapp'} target="_blank" rel="noopener noreferrer">GitHub</Link>
                                 </div>
@@ -165,7 +165,7 @@ export default function Projects(){
                                 <p>
                                     If you want to test it, I can provide login credentials or a manager key to register your own account.
                                 </p>
-                                <div>
+                                <div className="project-links">
                                     <a href={'https://lutonsky.eu/projects/truck_managment_app/'}>LIVE</a>
                                     <Link to={'https://github.com/lukaslgit/truck-management-app'} target="_blank" rel="noopener noreferrer">GitHub</Link>
                                 </div>

@@ -95,7 +95,7 @@ export default function Header(){
                             </div>
                         </div>
                         <Link to={'/contact'} className="header-btn">{t.getInTouch}</Link>
-                        <button><FontAwesomeIcon icon={faSun} /></button>
+                        {/*<button><FontAwesomeIcon icon={faSun} /></button>*/}
                     </div>
                 </div>
 
