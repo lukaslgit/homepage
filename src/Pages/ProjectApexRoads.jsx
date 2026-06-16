@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import apexbg from '../assets/apexbg.jpg';
 import apex1 from '../assets/apex/apex1.png';
 import apex2 from '../assets/apex/apex2.png';
@@ -123,6 +125,11 @@ export default function ProjectApexRoads() {
         };
         window.addEventListener('keydown', handler);
         return () => window.removeEventListener('keydown', handler);
+    }, [lightboxIndex]);
+
+    useEffect(() => {
+        document.body.style.overflow = lightboxIndex !== null ? 'hidden' : '';
+        return () => { document.body.style.overflow = ''; };
     }, [lightboxIndex]);
 
     return (
@@ -262,7 +269,7 @@ export default function ProjectApexRoads() {
             {lightboxIndex !== null && (
                 <div className='pd-lightbox' onClick={closeLightbox}>
                     <button className='pd-lightbox-close' onClick={closeLightbox}>✕</button>
-                    <button className='pd-lightbox-prev' onClick={showPrev}>‹</button>
+                    <button className='pd-lightbox-prev' onClick={showPrev}><FontAwesomeIcon icon={faChevronLeft} /></button>
                     <div
                         className='pd-lightbox-img-wrap'
                         onClick={e => e.stopPropagation()}
@@ -271,7 +278,7 @@ export default function ProjectApexRoads() {
                     >
                         <img src={galleryImages[lightboxIndex]} alt={`Screenshot ${lightboxIndex + 1}`} />
                     </div>
-                    <button className='pd-lightbox-next' onClick={showNext}>›</button>
+                    <button className='pd-lightbox-next' onClick={showNext}><FontAwesomeIcon icon={faChevronRight} /></button>
                     <div className='pd-lightbox-dots'>
                         {galleryImages.map((_, i) => (
                             <button
