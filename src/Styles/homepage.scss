@@ -263,22 +263,12 @@ section {
                 }
 
                 li:hover {
-                    background-color: $secColor;
+                    
                     transition: 0.3s ease;
 
-                    h2 {
-                        color: white
-                    }
-
                     svg {
-                        color: white;
-                        border-color: white;
                         border-radius: 20px;
                         transition: 0.3s ease;
-                    }
-
-                    p {
-                        color: white;
                     }
                 }
             }

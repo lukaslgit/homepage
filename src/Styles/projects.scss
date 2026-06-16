@@ -39,8 +39,7 @@
                 position: relative;
                 align-items: center;
                 max-width: 500px;
-                min-height: 300px;
-                max-height: 350px;
+                height: 350px;
 
 
                 .monitorImg {
@@ -123,8 +122,44 @@
                             margin-right: 1rem;
                             background-color: transparent;
 
+                            .weatherOrbitTrack {
+                                display: block;
+                                width: 1.3rem;
+                                height: 1.3rem;
+                                overflow: hidden;
+                                position: relative;
+                            }
+
+                            .weatherOrbitPivot {
+                                position: absolute;
+                                top: calc(50% + 1.3rem);
+                                left: 50%;
+                                width: 0;
+                                height: 0;
+                                transform-origin: 0 0;
+                                transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+                            }
+
+                            .weatherOrbitIcon {
+                                position: absolute;
+                                width: 1.3rem;
+                                height: 1.3rem;
+                                left: -0.65rem;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+
+                                &.moonIcon {
+                                    top: -1.95rem;
+                                }
+
+                                &.sunIcon {
+                                    top: 0.65rem;
+                                }
+                            }
+
                             svg {
-                                background-color: #ddf0ff;
                                 width: 0.7rem;
                                 height: 0.7rem;
                                 border-radius: 50px;
@@ -315,6 +350,84 @@
                             }
                         }
                     }
+
+                    &.truckMonitor {
+
+                        .truckNav {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            box-sizing: border-box;
+                            padding: 0.5rem 0.8rem;
+                            border-radius: 12px 12px 0 0;
+                            background-color: #1f2937;
+
+                            .truckLogo {
+                                color: white;
+                                font-size: 0.6rem;
+                                font-weight: 700;
+                            }
+
+                            .truckNavLinks {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.6rem;
+
+                                span {
+                                    color: white;
+                                    font-size: 0.45rem;
+                                    font-weight: 600;
+                                    letter-spacing: 0.02em;
+                                }
+
+                                .truckLogout {
+                                    background-color: #ef4444;
+                                    padding: 0.15rem 0.4rem;
+                                    border-radius: 3px;
+                                }
+                            }
+                        }
+
+                        .truckHeroText {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            padding: 0.8rem;
+
+                            p {
+                                max-width: none;
+                            }
+
+                            .truckHeroTitle {
+                                margin: 0;
+                                color: white;
+                                font-size: 0.75rem;
+                                font-weight: 700;
+                            }
+
+                            .truckHeroSub {
+                                margin: 0.2rem 0 0.5rem;
+                                color: rgba(255, 255, 255, 0.85);
+                                font-size: 0.5rem;
+                            }
+
+                            .truckHeroBtn {
+                                display: inline-block;
+                                border: 1.5px solid white;
+                                color: white;
+                                font-size: 0.45rem;
+                                font-weight: 600;
+                                padding: 0.25rem 0.6rem;
+                                border-radius: 5px;
+                                text-decoration: none;
+                            }
+                        }
+                    }
                 }
 
                 .darkmode {
@@ -347,8 +460,7 @@
                     }
 
                     .weatherDarkMode svg {
-                        background-color: $mainColor !important;
-                        transition: 0.3s ease;
+                        transition: color 0.15s ease;
                         color: white !important;
                     }
 
@@ -360,10 +472,14 @@
                 
 
             &:hover {
-                
+
                 .icon {
                     top: -4.5rem;
                     transition: 0.4s ease;
+                }
+
+                .phoneIcon {
+                    top: 5rem;
                 }
 
                 .project-image::after {
@@ -372,10 +488,17 @@
                 }
             }
 
+            .phoneWrap:hover ~ .icon.phoneIcon {
+                top: -6.5rem;
+                transition: 0.4s ease;
+            }
+
             .icon {
                 position: absolute;
                 z-index: 1;
                 top: 3rem;
+                left: 0;
+                right: 0;
                 display: flex;
                 gap: 10px;
                 justify-content: center;
@@ -386,15 +509,400 @@
                 svg {
                     width: 30px;
                     height: 30px;
-                    background-color: $thirdColor;
                     color: white;
                     border-radius: 10px;
                     padding: 10px;
                 }
 
+                &.phoneIcon svg   { background-color: #f0b429; color: black; }
+                &.truckIcon svg   { background-color: #1f2937; }
+                &.weatherIcon svg { background-color: $thirdColor; }
+
                 h2 {
                     margin: 0;
                 }
+                }
+
+                .phoneWrap {
+                    position: absolute;
+                    width: 12.65rem;
+                    height: 25.3rem;
+                    z-index: 10;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+
+                    .phoneBody {
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgb(24, 24, 28);
+                        border-radius: 3.5rem;
+                        border: 1.5px solid rgba(255, 255, 255, 0.1);
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            left: -4px;
+                            top: 5.8rem;
+                            width: 3px;
+                            height: 2.2rem;
+                            background-color: rgb(45, 45, 50);
+                            border-radius: 2px 0 0 2px;
+                            box-shadow: 0 3.2rem 0 rgb(45, 45, 50);
+                        }
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            right: -4px;
+                            top: 7.6rem;
+                            width: 3px;
+                            height: 4.1rem;
+                            background-color: rgb(45, 45, 50);
+                            border-radius: 0 2px 2px 0;
+                        }
+
+                        .phoneScreen {
+                            position: absolute;
+                            top: 0.65rem;
+                            left: 0.5rem;
+                            right: 0.5rem;
+                            bottom: 0.65rem;
+                            background-color: rgb(12, 12, 18);
+                            border-radius: 3rem;
+                            overflow: hidden;
+                            display: flex;
+                            flex-direction: column;
+
+                            .phoneTopBar {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 0.55rem;
+                                padding-top: 1.1rem;
+
+                                .phoneSpeaker {
+                                    width: 2.9rem;
+                                    height: 3px;
+                                    background-color: rgba(255, 255, 255, 0.1);
+                                    border-radius: 2px;
+                                }
+
+                                .phoneCamera {
+                                    width: 6px;
+                                    height: 6px;
+                                    border-radius: 50%;
+                                    background-color: rgba(255, 255, 255, 0.1);
+                                }
+                            }
+
+                            .phoneHomeBar {
+                                position: absolute;
+                                bottom: 0.55rem;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                width: 4.1rem;
+                                height: 2.5px;
+                                background-color: rgba(255, 255, 255, 0.18);
+                                border-radius: 2px;
+                            }
+
+                            .apexApp {
+                                flex: 1;
+                                display: flex;
+                                flex-direction: column;
+                                background-color: rgb(13, 13, 15);
+                                overflow: hidden;
+
+                                p {
+                                    max-width: none;
+                                    margin: 0;
+                                }
+
+                                svg {
+                                    background: none !important;
+                                    padding: 0 !important;
+                                    border-radius: 0 !important;
+                                }
+
+                                .apexHeader {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: flex-start;
+                                    padding: 0.35rem 0.55rem 0.15rem;
+
+                                    .apexAppTitle {
+                                        color: white;
+                                        font-size: 0.68rem;
+                                        font-weight: 800;
+                                        line-height: 1;
+                                    }
+
+                                    .apexAppSub {
+                                        color: rgba(255, 255, 255, 0.45);
+                                        font-size: 0.3rem;
+                                    }
+
+                                    .apexHeaderIcons {
+                                        display: flex;
+                                        gap: 0.2rem;
+                                        margin-top: 0.08rem;
+
+                                        .apexIconBtn {
+                                            width: 1rem;
+                                            height: 1rem;
+                                            background-color: rgba(255, 255, 255, 0.1);
+                                            border-radius: 50%;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            font-size: 0.42rem;
+                                            font-weight: 700;
+                                            color: white;
+
+                                            svg {
+                                                width: 0.32rem !important;
+                                                height: 0.32rem !important;
+                                                color: white;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .apexSeparator {
+                                    height: 1px;
+                                    background-color: rgba(255, 255, 255, 0.08);
+                                    margin: 0 0.55rem 0.2rem;
+                                    flex-shrink: 0;
+                                }
+
+                                .apexTabs {
+                                    display: flex;
+                                    margin: 0 0.55rem 0.25rem;
+                                    background-color: rgba(255, 255, 255, 0.07);
+                                    border-radius: 2rem;
+                                    padding: 0.1rem;
+                                    flex-shrink: 0;
+
+                                    .apexTab {
+                                        flex: 1;
+                                        border-radius: 2rem;
+                                        padding: 0.2rem 0;
+                                        font-size: 0.36rem;
+                                        font-weight: 600;
+                                        text-align: center;
+                                        color: rgba(255, 255, 255, 0.4);
+
+                                        &.apexTabActive {
+                                            background-color: #f0b429;
+                                            color: #1a1204;
+                                        }
+                                    }
+                                }
+
+                                .apexScroll {
+                                    flex: 1;
+                                    overflow: hidden;
+                                    padding: 0 0.5rem;
+
+                                    .apexChallLabel {
+                                        color: #f0b429;
+                                        font-size: 0.3rem;
+                                        font-weight: 700;
+                                        letter-spacing: 0.05em;
+                                        margin-bottom: 0.18rem !important;
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 0.15rem;
+
+                                        svg {
+                                            width: 0.3rem !important;
+                                            height: 0.3rem !important;
+                                            color: #f0b429;
+                                        }
+                                    }
+
+                                    .apexChallengeCard {
+                                        background-color: rgba(255, 255, 255, 0.06);
+                                        border-radius: 0.4rem;
+                                        padding: 0.3rem 0.4rem;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        margin-bottom: 0.18rem;
+
+                                        .apexCardTitle {
+                                            color: white;
+                                            font-size: 0.4rem;
+                                            font-weight: 700;
+                                            margin-bottom: 0.06rem !important;
+                                            line-height: 1.1;
+                                        }
+
+                                        .apexCardSub {
+                                            color: rgba(255, 255, 255, 0.38);
+                                            font-size: 0.3rem;
+                                            margin-bottom: 0.06rem !important;
+                                            line-height: 1.2;
+                                        }
+
+                                        .apexXP {
+                                            color: #f0b429;
+                                            font-size: 0.35rem;
+                                            font-weight: 700;
+                                            line-height: 1.1;
+                                        }
+
+                                        .apexCircle {
+                                            width: 0.65rem;
+                                            height: 0.65rem;
+                                            border-radius: 50%;
+                                            border: 1.5px solid rgba(255, 255, 255, 0.2);
+                                            flex-shrink: 0;
+                                        }
+                                    }
+
+                                    .apexFilterRow {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        background-color: rgba(255, 255, 255, 0.06);
+                                        border-radius: 0.4rem;
+                                        padding: 0.28rem 0.4rem;
+                                        margin-bottom: 0.15rem;
+
+                                        .apexFilterLeft {
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 0.2rem;
+
+                                            .apexFilterLabel {
+                                                color: white;
+                                                font-size: 0.38rem;
+                                                font-weight: 700;
+                                            }
+
+                                            .apexFilterBadge {
+                                                background-color: #f0b429;
+                                                color: #1a1204;
+                                                font-size: 0.28rem;
+                                                font-weight: 700;
+                                                width: 0.55rem;
+                                                height: 0.55rem;
+                                                border-radius: 50%;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                            }
+                                        }
+
+                                        .apexFilterRight {
+                                            color: rgba(255, 255, 255, 0.4);
+                                            font-size: 0.3rem;
+                                        }
+                                    }
+
+                                    .apexRouteCard {
+                                        border-radius: 0.4rem;
+                                        overflow: hidden;
+                                        margin-top: 0.15rem;
+
+                                        .apexRouteImg {
+                                            height: 3rem;
+                                            background-size: cover;
+                                            background-position: center;
+                                        }
+
+                                        .apexRouteInfo {
+                                            background-color: rgba(255, 255, 255, 0.06);
+                                            padding: 0.25rem 0.4rem;
+
+                                            .apexRouteName {
+                                                color: white;
+                                                font-size: 0.4rem;
+                                                font-weight: 700;
+                                                margin-bottom: 0.04rem !important;
+                                            }
+
+                                            .apexRouteDiff {
+                                                color: rgba(255, 255, 255, 0.42);
+                                                font-size: 0.3rem;
+                                                margin-bottom: 0.04rem !important;
+                                            }
+
+                                            .apexRouteStats {
+                                                color: rgba(255, 255, 255, 0.32);
+                                                font-size: 0.28rem;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .apexBottomNav {
+                                    display: flex;
+                                    justify-content: space-around;
+                                    align-items: flex-end;
+                                    padding: 0.28rem 0 1.1rem;
+                                    border-top: 1px solid rgba(255, 255, 255, 0.07);
+                                    background-color: rgb(13, 13, 15);
+                                    flex-shrink: 0;
+
+                                    .apexNavItem {
+                                        flex: 1;
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                        gap: 0.06rem;
+                                        color: rgba(255, 255, 255, 0.3);
+
+                                        span {
+                                            font-size: 0.26rem;
+                                        }
+
+                                        svg {
+                                            width: 0.48rem !important;
+                                            height: 0.48rem !important;
+                                            color: inherit;
+                                        }
+
+                                        &.apexNavActive {
+                                            color: #f0b429;
+                                        }
+                                    }
+
+                                    .apexNavCenter {
+                                        .apexNavCenterIcon {
+                                            width: 1.15rem;
+                                            height: 1.15rem;
+                                            background-color: rgba(255, 255, 255, 0.12);
+                                            border-radius: 50%;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            border: 1px solid rgba(255, 255, 255, 0.15);
+                                            transform: translateY(-0.12rem);
+                                            margin-bottom: 0.04rem;
+
+                                            svg {
+                                                width: 0.48rem !important;
+                                                height: 0.48rem !important;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.phoneIcon {
+                    top: 5rem;
+                }
+
+
+                &.truckIcon svg {
+                    background-color: #1f2937;
                 }
             }
 
@@ -425,6 +933,7 @@
 
             .project-desc {
                 height: fit-content;
+                min-width: 30rem;
                 margin-left: 1rem;
 
                 div {
@@ -438,12 +947,23 @@
 
                 .project-links {
                     display: flex;
+
                     a {
                         background-color: #90cfff;
                         text-decoration: none;
                         padding: 0.5rem;
                         border-radius: 0.5rem;
                         color: black;
+                    }
+
+                    .github-private-wrap {
+                        width: fit-content;
+
+                        .github-private-btn {
+                            width: fit-content;
+                            height: 100%;
+                            box-sizing: border-box;
+                        }
                     }
                 }
 
@@ -458,10 +978,77 @@
     }
 }
 
-@media only screen and (max-width: 1100px) { 
+.github-private-wrap {
+    position: relative;
+
+    .github-private-btn {
+        background-color: #90cfff;
+        text-decoration: none;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        color: black;
+        display: block;
+        cursor: not-allowed;
+        transition: opacity 0.2s ease, filter 0.2s ease;
+        user-select: none;
+    }
+
+    .github-tooltip {
+        position: absolute;
+        bottom: calc(100% + 0.6rem);
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgb(25, 25, 25);
+        color: white;
+        font-size: 0.78rem;
+        padding: 0.6rem 0.85rem;
+        border-radius: 8px;
+        width: 13rem;
+        line-height: 1.45;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: 100;
+        text-align: center;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: rgb(25, 25, 25);
+        }
+    }
+
+    &:hover {
+        .github-private-btn {
+            opacity: 0.35;
+            filter: grayscale(1);
+        }
+
+        .github-tooltip {
+            opacity: 1;
+        }
+    }
+}
+
+@media only screen and (max-width: 1100px) {
 
     .top-section {
         margin-top: 10rem !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top-section .content {
+        width: 100%;
+        max-width: 700px;
+        padding: 0 1.5rem;
+        box-sizing: border-box;
     }
 
     .content .title {
@@ -471,22 +1058,34 @@
         h1, h2 {
             font-size: 2rem !important;
         }
-        
+
     }
 
-    .project {
+    .top-section .content .project {
         display: block !important;
 
         .wrapImg {
             display: block;
-            height: 250px;
+            height: 25rem;
             width: 100% !important;
             max-width: 400px;
             margin: auto;
             margin-bottom: 6rem;
 
-            .icon {
+            .monitorImg {
+                top: 0;
+                left: 0;
+                box-sizing: border-box;
+            }
+
+            .icon:not(.phoneIcon) {
                 top: -5rem !important;
+            }
+
+            .icon.phoneIcon,
+            &:hover .icon.phoneIcon,
+            .phoneWrap:hover ~ .icon.phoneIcon {
+                top: -5.5rem !important;
             }
 
             .searchBar {
@@ -494,22 +1093,41 @@
             }
         }
 
+        .monitorStand {
+            top: 20rem;
+            bottom: auto;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
         .project-desc {
             display: block;
             width: 100%;
-            margin: auto;
-
-            p {
-                margin: auto;
-            }
+            max-width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            min-width: unset;
+            text-align: center;
+            padding: 0 1rem;
 
             h2 {
-                font-size: 2rem;
+                font-size: 1.6rem;
                 text-align: center;
+                word-break: break-word;
+            }
+
+            p {
+                margin: 0 auto;
+                max-width: 100%;
+                word-break: break-word;
+                margin-bottom: 1rem;
             }
 
             div {
-                margin-top: 1rem;
+                justify-content: center;
+            }
+
+            .project-links {
                 justify-content: center;
             }
         }

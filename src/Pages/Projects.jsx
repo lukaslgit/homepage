@@ -1,17 +1,26 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import translationConfig from "../Locales/translation-config";
 import { LanguageContext } from "../utils/LanguageContext";
 
 import '../Styles/projects.css';
-import { faCloud, faMagnifyingGlass, faSun, faTruck } from '@fortawesome/free-solid-svg-icons';
+import { faCloud, faMagnifyingGlass, faCar, faMoon, faSun, faTruck, faBolt, faHouse, faComments, faMap, faUsers, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import sun from '../assets/weatherSun.png';
+import truckbg from '../assets/truckbg.jpg';
+import apexbg from '../assets/apexbg.jpg';
 
 export default function Projects(){
 
     const { lang, setLang } = useContext(LanguageContext);
-    
+    const [isDark, setIsDark] = useState(true);
+    const [orbitAngle, setOrbitAngle] = useState(0);
+
+    const toggleWeather = () => {
+        setOrbitAngle(a => a - 180);
+        setTimeout(() => setIsDark(d => !d), 200);
+    };
+
     const t = translationConfig[lang];
 
     return(
@@ -25,16 +34,181 @@ export default function Projects(){
                     <ul>
                         <li className='project'>
                             <div className='wrapImg'>
-                                <div className='monitorImg'>
+                                <div className='phoneWrap'>
+                                    <div className='phoneBody'>
+                                        <div className='phoneScreen'>
+                                            <div className='phoneTopBar'>
+                                                <div className='phoneSpeaker'></div>
+                                                <div className='phoneCamera'></div>
+                                            </div>
+                                            <div className='apexApp'>
+                                                <div className='apexHeader'>
+                                                    <div>
+                                                        <p className='apexAppTitle'>Apex Roads</p>
+                                                        <p className='apexAppSub'>Drive. Progress. Explore.</p>
+                                                    </div>
+                                                    <div className='apexHeaderIcons'>
+                                                        <div className='apexIconBtn'><FontAwesomeIcon icon={faMagnifyingGlass} /></div>
+                                                        <div className='apexIconBtn'>+</div>
+                                                    </div>
+                                                </div>
+                                                <div className='apexSeparator'></div>
+                                                <div className='apexTabs'>
+                                                    <div className='apexTab apexTabActive'>Routes</div>
+                                                    <div className='apexTab'>Posts</div>
+                                                </div>
+                                                <div className='apexScroll'>
+                                                    <p className='apexChallLabel'><FontAwesomeIcon icon={faBolt} /> DAILY CHALLENGES</p>
+                                                    <div className='apexChallengeCard'>
+                                                        <div>
+                                                            <p className='apexCardTitle'>Fifteen</p>
+                                                            <p className='apexCardSub'>Ride at least 15 km today</p>
+                                                            <p className='apexXP'>+ 300 XP</p>
+                                                        </div>
+                                                        <div className='apexCircle'></div>
+                                                    </div>
+                                                    <div className='apexChallengeCard'>
+                                                        <div>
+                                                            <p className='apexCardTitle'>Daily Ride</p>
+                                                            <p className='apexCardSub'>Complete any route today</p>
+                                                            <p className='apexXP'>+ 200 XP</p>
+                                                        </div>
+                                                        <div className='apexCircle'></div>
+                                                    </div>
+                                                    <div className='apexFilterRow'>
+                                                        <div className='apexFilterLeft'>
+                                                            <span className='apexFilterLabel'>Filter</span>
+                                                            <span className='apexFilterBadge'>1</span>
+                                                        </div>
+                                                        <span className='apexFilterRight'>1 routes ▾</span>
+                                                    </div>
+                                                    <div className='apexRouteCard'>
+                                                        <div className='apexRouteImg' style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.45)), url(${apexbg})` }}></div>
+                                                        <div className='apexRouteInfo'>
+                                                            <p className='apexRouteName'>Test</p>
+                                                            <p className='apexRouteDiff'>Medium</p>
+                                                            <p className='apexRouteStats'>13.89 km · 56 min</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className='apexBottomNav'>
+                                                    <div className='apexNavItem apexNavActive'>
+                                                        <FontAwesomeIcon icon={faHouse} />
+                                                        <span>Home</span>
+                                                    </div>
+                                                    <div className='apexNavItem'>
+                                                        <FontAwesomeIcon icon={faComments} />
+                                                        <span>Chat</span>
+                                                    </div>
+                                                    <div className='apexNavItem apexNavCenter'>
+                                                        <div className='apexNavCenterIcon'>
+                                                            <FontAwesomeIcon icon={faMap} />
+                                                        </div>
+                                                        <span>Map</span>
+                                                    </div>
+                                                    <div className='apexNavItem'>
+                                                        <FontAwesomeIcon icon={faUsers} />
+                                                        <span>Community</span>
+                                                    </div>
+                                                    <div className='apexNavItem'>
+                                                        <FontAwesomeIcon icon={faUser} />
+                                                        <span>Profile</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='phoneHomeBar'></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='icon phoneIcon'>
+                                    <FontAwesomeIcon icon={faCar}/>
+                                    <h2>Apex</h2>
+                                </div>
+                            </div>
+                            <div className='project-desc'>
+                                <h2>PERN + React Expo</h2>
+                                <p>(WIP)</p>
+                                <p>
+                                    iOS/Android Mobile app for car enthusiasts. Users can discover and navigate GPS routes on an interactive map, chat in real time, follow others and share posts with analytics. The app also supports organizing car meets and includes a full authentication flow.
+                                </p>
+                                <div className='project-links'>
+                                    <div className='github-private-wrap'>
+                                        <span className='github-private-btn'>GitHub</span>
+                                        <div className='github-tooltip'>
+                                            This repository is private. The source code is available for review upon request — feel free to get in touch.
+                                        </div>
+                                    </div>
+                                    <Link to={'/projects/details/apexroads'}>Details</Link>
+                                </div>
+                            </div>
+                        </li>
+                        <li className='project'>
+                            <div className='wrapImg'>
+                                <div className='monitorImg truckMonitor' style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)), url(${truckbg})`, backgroundColor: '#1f2937', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                                    <div className='truckNav'>
+                                        <span className='truckLogo'>TruckApp</span>
+                                        <div className='truckNavLinks'>
+                                            <span>Trucks</span>
+                                            <span>Tasks</span>
+                                            <span>Workers</span>
+                                            <span className='truckLogout'>LogOut</span>
+                                        </div>
+                                    </div>
+                                    <div className='truckHeroText'>
+                                        <p className='truckHeroTitle'>Truck Manager App (WIP)</p>
+                                        <p className='truckHeroSub'>Manage trucks, tasks & drivers.</p>
+                                        <a href="https://lutonsky.eu/projects/truck_managment_app/" className='truckHeroBtn'>Find out more!</a>
+                                    </div>
+                                </div>
+                                <div className='icon truckIcon'>
+                                    <FontAwesomeIcon icon={faTruck}/>
+                                    <h2>TruckManager</h2>
+                                </div>
+                                <div className='monitorStand'>
+                                    <div className='leg'></div>
+                                    <div className='support'></div>
+                                </div>
+                            </div>
+                            <div className='project-desc'>
+                                <h2>PERN Fullstack</h2>
+                                <p>
+                                    (WIP)
+                                </p>
+                                <p>
+                                    This is a work-in-progress application with separate login for managers and workers, using secure authentication (JWT) and password hashing (bcrypt).
+                                    Managers can create tasks and manage trucks, while workers can view their assigned tasks.
+                                </p>
+                                <div className="project-links">
+                                    <a href={'https://lutonsky.eu/projects/truck_managment_app/'}>LIVE</a>
+                                    <Link to={'https://github.com/lukaslgit/truck-management-app'} target="_blank" rel="noopener noreferrer">GitHub</Link>
+                                    <Link to={'/projects/details/truckmanager'}>Details</Link>
+                                </div>
+                            </div>
+                        </li>
+                        <li className='project'>
+                            <div className='wrapImg'>
+                                <div className={`monitorImg${isDark ? ' darkmode' : ''}`}>
                                     <div className='searchBar'>
                                         <p>Vienna <strong>(AT)</strong></p>
                                         <div className='inputEl'>
                                             <input placeholder='Try me!'></input>
                                             <a href={'https://lutonsky.eu/projects/weatherapp/'}><FontAwesomeIcon icon={faMagnifyingGlass} /></a>
                                         </div>
-                                        <button className='weatherDarkMode' onClick={() => {
-                                            document.querySelector('.monitorImg').classList.toggle('darkmode');
-                                        }}><FontAwesomeIcon icon={faSun} /></button>
+                                        <button className='weatherDarkMode' onClick={toggleWeather}>
+                                            <span className='weatherOrbitTrack'>
+                                                <span
+                                                    className='weatherOrbitPivot'
+                                                    style={{ transform: `rotate(${orbitAngle}deg)` }}
+                                                >
+                                                    <span className='weatherOrbitIcon moonIcon' style={{ transform: `rotate(${-orbitAngle}deg)` }}>
+                                                        <FontAwesomeIcon icon={faMoon} />
+                                                    </span>
+                                                    <span className='weatherOrbitIcon sunIcon' style={{ transform: `rotate(${-orbitAngle}deg)` }}>
+                                                        <FontAwesomeIcon icon={faSun} />
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </button>
                                     </div>
                                     <div className='weatherContent'>
                                         <div className='left'>
@@ -78,7 +252,7 @@ export default function Projects(){
                                                             <p className='celsius'>19°C</p>
                                                         </div>
                                                     </div>
-                                                    <div className='bottomEl'> 
+                                                    <div className='bottomEl'>
                                                         <div>
                                                             <img src={sun}></img>
                                                             <p>14:00</p>
@@ -114,7 +288,7 @@ export default function Projects(){
                                         <p>Lukas Lutonsky</p>
                                     </div>
                                 </div>
-                                <div className='icon'>
+                                <div className='icon weatherIcon'>
                                     <FontAwesomeIcon icon={faCloud}/>
                                     <h2>WeatherApp</h2>
                                 </div>
@@ -125,49 +299,14 @@ export default function Projects(){
                             </div>
                             <div className='project-desc'>
                                 <h2>React + Express</h2>
-                                <p> 
+                                <p>
                                     <a>(08/2025)</a>
                                     {t.projectpage_main1}
                                 </p>
                                 <div className="project-links">
                                     <a href={'https://lutonsky.eu/projects/weatherapp/'}>LIVE</a>
                                     <Link to={'https://github.com/lukaslgit/weatherapp'} target="_blank" rel="noopener noreferrer">GitHub</Link>
-                                </div>
-                            </div>
-                        </li>
-                        <li className='project'>
-                            <div className='wrapImg'>
-                                <div className='monitorImg'>
-                                    <div>
-                                        <h2>Work in progress</h2>
-                                        <a href="https://lutonsky.eu/projects/truck_managment_app/">Try it anyway!</a>
-                                        <p>Not optimized for mobile yet!</p>
-                                    </div>
-                                </div>
-                                <div className='icon'>
-                                    <FontAwesomeIcon icon={faTruck}/>
-                                    <h2>TruckManager</h2>
-                                </div>
-                                <div className='monitorStand'>
-                                    <div className='leg'></div>
-                                    <div className='support'></div>
-                                </div>
-                            </div>
-                            <div className='project-desc'>
-                                <h2>PERN Fullstack</h2>
-                                <p>
-                                    (WIP)
-                                </p>
-                                <p>
-                                    This is a work-in-progress application with separate login for managers and workers, using secure authentication (JWT) and password hashing (bcrypt). 
-                                    Managers can create tasks and manage trucks, while workers can view their assigned tasks.
-                                </p>
-                                <p>
-                                    If you want to test it, I can provide login credentials or a manager key to register your own account.
-                                </p>
-                                <div className="project-links">
-                                    <a href={'https://lutonsky.eu/projects/truck_managment_app/'}>LIVE</a>
-                                    <Link to={'https://github.com/lukaslgit/truck-management-app'} target="_blank" rel="noopener noreferrer">GitHub</Link>
+                                    <Link to={'/projects/details/weatherapp'}>Details</Link>
                                 </div>
                             </div>
                         </li>

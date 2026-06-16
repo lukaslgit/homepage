@@ -225,20 +225,11 @@ section {
   margin: 0;
 }
 .end-section .content .about-right ul li:hover {
-  background-color: rgb(0, 15, 66);
   transition: 0.3s ease;
-}
-.end-section .content .about-right ul li:hover h2 {
-  color: white;
 }
 .end-section .content .about-right ul li:hover svg {
-  color: white;
-  border-color: white;
   border-radius: 20px;
   transition: 0.3s ease;
-}
-.end-section .content .about-right ul li:hover p {
-  color: white;
 }
 
 @keyframes fadeInUp {
