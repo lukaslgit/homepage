@@ -171,9 +171,7 @@ export default function Projects(){
                             </div>
                             <div className='project-desc'>
                                 <h2>PERN Fullstack</h2>
-                                <p>
-                                    (WIP)
-                                </p>
+                                <p>(WIP)</p>
                                 <p>
                                     This is a work-in-progress application with separate login for managers and workers, using secure authentication (JWT) and password hashing (bcrypt).
                                     Managers can create tasks and manage trucks, while workers can view their assigned tasks.
@@ -299,10 +297,8 @@ export default function Projects(){
                             </div>
                             <div className='project-desc'>
                                 <h2>React + Express</h2>
-                                <p>
-                                    <a>(08/2025)</a>
-                                    {t.projectpage_main1}
-                                </p>
+                                <p>(08/2025)</p>
+                                <p>{t.projectpage_main1}</p>
                                 <div className="project-links">
                                     <a href={'https://lutonsky.eu/projects/weatherapp/'}>LIVE</a>
                                     <Link to={'https://github.com/lukaslgit/weatherapp'} target="_blank" rel="noopener noreferrer">GitHub</Link>

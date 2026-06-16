@@ -9,7 +9,7 @@ section {
 }
 
 .top-section {
-  margin-top: 15rem;
+  margin-top: 10rem;
   color: rgb(20, 20, 20);
   animation: fadeInUp 0.8s ease forwards;
 }

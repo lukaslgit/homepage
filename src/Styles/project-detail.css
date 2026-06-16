@@ -357,6 +357,9 @@
 }
 
 @media (max-width: 900px) {
+  .project-detail {
+    margin-top: 5rem;
+  }
   .project-detail .pd-hero {
     padding: 3rem 6%;
     min-height: 50vh;

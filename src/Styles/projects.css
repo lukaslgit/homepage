@@ -1,7 +1,6 @@
 .top-section {
   margin-top: 15rem;
   width: 100%;
-  margin-bottom: 15rem;
 }
 .top-section p {
   max-width: 40rem;
@@ -809,6 +808,10 @@
   height: fit-content;
   min-width: 30rem;
   margin-left: 1rem;
+}
+.top-section .content .project .project-desc h2 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 .top-section .content .project .project-desc div {
   display: flex;
