@@ -1136,10 +1136,9 @@
   font-size: 0.62rem;
   font-weight: 800;
   color: #f5d900;
-  min-width: 0.55rem;
-  text-align: right;
+  width: 12px;
+  text-align: center;
   flex-shrink: 0;
-  margin-left: auto;
 }
 .top-section .content .project .wrapImg .devWrap .devDivider {
   height: 1px;

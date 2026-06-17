@@ -43,9 +43,6 @@ export default function Projects(){
                                                 <div className='phoneCamera'></div>
                                             </div>
                                             <div className='transitApp'>
-                                                <div className='tStatusBar'>
-                                                    <span>12:48</span>
-                                                </div>
                                                 <div className='tSteps'>
                                                     <div className='tStep tDone'><div className='tStepDot'>✓</div><span>BLE</span></div>
                                                     <div className='tStepBar'></div>
