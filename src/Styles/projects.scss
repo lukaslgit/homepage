@@ -1,5 +1,14 @@
 @import './Variables/variables.scss';
 
+@keyframes devDotOn {
+    0%, 49.9% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+@keyframes devDotOff {
+    0%, 49.9% { opacity: 0; }
+    50%, 100% { opacity: 1; }
+}
+
 .top-section {
     margin-top: 15rem;
     width: 100%;
@@ -29,6 +38,7 @@
             display: flex;
             justify-content: space-evenly;
             margin-bottom: 250px;
+            align-items: center;
 
             .wrapImg {
                 list-style: none;
@@ -477,6 +487,11 @@
                     transition: 0.4s ease;
                 }
 
+                .icon.cityboardIcon {
+                    top: -6.5rem;
+                    transition: none;
+                }
+
                 .phoneIcon {
                     top: 5rem;
                 }
@@ -514,8 +529,14 @@
                 }
 
                 &.phoneIcon svg   { background-color: #f0b429; color: black; }
+                &.cityboardIcon svg { background-color: #e53935; color: white;}
                 &.truckIcon svg   { background-color: #1f2937; }
                 &.weatherIcon svg { background-color: $thirdColor; }
+
+                &.cityboardIcon {
+                    top: -6.5rem;
+                    transition: none;
+                }
 
                 h2 {
                     margin: 0;
@@ -891,6 +912,228 @@
                                     }
                                 }
                             }
+
+                            .transitApp {
+                                flex: 1;
+                                display: flex;
+                                flex-direction: column;
+                                background-color: #0c0c0c;
+                                overflow-y: auto;
+                                overflow-x: hidden;
+                                scrollbar-width: none;
+
+                                &::-webkit-scrollbar { display: none; }
+
+                                p { max-width: none; margin: 0; }
+
+                                svg {
+                                    background: none !important;
+                                    padding: 0 !important;
+                                    border-radius: 0 !important;
+                                }
+
+                                .tStatusBar {
+                                    padding: 0.5rem 0.65rem 0.1rem;
+                                    flex-shrink: 0;
+                                    span {
+                                        font-size: 0.56rem;
+                                        color: white;
+                                        font-weight: 600;
+                                    }
+                                }
+
+                                .tSteps {
+                                    display: flex;
+                                    align-items: center;
+                                    background-color: #151515;
+                                    padding: 0.4rem 0.5rem;
+                                    gap: 0.06rem;
+                                    flex-shrink: 0;
+
+                                    .tStep {
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                        gap: 0.08rem;
+                                        flex-shrink: 0;
+
+                                        .tStepDot {
+                                            width: 0.9rem;
+                                            height: 0.9rem;
+                                            border-radius: 50%;
+                                            background-color: #e53935;
+                                            color: white;
+                                            font-size: 0.42rem;
+                                            font-weight: 700;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            flex-shrink: 0;
+
+                                            &.tDotGray { background-color: #444; }
+                                        }
+
+                                        span {
+                                            font-size: 0.36rem;
+                                            color: #aaa;
+                                        }
+
+                                        &.tGray span { color: #555; }
+                                    }
+
+                                    .tStepBar {
+                                        flex: 1;
+                                        height: 0.08rem;
+                                        background-color: #e53935;
+                                        margin-bottom: 0.46rem;
+
+                                        &.tBarGray { background-color: #444; }
+                                    }
+                                }
+
+                                .tBlock {
+                                    padding: 0.4rem 0.5rem 0.16rem;
+                                    flex-shrink: 0;
+                                }
+
+                                .tLabel {
+                                    font-size: 0.34rem;
+                                    color: #666;
+                                    letter-spacing: 0.04em;
+                                    display: block;
+                                    margin-bottom: 0.2rem;
+                                }
+
+                                .tDirDesc {
+                                    font-size: 0.32rem;
+                                    color: #555;
+                                    line-height: 1.4;
+                                    margin-bottom: 0.24rem;
+                                }
+
+                                .tCityRow {
+                                    display: flex;
+                                    gap: 0.14rem;
+
+                                    .tCityChip {
+                                        flex: 1;
+                                        padding: 0.22rem 0;
+                                        border: 1px solid #333;
+                                        border-radius: 0.3rem;
+                                        font-size: 0.42rem;
+                                        color: #777;
+                                        text-align: center;
+
+                                        &.tChipActive {
+                                            border-color: #e53935;
+                                            color: white;
+                                        }
+                                    }
+                                }
+
+                                .tSearchInput {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 0.2rem;
+                                    background-color: #1a1a1a;
+                                    border: 1px solid #2a2a2a;
+                                    border-radius: 0.35rem;
+                                    padding: 0.28rem 0.44rem;
+                                    margin-bottom: 0.2rem;
+
+                                    span { font-size: 0.44rem; color: #666; }
+                                    span:last-child { color: white; }
+                                }
+
+                                .tResultCard {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 0.28rem;
+                                    background-color: #181818;
+                                    border: 1px solid #2a2a2a;
+                                    border-radius: 0.35rem;
+                                    padding: 0.28rem 0.42rem;
+
+                                    .tResultLine {
+                                        width: 0.09rem;
+                                        height: 0.9rem;
+                                        background-color: #e53935;
+                                        border-radius: 2px;
+                                        flex-shrink: 0;
+                                    }
+
+                                    .tResultTitle {
+                                        font-size: 0.44rem;
+                                        color: white;
+                                        font-weight: 600;
+                                    }
+
+                                    .tResultSub {
+                                        font-size: 0.34rem;
+                                        color: #666;
+                                    }
+                                }
+
+                                .tDirChosen {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 0.26rem;
+                                    border: 1px solid #e53935;
+                                    background-color: rgba(229, 57, 53, 0.12);
+                                    border-radius: 0.35rem;
+                                    padding: 0.28rem 0.44rem;
+                                    margin-bottom: 0.14rem;
+
+                                    span { font-size: 0.42rem; color: white; }
+
+                                    .tRadioOn {
+                                        width: 0.55rem;
+                                        height: 0.55rem;
+                                        border-radius: 50%;
+                                        border: 2px solid #e53935;
+                                        flex-shrink: 0;
+                                    }
+                                }
+
+                                .tDirItem {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 0.2rem;
+                                    background-color: #151515;
+                                    border: 1px solid #222;
+                                    border-radius: 0.35rem;
+                                    padding: 0.26rem 0.4rem;
+                                    margin-bottom: 0.12rem;
+
+                                    span { font-size: 0.38rem; color: #bbb; }
+
+                                    .tRadioOff {
+                                        width: 0.5rem;
+                                        height: 0.5rem;
+                                        border-radius: 50%;
+                                        border: 1.5px solid #555;
+                                        flex-shrink: 0;
+                                    }
+
+                                    .tLineBadge {
+                                        background-color: #e53935;
+                                        color: white !important;
+                                        font-size: 0.34rem !important;
+                                        font-weight: 700;
+                                        padding: 0.06rem 0.18rem;
+                                        border-radius: 0.12rem;
+                                        flex-shrink: 0;
+                                    }
+                                }
+
+                                .tBlockLabel {
+                                    background-color: #131313;
+                                    border-top: 1px solid #1e1e1e;
+                                    padding: 0.4rem 0.5rem;
+                                    margin-top: auto;
+                                    flex-shrink: 0;
+                                }
+                            }
                         }
                     }
                 }
@@ -902,6 +1145,158 @@
 
                 &.truckIcon svg {
                     background-color: #1f2937;
+                }
+
+                .mockupGroup {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 0.8rem;
+                    z-index: 10;
+
+                    .phoneWrap {
+                        position: relative;
+                        left: unset;
+                        top: unset;
+                        transform: none;
+                    }
+
+                    .devWrap {
+                        position: relative;
+                        left: unset;
+                        top: unset;
+                        transform: none;
+                        order: -1;
+                    }
+                }
+
+                .mockupGroup:hover ~ .icon.cityboardIcon {
+                    top: -6.5rem;
+                    transition: 0.4s ease;
+                }
+
+                .devWrap {
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    z-index: 5;
+                    height: 25.3rem;
+
+                    .devCasing {
+                        background-color: #6e1020;
+                        border-radius: 0.45rem;
+                        padding: 0.26rem;
+                        box-shadow: 2px 6px 16px rgba(0,0,0,0.55);
+                    }
+
+                    .devScreen {
+                        background-color: #040404;
+                        border-radius: 0.18rem;
+                        width: 8rem;
+                        padding: 0.55rem 0.4rem;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.22rem;
+                        font-family: 'Poppins', sans-serif;
+                    }
+
+                    .devRow {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.18rem;
+                    }
+
+                    .devNum {
+                        font-size: 0.62rem;
+                        font-weight: 800;
+                        color: #f5d900;
+                        min-width: 1.4rem;
+                        line-height: 1;
+                        flex-shrink: 0;
+                    }
+
+                    .devNumSub {
+                        font-size: 0.38rem;
+                        vertical-align: middle;
+                    }
+
+                    .devDestCol {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .devDestRow {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+
+                    .devDest {
+                        font-size: 0.34rem;
+                        color: #f5d900;
+                        font-weight: 600;
+                        line-height: 1.2;
+                        flex: 1;
+                    }
+
+                    .devInd {
+                        position: relative;
+                        width: 12px;
+                        height: 12px;
+                        flex-shrink: 0;
+
+                        .devIndDot {
+                            display: block;
+                            position: absolute;
+                            width: 5px;
+                            height: 5px;
+                            background-color: #f5d900;
+                            animation: devDotOn 2s linear infinite;
+
+                            &:first-child {
+                                bottom: 0;
+                                left: 0;
+                            }
+
+                            &.devIndDotB {
+                                top: 0;
+                                right: 0;
+                                animation: devDotOff 2s linear infinite;
+                            }
+                        }
+                    }
+
+                    .devMin {
+                        font-size: 0.62rem;
+                        font-weight: 800;
+                        color: #f5d900;
+                        min-width: 0.55rem;
+                        text-align: right;
+                        flex-shrink: 0;
+                        margin-left: auto;
+                    }
+
+                    .devDivider {
+                        height: 1px;
+                        background-color: rgba(245, 217, 0, 0.12);
+                    }
+
+                    .devLeg {
+                        flex: 1;
+                        width: 1.2rem;
+                        background-color: #6e1020;
+                        border-radius: 0 0 0.3rem 0.3rem;
+                        margin-right: 0.45rem;
+                        box-shadow: 2px 4px 10px rgba(0,0,0,0.35);
+                    }
                 }
             }
 

@@ -390,7 +390,7 @@
     transform: none;
   }
   .project-detail .pd-hero .github-private-wrap .github-tooltip::after {
-    left: 3.3rem;
+    left: 3.2rem;
     transform: translateX(-50%);
   }
   .project-detail .pd-tabs {

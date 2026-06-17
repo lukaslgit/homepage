@@ -4,7 +4,7 @@ import translationConfig from "../Locales/translation-config";
 import { LanguageContext } from "../utils/LanguageContext";
 
 import '../Styles/projects.css';
-import { faCloud, faMagnifyingGlass, faCar, faMoon, faSun, faTruck, faBolt, faHouse, faComments, faMap, faUsers, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCloud, faMagnifyingGlass, faCar, faMoon, faSun, faTruck, faBolt, faHouse, faComments, faMap, faUsers, faUser, faBus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import sun from '../assets/weatherSun.png';
 import truckbg from '../assets/truckbg.jpg';
@@ -32,6 +32,144 @@ export default function Projects(){
                 </div>
                 <div>
                     <ul>
+                        <li className='project'>
+                            <div className='wrapImg'>
+                                <div className='mockupGroup'>
+                                <div className='phoneWrap'>
+                                    <div className='phoneBody'>
+                                        <div className='phoneScreen'>
+                                            <div className='phoneTopBar'>
+                                                <div className='phoneSpeaker'></div>
+                                                <div className='phoneCamera'></div>
+                                            </div>
+                                            <div className='transitApp'>
+                                                <div className='tStatusBar'>
+                                                    <span>12:48</span>
+                                                </div>
+                                                <div className='tSteps'>
+                                                    <div className='tStep tDone'><div className='tStepDot'>✓</div><span>BLE</span></div>
+                                                    <div className='tStepBar'></div>
+                                                    <div className='tStep tDone'><div className='tStepDot'>✓</div><span>WiFi</span></div>
+                                                    <div className='tStepBar'></div>
+                                                    <div className='tStep tActive'><div className='tStepDot'>3</div><span>Stop</span></div>
+                                                    <div className='tStepBar tBarGray'></div>
+                                                    <div className='tStep tGray'><div className='tStepDot tDotGray'>4</div><span>Monitor</span></div>
+                                                </div>
+                                                <div className='tBlock'>
+                                                    <span className='tLabel'>CITY</span>
+                                                    <div className='tCityRow'>
+                                                        <div className='tCityChip tChipActive'>Wien</div>
+                                                        <div className='tCityChip'>Graz</div>
+                                                        <div className='tCityChip'>Berlin</div>
+                                                        <div className='tCityChip'>BA</div>
+                                                    </div>
+                                                </div>
+                                                <div className='tBlock'>
+                                                    <span className='tLabel'>SEARCH VIENNA STOP</span>
+                                                    <div className='tSearchInput'>
+                                                        <span>⌕</span>
+                                                        <span>Polgarstraße</span>
+                                                    </div>
+                                                    <div className='tResultCard'>
+                                                        <div className='tResultLine'></div>
+                                                        <div>
+                                                            <p className='tResultTitle'>Polgarstraße</p>
+                                                            <p className='tResultSub'>5 platforms (merged)</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className='tBlock'>
+                                                    <span className='tLabel'>FILTER BY DIRECTION</span>
+                                                    <p className='tDirDesc'>Show only departures in one direction (e.g. for a platform on one side of the street)</p>
+                                                    <div className='tDirChosen'>
+                                                        <div className='tRadioOn'></div>
+                                                        <span>All directions</span>
+                                                    </div>
+                                                    <div className='tDirItem'>
+                                                        <div className='tRadioOff'></div>
+                                                        <span className='tLineBadge'>25</span>
+                                                        <span>→ Aspern, Oberdorfstraße</span>
+                                                    </div>
+                                                    <div className='tDirItem'>
+                                                        <div className='tRadioOff'></div>
+                                                        <span className='tLineBadge'>25</span>
+                                                        <span>→ Floridsdorf S U</span>
+                                                    </div>
+                                                    <div className='tDirItem'>
+                                                        <div className='tRadioOff'></div>
+                                                        <span className='tLineBadge'>26A</span>
+                                                        <span>→ Groß-Enzersdorf</span>
+                                                    </div>
+                                                    <div className='tDirItem'>
+                                                        <div className='tRadioOff'></div>
+                                                        <span className='tLineBadge'>26A</span>
+                                                        <span className='tLineBadge'>94A</span>
+                                                        <span>→ Kagran U</span>
+                                                    </div>
+                                                    <div className='tDirItem'>
+                                                        <div className='tRadioOff'></div>
+                                                        <span className='tLineBadge'>94A</span>
+                                                        <span>→ Stadlau S U</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='phoneHomeBar'></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='devWrap'>
+                                    <div className='devCasing'>
+                                        <div className='devScreen'>
+                                            <div className='devRow'>
+                                                <span className='devNum'>25</span>
+                                                <span className='devDest'>Aspern, Oberdorfstr.</span>
+                                                <div className='devInd'>
+                                                    <span className='devIndDot'></span>
+                                                    <span className='devIndDot devIndDotB'></span>
+                                                </div>
+                                            </div>
+                                            <div className='devDivider'></div>
+                                            <div className='devRow'>
+                                                <span className='devNum'>26<span className='devNumSub'>A</span></span>
+                                                <span className='devDest'>Kagran U</span>
+                                                <span className='devMin'>2</span>
+                                            </div>
+                                            <div className='devDivider'></div>
+                                            <div className='devRow'>
+                                                <span className='devNum'>25</span>
+                                                <span className='devDest'>Floridsdorf S U</span>
+                                                <span className='devMin'>4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='devLeg'></div>
+                                </div>
+                                </div>
+                                <div className='icon phoneIcon cityboardIcon'>
+                                    <FontAwesomeIcon icon={faBus}/>
+                                    <h2>CityBoard</h2>
+                                </div>
+                            </div>
+                            <div className='project-desc'>
+                                <h2>C++</h2>
+                                <h2>Node.js + React Expo</h2>
+                                <p>(05/2026)</p>
+                                <p>
+                                    A custom IoT departure board with real-time transit data from Vienna, Graz, Berlin, and Bratislava.
+                                    Four independent codebases: ESP32-S3 C++ firmware with FreeRTOS, a Node.js GTFS backend,
+                                    a React Native BLE/Wi-Fi configurator app, and a Python font pipeline — all built from scratch.
+                                </p>
+                                <div className='project-links'>
+                                    <div className='github-private-wrap'>
+                                        <span className='github-private-btn'>GitHub</span>
+                                        <div className='github-tooltip'>
+                                            This repository is private. The source code is available for review upon request — feel free to get in touch.
+                                        </div>
+                                    </div>
+                                    <Link to={'/projects/details/wienboard'}>Details</Link>
+                                </div>
+                            </div>
+                        </li>
                         <li className='project'>
                             <div className='wrapImg'>
                                 <div className='phoneWrap'>
@@ -127,7 +265,7 @@ export default function Projects(){
                             </div>
                             <div className='project-desc'>
                                 <h2>PERN + React Expo</h2>
-                                <p>(WIP)</p>
+                                <p>(02/2026)</p>
                                 <p>
                                     iOS/Android Mobile app for car enthusiasts. Users can discover and navigate GPS routes on an interactive map, chat in real time, follow others and share posts with analytics. The app also supports organizing car meets and includes a full authentication flow.
                                 </p>
@@ -155,7 +293,7 @@ export default function Projects(){
                                         </div>
                                     </div>
                                     <div className='truckHeroText'>
-                                        <p className='truckHeroTitle'>Truck Manager App (WIP)</p>
+                                        <p className='truckHeroTitle'>Truck Manager App</p>
                                         <p className='truckHeroSub'>Manage trucks, tasks & drivers.</p>
                                         <a href="https://lutonsky.eu/projects/truck_managment_app/" className='truckHeroBtn'>Find out more!</a>
                                     </div>
@@ -171,7 +309,7 @@ export default function Projects(){
                             </div>
                             <div className='project-desc'>
                                 <h2>PERN Fullstack</h2>
-                                <p>(WIP)</p>
+                                <p>(11/2025)</p>
                                 <p>
                                     This is a work-in-progress application with separate login for managers and workers, using secure authentication (JWT) and password hashing (bcrypt).
                                     Managers can create tasks and manage trucks, while workers can view their assigned tasks.

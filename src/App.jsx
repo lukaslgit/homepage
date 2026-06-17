@@ -8,6 +8,7 @@ const Projects = lazy(() => import('./Pages/Projects'));
 const ProjectApexRoads = lazy(() => import('./Pages/ProjectApexRoads'));
 const ProjectTruckManager = lazy(() => import('./Pages/ProjectTruckManager'));
 const ProjectWeatherApp = lazy(() => import('./Pages/ProjectWeatherApp'));
+const ProjectCityBoard = lazy(() => import('./Pages/ProjectCityBoard'));
 const Contact = lazy(() => import('./Pages/Contact'));
 const NotFound = lazy(() => import('./Pages/NotFound'));
 
@@ -38,6 +39,16 @@ export default function App() {
                 <Suspense fallback={<></>}>
                     <Layout>
                         <Projects />
+                    </Layout>
+                </Suspense>
+            ),
+        },
+        {
+            path: '/projects/details/wienboard',
+            element: (
+                <Suspense fallback={<></>}>
+                    <Layout>
+                        <ProjectCityBoard />
                     </Layout>
                 </Suspense>
             ),
