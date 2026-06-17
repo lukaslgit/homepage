@@ -1346,6 +1346,11 @@
                 .project-links {
                     display: flex;
 
+                    .live-btn {
+                        background-color: red;
+                        color: white;
+                    }
+
                     a {
                         background-color: #90cfff;
                         text-decoration: none;

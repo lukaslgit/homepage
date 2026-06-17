@@ -1195,6 +1195,10 @@
 .top-section .content .project .project-desc .project-links {
   display: flex;
 }
+.top-section .content .project .project-desc .project-links .live-btn {
+  background-color: red;
+  color: white;
+}
 .top-section .content .project .project-desc .project-links a {
   background-color: #90cfff;
   text-decoration: none;

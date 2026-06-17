@@ -157,12 +157,7 @@ export default function Projects(){
                                     a React Native BLE/Wi-Fi configurator app, and a Python font pipeline — all built from scratch.
                                 </p>
                                 <div className='project-links'>
-                                    <div className='github-private-wrap'>
-                                        <span className='github-private-btn'>GitHub</span>
-                                        <div className='github-tooltip'>
-                                            This repository is private. The source code is available for review upon request — feel free to get in touch.
-                                        </div>
-                                    </div>
+                                    <Link to={'https://github.com/lukaslgit/CityBoard/'} target="_blank" rel="noopener noreferrer">GitHub</Link>
                                     <Link to={'/projects/details/wienboard'}>Details</Link>
                                 </div>
                             </div>
@@ -312,7 +307,7 @@ export default function Projects(){
                                     Managers can create tasks and manage trucks, while workers can view their assigned tasks.
                                 </p>
                                 <div className="project-links">
-                                    <a href={'https://lutonsky.eu/projects/truck_managment_app/'}>LIVE</a>
+                                    <a className="live-btn" href={'https://lutonsky.eu/projects/truck_managment_app/'}>LIVE</a>
                                     <Link to={'https://github.com/lukaslgit/truck-management-app'} target="_blank" rel="noopener noreferrer">GitHub</Link>
                                     <Link to={'/projects/details/truckmanager'}>Details</Link>
                                 </div>
@@ -435,7 +430,7 @@ export default function Projects(){
                                 <p>(08/2025)</p>
                                 <p>{t.projectpage_main1}</p>
                                 <div className="project-links">
-                                    <a href={'https://lutonsky.eu/projects/weatherapp/'}>LIVE</a>
+                                    <a className="live-btn" href={'https://lutonsky.eu/projects/weatherapp/'}>LIVE</a>
                                     <Link to={'https://github.com/lukaslgit/weatherapp'} target="_blank" rel="noopener noreferrer">GitHub</Link>
                                     <Link to={'/projects/details/weatherapp'}>Details</Link>
                                 </div>

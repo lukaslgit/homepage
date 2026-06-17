@@ -120,13 +120,13 @@ export default function ProjectTruckManager() {
             </div>
 
             <div className='pd-page-links'>
-                <Link to='/projects'>← Back to Projects</Link>
+                <Link to='/projects'>← Projects</Link>
                 <a
                     href='https://lutonsky.eu/projects/truck_managment_app/'
                     target='_blank'
                     rel='noopener noreferrer'
                 >
-                    Live Demo
+                    Live
                 </a>
                 <a
                     href='https://github.com/lukaslgit/truck-management-app'

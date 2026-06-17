@@ -137,20 +137,15 @@ export default function ProjectCityBoard() {
                         The project spans four independent codebases — embedded C++ firmware, a Node.js transit API,
                         a React Native mobile configurator, and a Python font toolchain — built end-to-end by one developer.
                     </p>
-                    <div className='github-private-wrap'>
-                        <span className='github-private-btn'>GitHub</span>
-                        <div className='github-tooltip'>
-                            This repository is private. The source code is available for review upon request — feel free to get in touch.
-                        </div>
-                    </div>
+                    <a
+                        href='https://github.com/lukaslgit/CityBoard/'
+                        className='pd-hero-btn'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                    >
+                        GitHub
+                    </a>
                 </div>
-            </div>
-
-            <div className='pd-section pd-private-notice'>
-                <strong>Coming soon</strong>
-                <p>
-                    The repository will be made public soon. In the meantime, feel free to get in touch if you'd like early access.
-                </p>
             </div>
 
             <div className='pd-section pd-private-notice'>
