@@ -7,12 +7,12 @@ const eggs = [
     {
         key: 'weatherToggled',
         name: 'Useless Darkmode',
-        hint: 'Found on the Projects page — try clicking the button inside the WeatherApp mockup.',
+        hint: 'Found on the Projects page — click on the moon icon inside the WeatherApp mockup.',
     },
     {
         key: 'tasksClicked',
         name: 'Tasks?',
-        hint: 'Found on the Projects page — click on "Tasks" in the TruckApp navigation bar.',
+        hint: 'Found on the Projects page — click on "Tasks" in the TruckApp nav bar.',
     },
 ];
 
