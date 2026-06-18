@@ -117,6 +117,7 @@ export default function Header(){
                             <li><Link onClick={() => closeMobileNav()} to={'/'}>{t.home}</Link></li>
                             <li><Link onClick={() => closeMobileNav()} to={'/projects'}>{t.projects}</Link></li>
                             <li><Link onClick={() => closeMobileNav()} to={'/contact'}>{t.contact}</Link></li>
+                            <li><Link onClick={() => closeMobileNav()} to={'/eastereggs'}>EASTER EGGS</Link></li>
                         </ul>
                         </nav>
                         <div className="header-right">
