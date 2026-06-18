@@ -304,12 +304,14 @@ export default function Projects(){
                                         <div className='truckTasksPage'>
                                             <span className='truckTasksLabel'>Active tasks</span>
                                             {[
-                                                { label: 'Get told that your app was made using AI', status: 'Active', statusColor: '#3b82f6', color: '#3b82f6' },
-                                                { label: 'Learn to work with AI', status: 'Pending', statusColor: '#f59e0b', color: '#f59e0b' },
-                                                { label: 'Get replaced by AI', status: 'Done', statusColor: '#10b981', color: '#10b981' },
-                                                { label: 'Learn Express.js', status: 'Done', statusColor: '#10b981', color: '#10b981' },
-                                                { label: 'Learn React', status: 'Done', statusColor: '#10b981', color: '#10b981' },
-                                                { label: 'Learn JavaScript', status: 'Done', statusColor: '#10b981', color: '#10b981' },
+                                                { label: 'Stop making TodoApp because nobody cares about TodoApps', status: 'Pending', statusColor: '#f59e0b', color: '#f59e0b' },
+                                                { label: 'Make React Native TodoApp for iOS and Android and send reminders to the esp32-s3 display depending on the settings in the app', status: 'Done', statusColor: '#10b981', color: '#10b981' },
+                                                { label: 'Make React TodoApp send reminders to esp32-s3 display', status: 'Done', statusColor: '#10b981', color: '#10b981' },
+                                                { label: 'Make React TodoApp have login/register with JWT and bcrypt', status: 'Done', statusColor: '#10b981', color: '#10b981' },
+                                                { label: 'Make React TodoApp use postgreSQL', status: 'Done', statusColor: '#10b981', color: '#10b981' },
+                                                { label: 'Make React TodoApp use LocalStorage', status: 'Done', statusColor: '#10b981', color: '#10b981' },
+                                                { label: 'Make TodoApp using React', status: 'Done', statusColor: '#10b981', color: '#10b981' },
+                                                { label: 'Make plain JS TodoApp', status: 'Done', statusColor: '#10b981', color: '#10b981' },
                                             ].map(({ label, status, statusColor, color }, i) => (
                                                 <div key={i} className='truckTaskRow'>
                                                     <div className='truckTaskDot' style={{ backgroundColor: color }}></div>
