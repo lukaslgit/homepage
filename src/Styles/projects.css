@@ -1090,7 +1090,7 @@
 }
 .top-section .content .project .wrapImg .devWrap .devNumSub {
   font-size: 0.38rem;
-  vertical-align: middle;
+  vertical-align: bottom;
 }
 .top-section .content .project .wrapImg .devWrap .devDestCol {
   flex: 1;

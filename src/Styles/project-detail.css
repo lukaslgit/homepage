@@ -157,7 +157,8 @@
 .project-detail .pd-gallery .pd-gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 14px;
   transition: transform 0.4s ease;
 }
@@ -174,7 +175,8 @@
   transform: scale(1.04);
 }
 .project-detail .pd-gallery .pd-gallery-item.pd-gallery-photo:hover img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   transform: scale(1);
 }
 .project-detail .pd-lightbox {
@@ -233,9 +235,12 @@
   max-width: min(420px, 80vw);
   width: auto;
   height: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   border-radius: 16px;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .project-detail .pd-lightbox .pd-lightbox-dots {
   position: absolute;
@@ -284,7 +289,9 @@
 .project-detail .github-private-wrap .github-private-btn {
   cursor: not-allowed;
   transition: opacity 0.2s ease, filter 0.2s ease;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .project-detail .github-private-wrap .github-tooltip {
   position: absolute;
@@ -392,7 +399,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .project-detail .pd-gallery .pd-gallery-item.pd-gallery-photo:hover img {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     transform: scale(1.04);
   }
   .project-detail .pd-lightbox .pd-lightbox-prev,
@@ -421,4 +429,4 @@
     flex-shrink: 0;
     white-space: nowrap;
   }
-}
+}/*# sourceMappingURL=project-detail.css.map */
