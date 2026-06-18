@@ -108,12 +108,11 @@ export default function ProjectTruckManager() {
                             <li>Role-based access control</li>
                         </ul>
                     </div>
-                    <div className='pd-db'>
+                    <div>
                         <h3>Database</h3>
                         <ul className='pd-list'>
                             <li>PostgreSQL</li>
                             <li>Relational schema</li>
-                            <li>REST API via Express</li>
                         </ul>
                     </div>
                 </div>

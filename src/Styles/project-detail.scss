@@ -1,5 +1,9 @@
 @import './Variables/variables.scss';
 
+@keyframes pd-spin {
+    to { transform: rotate(360deg); }
+}
+
 .project-detail {
     font-family: Inter, sans-serif;
 
@@ -386,6 +390,26 @@
         color: black;
         font-weight: 600;
         display: block;
+    }
+
+    .pd-gallery-spinner {
+        display: flex;
+        justify-content: center;
+        padding: 4rem 0;
+
+        .pd-spinner-ring {
+            width: 2.2rem;
+            height: 2.2rem;
+            border-radius: 50%;
+            border: 3px solid rgba(0, 15, 66, 0.12);
+            border-top-color: $secColor;
+            animation: pd-spin 0.7s linear infinite;
+        }
+    }
+
+    .pd-dark .pd-gallery-spinner .pd-spinner-ring {
+        border-color: rgba(255, 255, 255, 0.12);
+        border-top-color: $thirdColor;
     }
 
     .pd-page-links {

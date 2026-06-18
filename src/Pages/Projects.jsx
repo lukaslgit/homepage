@@ -158,7 +158,8 @@ export default function Projects(){
                                 </p>
                                 <div className='project-links'>
                                     <Link to={'https://github.com/lukaslgit/CityBoard/'} target="_blank" rel="noopener noreferrer">GitHub</Link>
-                                    <Link to={'/projects/details/wienboard'}>Details</Link>
+                                    <Link to={'/projects/details/cityboard'}>Details</Link>
+                                    <Link to={'/projects/details/cityboard#gallery'}>Gallery</Link>
                                 </div>
                             </div>
                         </li>
@@ -269,6 +270,7 @@ export default function Projects(){
                                         </div>
                                     </div>
                                     <Link to={'/projects/details/apexroads'}>Details</Link>
+                                    <Link to={'/projects/details/apexroads#gallery'}>Gallery</Link>
                                 </div>
                             </div>
                         </li>

@@ -3,6 +3,16 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import '../Styles/project-detail.css';
+import cb1 from '../assets/cityboard/cityboard1.jpeg';
+import cb2 from '../assets/cityboard/cityboard2.jpeg';
+import cb3 from '../assets/cityboard/cityboard3.jpeg';
+import cb4 from '../assets/cityboard/cityboard4.jpeg';
+import cb5 from '../assets/cityboard/cityboard5.jpeg';
+import cb6 from '../assets/cityboard/cityboard6.jpeg';
+import cb7 from '../assets/cityboard/cityboard7.jpeg';
+import cb8 from '../assets/cityboard/cityboard8.jpeg';
+import cb9 from '../assets/cityboard/cityboard9.jpeg';
+import cb10 from '../assets/cityboard/cityboard10.jpeg';
 
 const firmware = [
     'ESP32-S3 with PlatformIO / Arduino framework — SPI display, BLE 5.0, 802.11 Wi-Fi, LEDC PWM backlight',
@@ -83,12 +93,13 @@ const engineeringRight = [
     },
 ];
 
-const GALLERY_COUNT = 8;
-const galleryImages = [];
+const galleryImages = [cb1, cb2, cb3, cb4, cb5, cb6, cb7, cb8, cb9, cb10];
 
 export default function ProjectCityBoard() {
     const [activeTab, setActiveTab] = useState('firmware');
     const [lightboxIndex, setLightboxIndex] = useState(null);
+    const [loadedCount, setLoadedCount] = useState(0);
+    const isLoading = galleryImages.length > 0 && loadedCount < galleryImages.length;
     const touchStartX = useRef(null);
 
     const openLightbox = (i) => setLightboxIndex(i);
@@ -231,16 +242,16 @@ export default function ProjectCityBoard() {
             </div>
 
             <div className='pd-section pd-dark'>
-                <h2>Gallery</h2>
-                <div className='pd-gallery'>
+                <h2 id='gallery'>Gallery</h2>
+                {isLoading && (
+                    <div className='pd-gallery-spinner'>
+                        <div className='pd-spinner-ring'></div>
+                    </div>
+                )}
+                <div className='pd-gallery' style={isLoading ? { display: 'none' } : {}}>
                     {galleryImages.map((img, i) => (
                         <div key={i} className='pd-gallery-item pd-gallery-photo' onClick={() => openLightbox(i)}>
-                            <img src={img} alt={`CityBoard screenshot ${i + 1}`} />
-                        </div>
-                    ))}
-                    {Array.from({ length: GALLERY_COUNT - galleryImages.length }, (_, i) => (
-                        <div key={`ph-${i}`} className='pd-gallery-item'>
-                            <span>Coming soon</span>
+                            <img src={img} alt={`CityBoard screenshot ${i + 1}`} onLoad={() => setLoadedCount(c => c + 1)} />
                         </div>
                     ))}
                 </div>

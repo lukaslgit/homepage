@@ -44,7 +44,7 @@ export default function App() {
             ),
         },
         {
-            path: '/projects/details/wienboard',
+            path: '/projects/details/cityboard',
             element: (
                 <Suspense fallback={<></>}>
                     <Layout>

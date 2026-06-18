@@ -100,6 +100,8 @@ export default function ProjectApexRoads() {
 
     const galleryImages = [apex1, apex2, apex3, apex4, apex5, apex6, apex7, apex8, apex9];
     const [lightboxIndex, setLightboxIndex] = useState(null);
+    const [loadedCount, setLoadedCount] = useState(0);
+    const isLoading = loadedCount < galleryImages.length;
     const touchStartX = useRef(null);
 
     const openLightbox = (i) => setLightboxIndex(i);
@@ -251,11 +253,16 @@ export default function ProjectApexRoads() {
             </div>
 
             <div className='pd-section'>
-                <h2>Gallery</h2>
-                <div className='pd-gallery'>
+                <h2 id='gallery'>Gallery</h2>
+                {isLoading && (
+                    <div className='pd-gallery-spinner'>
+                        <div className='pd-spinner-ring'></div>
+                    </div>
+                )}
+                <div className='pd-gallery' style={isLoading ? { display: 'none' } : {}}>
                     {galleryImages.map((img, i) => (
                         <div key={i} className='pd-gallery-item pd-gallery-photo' onClick={() => openLightbox(i)}>
-                            <img src={img} alt={`Apex Roads screenshot ${i + 1}`} />
+                            <img src={img} alt={`Apex Roads screenshot ${i + 1}`} onLoad={() => setLoadedCount(c => c + 1)} />
                         </div>
                     ))}
                     {Array.from({ length: GALLERY_COUNT - galleryImages.length }, (_, i) => (
