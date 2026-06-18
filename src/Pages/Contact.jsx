@@ -74,6 +74,10 @@ export default function Contact() {
     <div className='content'>
       <h1>{t.getInTouch}</h1>
       <p>{t.contactpage_main1}</p>
+      <br></br>
+      <p>If you prefer, you can also contact me directly via email</p>
+      <br></br>
+      <p>lukas@lutonsky.eu</p>
     </div>
 
     

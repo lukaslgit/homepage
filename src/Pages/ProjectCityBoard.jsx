@@ -29,10 +29,10 @@ const mobile = [
     'React Native 0.81 + Expo SDK 54 — cross-platform iOS and Android',
     '4-screen setup wizard: BLE scan → Wi-Fi configuration → Stop & direction selection → Live departure monitor',
     'BLE device scanning and GATT characteristic reads/writes (react-native-ble-plx)',
-    'Dual-transport config sync: HTTP over Wi-Fi attempted first (3 s timeout), BLE GATT as automatic fallback; connection mode auto-detected with background polling',
+    'Dual-transport config sync: HTTP over Wi-Fi attempted first (3 s timeout), BLE GATT as automatic fallback, connection mode auto-detected with background polling',
     '4-city stop search: WienerLinien CSV index with platform merging, ÖBB transport.rest, BVG transport.rest, self-built DPB REST API',
-    'Fully custom PanResponder slider — drag-anchor fix eliminates position jump on grab; blocks native scroll in nested ScrollView',
-    'Multi-device dashboard with full config persisted in AsyncStorage; duplicate-device detection by BLE ID and IP address',
+    'Fully custom PanResponder slider — drag-anchor fix eliminates position jump on grab, blocks native scroll in nested ScrollView',
+    'Multi-device dashboard with full config persisted in AsyncStorage, duplicate-device detection by BLE ID and IP address',
     'Live monitor screen: 15 s auto-refresh, color-coded countdown (red / orange / yellow), inline brightness control while connected',
 ];
 
@@ -59,22 +59,22 @@ const engineeringLeft = [
     },
     {
         title: 'Second-precision countdowns from minute-resolution data',
-        body: 'Parsed ISO 8601 departure timestamps into Unix epoch via mktime(); firmware computes exact seconds-remaining live from the stored epoch.',
+        body: 'Parsed ISO 8601 departure timestamps into Unix epoch via mktime(), firmware computes exact seconds-remaining live from the stored epoch.',
     },
     {
         title: 'Concurrent display access from two FreeRTOS tasks',
-        body: 'Recursive tftMutex guards all TFT calls; a separate depsMutex protects departure data; the animation task uses trylock to stay non-blocking.',
+        body: 'Recursive tftMutex guards all TFT calls, a separate depsMutex protects departure data, the animation task uses trylock to stay non-blocking.',
     },
 ];
 
 const engineeringMid = [
     {
         title: 'Custom slider inside a ScrollView',
-        body: 'PanResponder drag-anchor (startXRef) eliminates the position jump caused by locationX changing coordinate origin on grant; onShouldBlockNativeResponder blocks the native scroll layer during a drag.',
+        body: 'PanResponder drag-anchor (startXRef) eliminates the position jump caused by locationX changing coordinate origin on grant, onShouldBlockNativeResponder blocks the native scroll layer during a drag.',
     },
     {
         title: 'BLE and HTTP config coexistence',
-        body: 'HTTP over Wi-Fi is tried first via AbortController with a 3 s timeout; BLE GATT is used as fallback. The device broadcasts its IP in a BLE characteristic so the app can reconnect automatically.',
+        body: 'HTTP over Wi-Fi is tried first via AbortController with a 3 s timeout, BLE GATT is used as fallback. The device broadcasts its IP in a BLE characteristic so the app can reconnect automatically.',
     },
     {
         title: 'Duplicate departures from multi-platform GTFS stops',
@@ -89,7 +89,7 @@ const engineeringRight = [
     },
     {
         title: 'Slovak and Czech characters in firmware fonts',
-        body: 'Custom Python font pipeline extended glyph coverage to Latin Extended-A (U+00A0–U+017E); fixed the TFT_eSPI UTF-8 multi-byte decoder path in firmware for glyphs above U+007F.',
+        body: 'Custom Python font pipeline extended glyph coverage to Latin Extended-A (U+00A0–U+017E), fixed the TFT_eSPI UTF-8 multi-byte decoder path in firmware for glyphs above U+007F.',
     },
 ];
 
@@ -179,7 +179,7 @@ export default function ProjectCityBoard() {
                 <p style={{ marginTop: '1.2rem' }}>
                     The device is configured entirely over the air. A companion React Native app walks through
                     a four-step wizard — BLE pairing, Wi-Fi setup, stop selection with direction filtering, and display preferences.
-                    When the phone is on the same network, the app uses HTTP for speed; it falls back to BLE GATT automatically
+                    When the phone is on the same network, the app uses HTTP for speed, it falls back to BLE GATT automatically
                     when Wi-Fi is unavailable. All settings survive power cycles via NVS flash.
                 </p>
                 <p style={{ marginTop: '1.2rem' }}>
