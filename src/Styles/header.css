@@ -120,7 +120,8 @@ header ul {
   width: 100%;
 }
 header ul li {
-  width: 33%;
+  width: -moz-fit-content;
+  width: fit-content;
   text-align: center;
 }
 
@@ -155,7 +156,7 @@ header ul li {
     padding-top: 50px;
   }
 }
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1300px) {
   header {
     top: 0;
     width: 100%;

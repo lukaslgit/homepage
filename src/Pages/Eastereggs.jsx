@@ -14,6 +14,11 @@ const eggs = [
         name: 'Tasks?',
         hint: 'Found on the Projects page — click on "Tasks" in the TruckApp nav bar.',
     },
+    {
+        key: 'kagranClicked',
+        name: 'Donauzentrum?',
+        hint: 'Found on the Projects page — select the "26A / 94A → Kagran U" direction in the CityBoard phone mockup.',
+    },
 ];
 
 export default function Eastereggs() {

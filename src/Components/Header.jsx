@@ -81,8 +81,8 @@ export default function Header(){
                         <ul>
                             <li><Link to={'/'}>{t.home}</Link></li>
                             <li><Link to={'/projects'}>{t.projects}</Link></li>
-                            <li><Link to={'/contact'}>{t.contact}</Link></li>
                             <li><Link to={'/eastereggs'}>EASTER EGGS</Link></li>
+                            <li><Link to={'/contact'}>{t.contact}</Link></li>
                         </ul>
                     </nav>
                     <div className="header-right">
@@ -116,8 +116,8 @@ export default function Header(){
                         <ul>
                             <li><Link onClick={() => closeMobileNav()} to={'/'}>{t.home}</Link></li>
                             <li><Link onClick={() => closeMobileNav()} to={'/projects'}>{t.projects}</Link></li>
-                            <li><Link onClick={() => closeMobileNav()} to={'/contact'}>{t.contact}</Link></li>
                             <li><Link onClick={() => closeMobileNav()} to={'/eastereggs'}>EASTER EGGS</Link></li>
+                            <li><Link onClick={() => closeMobileNav()} to={'/contact'}>{t.contact}</Link></li>
                         </ul>
                         </nav>
                         <div className="header-right">

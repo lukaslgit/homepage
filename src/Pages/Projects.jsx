@@ -18,6 +18,16 @@ export default function Projects(){
     const [isDark, setIsDark] = useState(true);
     const [orbitAngle, setOrbitAngle] = useState(0);
     const [showTasks, setShowTasks] = useState(false);
+    const [kagranSelected, setKagranSelected] = useState(false);
+
+    const toggleKagran = () => {
+        setKagranSelected(v => !v);
+        if (!window.localStorage.getItem('kagranClicked')) {
+            window.localStorage.setItem('kagranClicked', '1');
+            showNotification('Achievement unlocked: Donauzentrum?', 'success', 4000);
+        }
+    };
+
     const toggleWeather = () => {
         setOrbitAngle(a => a - 180);
         setTimeout(() => setIsDark(d => !d), 200);
@@ -92,10 +102,17 @@ export default function Projects(){
                                                 <div className='tBlock'>
                                                     <span className='tLabel'>FILTER BY DIRECTION</span>
                                                     <p className='tDirDesc'>Show only departures in one direction (e.g. for a platform on one side of the street)</p>
-                                                    <div className='tDirChosen'>
-                                                        <div className='tRadioOn'></div>
-                                                        <span>All directions</span>
-                                                    </div>
+                                                    {kagranSelected ? (
+                                                        <div className='tDirItem' style={{ cursor: 'pointer' }} onClick={toggleKagran}>
+                                                            <div className='tRadioOff'></div>
+                                                            <span>All directions</span>
+                                                        </div>
+                                                    ) : (
+                                                        <div className='tDirChosen'>
+                                                            <div className='tRadioOn'></div>
+                                                            <span>All directions</span>
+                                                        </div>
+                                                    )}
                                                     <div className='tDirItem'>
                                                         <div className='tRadioOff'></div>
                                                         <span className='tLineBadge'>25</span>
@@ -111,12 +128,21 @@ export default function Projects(){
                                                         <span className='tLineBadge'>26A</span>
                                                         <span>→ Groß-Enzersdorf</span>
                                                     </div>
-                                                    <div className='tDirItem'>
-                                                        <div className='tRadioOff'></div>
-                                                        <span className='tLineBadge'>26A</span>
-                                                        <span className='tLineBadge'>94A</span>
-                                                        <span>→ Kagran U</span>
-                                                    </div>
+                                                    {kagranSelected ? (
+                                                        <div className='tDirChosen'>
+                                                            <div className='tRadioOn'></div>
+                                                            <span className='tLineBadge'>26A</span>
+                                                            <span className='tLineBadge'>94A</span>
+                                                            <span>→ Kagran U</span>
+                                                        </div>
+                                                    ) : (
+                                                        <div className='tDirItem' style={{ cursor: 'pointer' }} onClick={toggleKagran}>
+                                                            <div className='tRadioOff'></div>
+                                                            <span className='tLineBadge'>26A</span>
+                                                            <span className='tLineBadge'>94A</span>
+                                                            <span>→ Kagran U</span>
+                                                        </div>
+                                                    )}
                                                     <div className='tDirItem'>
                                                         <div className='tRadioOff'></div>
                                                         <span className='tLineBadge'>94A</span>
@@ -131,26 +157,46 @@ export default function Projects(){
                                 <div className='devWrap'>
                                     <div className='devCasing'>
                                         <div className='devScreen'>
-                                            <div className='devRow'>
-                                                <span className='devNum'>25</span>
-                                                <span className='devDest'>Aspern, Oberdorfstr.</span>
-                                                <div className='devInd'>
-                                                    <span className='devIndDot'></span>
-                                                    <span className='devIndDot devIndDotB'></span>
+                                            {kagranSelected ? (<>
+                                                <div className='devRow'>
+                                                    <span className='devNum'>26<span className='devNumSub'>A</span></span>
+                                                    <span className='devDest'>Kagran U</span>
+                                                    <span className='devMin'>2</span>
                                                 </div>
-                                            </div>
-                                            <div className='devDivider'></div>
-                                            <div className='devRow'>
-                                                <span className='devNum'>26<span className='devNumSub'>A</span></span>
-                                                <span className='devDest'>Kagran U</span>
-                                                <span className='devMin'>2</span>
-                                            </div>
-                                            <div className='devDivider'></div>
-                                            <div className='devRow'>
-                                                <span className='devNum'>25</span>
-                                                <span className='devDest'>Floridsdorf S U</span>
-                                                <span className='devMin'>4</span>
-                                            </div>
+                                                <div className='devDivider'></div>
+                                                <div className='devRow'>
+                                                    <span className='devNum'>94<span className='devNumSub'>A</span></span>
+                                                    <span className='devDest'>Kagran U</span>
+                                                    <span className='devMin'>5</span>
+                                                </div>
+                                                <div className='devDivider'></div>
+                                                <div className='devRow'>
+                                                    <span className='devNum'>26<span className='devNumSub'>A</span></span>
+                                                    <span className='devDest'>Kagran U</span>
+                                                    <span className='devMin'>8</span>
+                                                </div>
+                                            </>) : (<>
+                                                <div className='devRow'>
+                                                    <span className='devNum'>25</span>
+                                                    <span className='devDest'>Aspern, Oberdorfstr.</span>
+                                                    <div className='devInd'>
+                                                        <span className='devIndDot'></span>
+                                                        <span className='devIndDot devIndDotB'></span>
+                                                    </div>
+                                                </div>
+                                                <div className='devDivider'></div>
+                                                <div className='devRow'>
+                                                    <span className='devNum'>26<span className='devNumSub'>A</span></span>
+                                                    <span className='devDest'>Kagran U</span>
+                                                    <span className='devMin'>2</span>
+                                                </div>
+                                                <div className='devDivider'></div>
+                                                <div className='devRow'>
+                                                    <span className='devNum'>25</span>
+                                                    <span className='devDest'>Floridsdorf S U</span>
+                                                    <span className='devMin'>4</span>
+                                                </div>
+                                            </>)}
                                         </div>
                                     </div>
                                     <div className='devLeg'></div>
