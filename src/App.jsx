@@ -11,6 +11,7 @@ const ProjectWeatherApp = lazy(() => import('./Pages/ProjectWeatherApp'));
 const ProjectCityBoard = lazy(() => import('./Pages/ProjectCityBoard'));
 const Contact = lazy(() => import('./Pages/Contact'));
 const NotFound = lazy(() => import('./Pages/NotFound'));
+const Eastereggs = lazy(() => import('./Pages/Eastereggs'));
 
 const Layout = lazy(() => import('./Components/Layout'));
 
@@ -89,6 +90,16 @@ export default function App() {
                 <Suspense fallback={<></>}>
                     <Layout>
                         <Contact />
+                    </Layout>
+                </Suspense>
+            ),
+        },
+        {
+            path: '/eastereggs',
+            element: (
+                <Suspense fallback={<></>}>
+                    <Layout>
+                        <Eastereggs />
                     </Layout>
                 </Suspense>
             ),

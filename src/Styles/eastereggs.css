@@ -1,0 +1,118 @@
+.ee-section {
+  margin-top: 15rem;
+  color: rgb(20, 20, 20);
+  font-family: Inter, sans-serif;
+  animation: fadeInUp 0.8s ease forwards;
+  padding-bottom: 8rem;
+}
+.ee-section .content {
+  margin: auto;
+  width: 80%;
+}
+.ee-section h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 600;
+}
+.ee-section h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 0;
+}
+.ee-section .ee-intro {
+  margin-top: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+.ee-section .ee-intro p {
+  font-weight: 300;
+  font-size: 1.1rem;
+  max-width: 50rem;
+  color: rgba(20, 20, 20, 0.65);
+  line-height: 1.7;
+  margin: 0 0 0.4rem;
+}
+.ee-section .ee-counter {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgb(0, 15, 66);
+  background-color: rgba(0, 15, 66, 0.07);
+  padding: 0.3rem 0.9rem;
+  border-radius: 2rem;
+}
+.ee-section .ee-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 580px;
+}
+.ee-section .ee-item {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 1.3rem 1.6rem;
+  border-radius: 16px;
+  border: 2px solid;
+  background-color: white;
+  transition: border-color 0.2s ease;
+}
+.ee-section .ee-item.ee-locked {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.ee-section .ee-item.ee-locked .ee-icon-wrap {
+  background-color: rgba(0, 15, 66, 0.06);
+  color: rgba(0, 15, 66, 0.25);
+}
+.ee-section .ee-item.ee-locked .ee-name {
+  color: rgba(20, 20, 20, 0.35);
+}
+.ee-section .ee-item.ee-unlocked {
+  border-color: rgb(0, 15, 66);
+}
+.ee-section .ee-item.ee-unlocked .ee-icon-wrap {
+  background-color: rgb(0, 15, 66);
+  color: white;
+}
+.ee-section .ee-item.ee-unlocked .ee-name {
+  color: rgb(0, 15, 66);
+}
+.ee-section .ee-item .ee-icon-wrap {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.ee-section .ee-item .ee-info .ee-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+  transition: color 0.2s ease;
+}
+.ee-section .ee-item .ee-info .ee-hint {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(20, 20, 20, 0.5);
+  margin: 0;
+  line-height: 1.55;
+}
+
+@media (max-width: 1100px) {
+  .ee-section {
+    margin-top: 10rem;
+  }
+  .ee-section h1, .ee-section h2 {
+    font-size: 2rem;
+  }
+  .ee-section .content {
+    width: 90%;
+  }
+}/*# sourceMappingURL=eastereggs.css.map */

@@ -82,6 +82,7 @@ export default function Header(){
                             <li><Link to={'/'}>{t.home}</Link></li>
                             <li><Link to={'/projects'}>{t.projects}</Link></li>
                             <li><Link to={'/contact'}>{t.contact}</Link></li>
+                            <li><Link to={'/eastereggs'}>EASTER EGGS</Link></li>
                         </ul>
                     </nav>
                     <div className="header-right">

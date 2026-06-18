@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import translationConfig from "../Locales/translation-config";
 import { LanguageContext } from "../utils/LanguageContext";
+import { useNotificationContext } from "../utils/NotificationContext";
 
 import '../Styles/projects.css';
-import { faCloud, faMagnifyingGlass, faCar, faMoon, faSun, faTruck, faBolt, faHouse, faComments, faMap, faUsers, faUser, faBus } from '@fortawesome/free-solid-svg-icons';
+import { faCloud, faMagnifyingGlass, faCar, faMoon, faSun, faTruck, faBolt, faHouse, faComments, faMap, faUsers, faUser, faBus, faListCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import sun from '../assets/weatherSun.png';
 import truckbg from '../assets/truckbg.jpg';
@@ -13,12 +14,42 @@ import apexbg from '../assets/apexbg.jpg';
 export default function Projects(){
 
     const { lang, setLang } = useContext(LanguageContext);
+    const { showNotification } = useNotificationContext();
     const [isDark, setIsDark] = useState(true);
     const [orbitAngle, setOrbitAngle] = useState(0);
+    const [showTasks, setShowTasks] = useState(false);
+    const [todoItems, setTodoItems] = useState([
+        { id: 1, text: 'Buy groceries', done: true },
+        { id: 2, text: 'Read a book', done: false },
+        { id: 3, text: 'Go for a walk', done: false },
+        { id: 4, text: 'Clean the house', done: false },
+    ]);
+    const [todoInput, setTodoInput] = useState('');
+
+    const addTodo = () => {
+        const text = todoInput.trim();
+        if (!text) return;
+        setTodoItems(items => [...items, { id: Date.now(), text, done: false }]);
+        setTodoInput('');
+    };
+    const toggleTodo = (id) => setTodoItems(items => items.map(t => t.id === id ? { ...t, done: !t.done } : t));
+    const deleteTodo = (id) => setTodoItems(items => items.filter(t => t.id !== id));
 
     const toggleWeather = () => {
         setOrbitAngle(a => a - 180);
         setTimeout(() => setIsDark(d => !d), 200);
+        if (!window.localStorage.getItem('weatherToggled')) {
+            window.localStorage.setItem('weatherToggled', '1');
+            showNotification('NEW Achievement: Useless darkmode', 'success', 4000);
+        }
+    };
+
+    const toggleTasks = () => {
+        setShowTasks(v => !v);
+        if (!window.localStorage.getItem('tasksClicked')) {
+            window.localStorage.setItem('tasksClicked', '1');
+            showNotification('Achievement unlocked: Tasks?', 'success', 4000);
+        }
     };
 
     const t = translationConfig[lang];
@@ -278,19 +309,39 @@ export default function Projects(){
                             <div className='wrapImg'>
                                 <div className='monitorImg truckMonitor' style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)), url(${truckbg})`, backgroundColor: '#1f2937', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                                     <div className='truckNav'>
-                                        <span className='truckLogo'>TruckApp</span>
+                                        <span className={`truckLogo${showTasks ? ' truckLogoBack' : ''}`} onClick={showTasks ? () => setShowTasks(false) : undefined}>TruckApp</span>
                                         <div className='truckNavLinks'>
                                             <span>Trucks</span>
-                                            <span>Tasks</span>
+                                            <span className={`truckNavTasks${showTasks ? ' active' : ''}`} onClick={toggleTasks}>Tasks</span>
                                             <span>Workers</span>
                                             <span className='truckLogout'>LogOut</span>
                                         </div>
                                     </div>
-                                    <div className='truckHeroText'>
-                                        <p className='truckHeroTitle'>Truck Manager App</p>
-                                        <p className='truckHeroSub'>Manage trucks, tasks & drivers.</p>
-                                        <a href="https://lutonsky.eu/projects/truck_managment_app/" className='truckHeroBtn'>Find out more!</a>
-                                    </div>
+                                    {showTasks ? (
+                                        <div className='truckTasksPage'>
+                                            <span className='truckTasksLabel'>Active tasks</span>
+                                            {[
+                                                { label: 'Get told that your app was made using AI', status: 'Active', statusColor: '#3b82f6', color: '#3b82f6' },
+                                                { label: 'Learn to work with AI', status: 'Pending', statusColor: '#f59e0b', color: '#f59e0b' },
+                                                { label: 'Get replaced by AI', status: 'Done', statusColor: '#10b981', color: '#10b981' },
+                                                { label: 'Learn Express.js', status: 'Done', statusColor: '#10b981', color: '#10b981' },
+                                                { label: 'Learn React', status: 'Done', statusColor: '#10b981', color: '#10b981' },
+                                                { label: 'Learn JavaScript', status: 'Done', statusColor: '#10b981', color: '#10b981' },
+                                            ].map(({ label, status, statusColor, color }, i) => (
+                                                <div key={i} className='truckTaskRow'>
+                                                    <div className='truckTaskDot' style={{ backgroundColor: color }}></div>
+                                                    <span className='truckTaskRowLabel'>{label}</span>
+                                                    <span className='truckTaskBadge' style={{ backgroundColor: statusColor }}>{status}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <div className='truckHeroText'>
+                                            <p className='truckHeroTitle'>Truck Manager App</p>
+                                            <p className='truckHeroSub'>Manage trucks, tasks & drivers.</p>
+                                            <a href="https://lutonsky.eu/projects/truck_managment_app/" className='truckHeroBtn'>Find out more!</a>
+                                        </div>
+                                    )}
                                 </div>
                                 <div className='icon truckIcon'>
                                     <FontAwesomeIcon icon={faTruck}/>
@@ -435,6 +486,56 @@ export default function Projects(){
                                     <a className="live-btn" href={'https://lutonsky.eu/projects/weatherapp/'}>LIVE</a>
                                     <Link to={'https://github.com/lukaslgit/weatherapp'} target="_blank" rel="noopener noreferrer">GitHub</Link>
                                     <Link to={'/projects/details/weatherapp'}>Details</Link>
+                                </div>
+                            </div>
+                        </li>
+                        <li className='project'>
+                            <div className='wrapImg'>
+                                <div className='monitorImg todoMonitor'>
+                                    <p className='todoMockupTitle'>Todo List</p>
+                                    <div className='todoMockupInput'>
+                                        <input
+                                            value={todoInput}
+                                            onChange={e => setTodoInput(e.target.value)}
+                                            onKeyDown={e => e.key === 'Enter' && addTodo()}
+                                            placeholder='Add a task...'
+                                        />
+                                        <button onClick={addTodo}>Add</button>
+                                    </div>
+                                    <ul className='todoMockupList'>
+                                        {todoItems.map(item => (
+                                            <li key={item.id} className={item.done ? 'todoDone' : ''}>
+                                                <span className='todoMockupText'>{item.text}</span>
+                                                <div className='todoMockupBtns'>
+                                                    <button
+                                                        className={`todoCircle${item.done ? ' checked' : ''}`}
+                                                        onClick={() => toggleTodo(item.id)}
+                                                    />
+                                                    <button className='todoX' onClick={() => deleteTodo(item.id)}>✕</button>
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className='icon todoIcon'>
+                                    <FontAwesomeIcon icon={faListCheck}/>
+                                    <h2>TodoList</h2>
+                                </div>
+                                <div className='monitorStand'>
+                                    <div className='leg'></div>
+                                    <div className='support'></div>
+                                </div>
+                            </div>
+                            <div className='project-desc'>
+                                <h2>Vanilla JS</h2>
+                                <p>(12/2024)</p>
+                                <p>
+                                    A to-do list built with plain HTML, CSS, and JavaScript — no frameworks, no build tools.
+                                    Tasks persist in <code>localStorage</code> and survive page refresh.
+                                    Each item can be marked as done or removed individually.
+                                </p>
+                                <div className='project-links'>
+                                    <Link to={'https://github.com/lukaslgit'} target='_blank' rel='noopener noreferrer'>GitHub</Link>
                                 </div>
                             </div>
                         </li>

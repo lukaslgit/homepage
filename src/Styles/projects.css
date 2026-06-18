@@ -347,10 +347,74 @@
   font-weight: 600;
   letter-spacing: 0.02em;
 }
+.top-section .content .project .wrapImg .monitorImg.truckMonitor .truckNav .truckNavLinks .truckNavTasks {
+  cursor: pointer;
+  padding: 0.12rem 0.3rem;
+  border-radius: 3px;
+  transition: background 0.15s ease;
+}
+.top-section .content .project .wrapImg .monitorImg.truckMonitor .truckNav .truckNavLinks .truckNavTasks:hover, .top-section .content .project .wrapImg .monitorImg.truckMonitor .truckNav .truckNavLinks .truckNavTasks.active {
+  background-color: rgba(255, 255, 255, 0.15);
+}
 .top-section .content .project .wrapImg .monitorImg.truckMonitor .truckNav .truckNavLinks .truckLogout {
   background-color: #ef4444;
   padding: 0.15rem 0.4rem;
   border-radius: 3px;
+}
+.top-section .content .project .wrapImg .monitorImg.truckMonitor .truckLogoBack {
+  cursor: pointer;
+  opacity: 0.75;
+}
+.top-section .content .project .wrapImg .monitorImg.truckMonitor .truckLogoBack:hover {
+  opacity: 1;
+}
+.top-section .content .project .wrapImg .monitorImg.truckMonitor .truckTasksPage {
+  position: absolute;
+  top: 1.6rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111827;
+  padding: 0.5rem 0.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  overflow: hidden;
+}
+.top-section .content .project .wrapImg .monitorImg.truckMonitor .truckTasksPage .truckTasksLabel {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.1rem;
+}
+.top-section .content .project .wrapImg .monitorImg.truckMonitor .truckTasksPage .truckTaskRow {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 0.45rem 0.55rem;
+}
+.top-section .content .project .wrapImg .monitorImg.truckMonitor .truckTasksPage .truckTaskRow .truckTaskDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.top-section .content .project .wrapImg .monitorImg.truckMonitor .truckTasksPage .truckTaskRow .truckTaskRowLabel {
+  flex: 1;
+  font-size: 0.55rem;
+  color: white;
+  font-weight: 500;
+}
+.top-section .content .project .wrapImg .monitorImg.truckMonitor .truckTasksPage .truckTaskRow .truckTaskBadge {
+  font-size: 0.42rem;
+  font-weight: 700;
+  padding: 0.1rem 0.28rem;
+  border-radius: 3px;
+  color: white;
 }
 .top-section .content .project .wrapImg .monitorImg.truckMonitor .truckHeroText {
   position: absolute;
@@ -382,6 +446,143 @@
   padding: 0.25rem 0.6rem;
   border-radius: 5px;
   text-decoration: none;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor {
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
+  gap: 0.45rem;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupTitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 0.1rem;
+  max-width: none;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupInput {
+  display: flex;
+  gap: 0.28rem;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupInput input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.22rem 0.4rem;
+  font-size: 0.45rem;
+  outline: none;
+  background-color: white;
+  color: #333;
+  line-height: normal;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupInput input:focus {
+  border-color: #4CAF50;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupInput input::-moz-placeholder {
+  color: #bbb;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupInput input::placeholder {
+  color: #bbb;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupInput button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.22rem 0.55rem;
+  font-size: 0.45rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupInput button:hover {
+  background-color: #43a047;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  overflow-y: auto;
+  flex: 1;
+  scrollbar-width: none;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupList::-webkit-scrollbar {
+  display: none;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupList li {
+  background-color: white;
+  border-radius: 6px;
+  padding: 0.28rem 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupList li.todoDone .todoMockupText {
+  text-decoration: line-through;
+  color: #bbb;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupList .todoMockupText {
+  font-size: 0.45rem;
+  color: #333;
+  flex: 1;
+  max-width: none;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupList .todoMockupBtns {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupList .todoMockupBtns .todoCircle {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: 1.5px solid #bbb;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 0;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupList .todoMockupBtns .todoCircle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.25s ease;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupList .todoMockupBtns .todoCircle.checked {
+  border-color: transparent;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupList .todoMockupBtns .todoCircle.checked::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupList .todoMockupBtns .todoX {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.38rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.top-section .content .project .wrapImg .monitorImg.todoMonitor .todoMockupList .todoMockupBtns .todoX:hover {
+  background-color: #c0392b;
 }
 .top-section .content .project .wrapImg .darkmode {
   background-color: rgb(20, 20, 20) !important;
@@ -473,6 +674,9 @@
 }
 .top-section .content .project .wrapImg .icon.weatherIcon svg {
   background-color: rgb(98, 161, 255);
+}
+.top-section .content .project .wrapImg .icon.todoIcon svg {
+  background-color: #4CAF50;
 }
 .top-section .content .project .wrapImg .icon.cityboardIcon {
   top: -6.5rem;
