@@ -5,7 +5,7 @@ import { LanguageContext } from "../utils/LanguageContext";
 import { useNotificationContext } from "../utils/NotificationContext";
 
 import '../Styles/projects.css';
-import { faCloud, faMagnifyingGlass, faCar, faMoon, faSun, faTruck, faBolt, faHouse, faComments, faMap, faUsers, faUser, faBus, faListCheck } from '@fortawesome/free-solid-svg-icons';
+import { faCloud, faMagnifyingGlass, faCar, faMoon, faSun, faTruck, faBolt, faHouse, faComments, faMap, faUsers, faUser, faBus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import sun from '../assets/weatherSun.png';
 import truckbg from '../assets/truckbg.jpg';
@@ -18,23 +18,6 @@ export default function Projects(){
     const [isDark, setIsDark] = useState(true);
     const [orbitAngle, setOrbitAngle] = useState(0);
     const [showTasks, setShowTasks] = useState(false);
-    const [todoItems, setTodoItems] = useState([
-        { id: 1, text: 'Buy groceries', done: true },
-        { id: 2, text: 'Read a book', done: false },
-        { id: 3, text: 'Go for a walk', done: false },
-        { id: 4, text: 'Clean the house', done: false },
-    ]);
-    const [todoInput, setTodoInput] = useState('');
-
-    const addTodo = () => {
-        const text = todoInput.trim();
-        if (!text) return;
-        setTodoItems(items => [...items, { id: Date.now(), text, done: false }]);
-        setTodoInput('');
-    };
-    const toggleTodo = (id) => setTodoItems(items => items.map(t => t.id === id ? { ...t, done: !t.done } : t));
-    const deleteTodo = (id) => setTodoItems(items => items.filter(t => t.id !== id));
-
     const toggleWeather = () => {
         setOrbitAngle(a => a - 180);
         setTimeout(() => setIsDark(d => !d), 200);
@@ -486,56 +469,6 @@ export default function Projects(){
                                     <a className="live-btn" href={'https://lutonsky.eu/projects/weatherapp/'}>LIVE</a>
                                     <Link to={'https://github.com/lukaslgit/weatherapp'} target="_blank" rel="noopener noreferrer">GitHub</Link>
                                     <Link to={'/projects/details/weatherapp'}>Details</Link>
-                                </div>
-                            </div>
-                        </li>
-                        <li className='project'>
-                            <div className='wrapImg'>
-                                <div className='monitorImg todoMonitor'>
-                                    <p className='todoMockupTitle'>Todo List</p>
-                                    <div className='todoMockupInput'>
-                                        <input
-                                            value={todoInput}
-                                            onChange={e => setTodoInput(e.target.value)}
-                                            onKeyDown={e => e.key === 'Enter' && addTodo()}
-                                            placeholder='Add a task...'
-                                        />
-                                        <button onClick={addTodo}>Add</button>
-                                    </div>
-                                    <ul className='todoMockupList'>
-                                        {todoItems.map(item => (
-                                            <li key={item.id} className={item.done ? 'todoDone' : ''}>
-                                                <span className='todoMockupText'>{item.text}</span>
-                                                <div className='todoMockupBtns'>
-                                                    <button
-                                                        className={`todoCircle${item.done ? ' checked' : ''}`}
-                                                        onClick={() => toggleTodo(item.id)}
-                                                    />
-                                                    <button className='todoX' onClick={() => deleteTodo(item.id)}>✕</button>
-                                                </div>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                                <div className='icon todoIcon'>
-                                    <FontAwesomeIcon icon={faListCheck}/>
-                                    <h2>TodoList</h2>
-                                </div>
-                                <div className='monitorStand'>
-                                    <div className='leg'></div>
-                                    <div className='support'></div>
-                                </div>
-                            </div>
-                            <div className='project-desc'>
-                                <h2>Vanilla JS</h2>
-                                <p>(12/2024)</p>
-                                <p>
-                                    A to-do list built with plain HTML, CSS, and JavaScript — no frameworks, no build tools.
-                                    Tasks persist in <code>localStorage</code> and survive page refresh.
-                                    Each item can be marked as done or removed individually.
-                                </p>
-                                <div className='project-links'>
-                                    <Link to={'https://github.com/lukaslgit'} target='_blank' rel='noopener noreferrer'>GitHub</Link>
                                 </div>
                             </div>
                         </li>
