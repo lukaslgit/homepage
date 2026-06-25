@@ -21,7 +21,18 @@ const routes = [
 async function prerender() {
     const server = await preview({ preview: { port: 4173, strictPort: true } });
 
-    const browser = await puppeteer.launch({ headless: true });
+    const executablePath = process.env.PUPPETEER_EXECUTABLE_PATH
+        || (process.platform === 'linux'
+            ? (['/usr/bin/chromium-browser', '/usr/bin/chromium'].find(p => {
+                try { return require('fs').existsSync(p); } catch { return false; }
+              }) || '/usr/bin/chromium-browser')
+            : undefined);
+
+    const browser = await puppeteer.launch({
+        headless: true,
+        ...(executablePath ? { executablePath } : {}),
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
 
     for (const route of routes) {
         process.stdout.write(`Prerendering ${route} ...`);
