@@ -17,19 +17,19 @@ import '../Styles/project-detail.css';
 const features = {
     routes: [
         'Plot A-to-B routes on an interactive map using OSRM routing engine',
-        'Preview routes as a polyline before driving — navigate turn-by-turn inside the app',
+        'Preview routes as a polyline before driving - navigate turn-by-turn inside the app',
         'Save routes with a title, description, and photos after a drive',
         'Make routes public to share with the community or keep them private',
     ],
     social: [
-        'Instagram-style image feed — post photos with captions, like, comment, and share via DMs',
+        'Instagram-style image feed - post photos with captions, like, comment, and share via DMs',
         'Full real-time DM system with typing indicators, read receipts, and online presence',
         'Follow / unfollow users, view follower and following lists, block accounts',
-        'Report inappropriate content — reviewed in the admin web panel',
+        'Report inappropriate content - reviewed in the admin web panel',
     ],
     xp: [
         'Claim geo-located XP spots (fuel stations, parking) sourced live from OpenStreetMap via Overpass API',
-        'Season-based quests with geo-fenced checkpoints — app auto-checks GPS and awards XP on arrival',
+        'Season-based quests with geo-fenced checkpoints - app auto-checks GPS and awards XP on arrival',
         'Earn XP by attending group meetups within 500 m of the pin location',
         'Global and friends-only leaderboard, filterable by 7 days, 30 days, or all-time',
     ],
@@ -43,36 +43,36 @@ const features = {
 
 const mobileStack = [
     'React Native (Expo SDK 54)',
-    'React Navigation v7 — Stack + Bottom Tabs',
+    'React Navigation v7 - Stack + Bottom Tabs',
     'Leaflet.js inside a WebView (map rendering)',
-    'OSRM — route calculation & turn-by-turn',
+    'OSRM - route calculation & turn-by-turn',
     'OpenStreetMap Overpass API (XP spots)',
-    'expo-location — real-time GPS tracking',
+    'expo-location - real-time GPS tracking',
     'Axios with JWT interceptors & auto token refresh',
 ];
 
 const backendStack = [
     'Node.js + Express.js',
-    'PostgreSQL — connection pooling via pg',
-    'WebSocket (ws) — real-time DMs on same HTTP server',
+    'PostgreSQL - connection pooling via pg',
+    'WebSocket (ws) - real-time DMs on same HTTP server',
     'JWT (1-day access) + bcryptjs (12 salt rounds)',
     'Multer + Sharp + Cloudflare R2 (image storage)',
-    'node-cron — nightly scheduled cleanup jobs',
-    'express-rate-limit — brute-force & abuse protection',
+    'node-cron - nightly scheduled cleanup jobs',
+    'express-rate-limit - brute-force & abuse protection',
 ];
 
 const adminStack = [
-    'React (Vite) — standalone web app',
-    'Axios — same backend API',
+    'React (Vite) - standalone web app',
+    'Axios - same backend API',
     'JWT auth (7-day token) + separate admin endpoint',
-    'adminMiddleware — second auth layer on all admin routes',
-    'Content moderation dashboard — review reports, take down posts',
+    'adminMiddleware - second auth layer on all admin routes',
+    'Content moderation dashboard - review reports, take down posts',
 ];
 
 const authSecurity = [
-    'bcrypt password hashing — 12 salt rounds',
-    'JWT access tokens — 1-day expiry, never stored in DB',
-    'Refresh token rotation — old token deleted on every refresh',
+    'bcrypt password hashing - 12 salt rounds',
+    'JWT access tokens - 1-day expiry, never stored in DB',
+    'Refresh token rotation - old token deleted on every refresh',
     '80-char cryptographically random refresh tokens (crypto.randomBytes)',
     'Nightly cron purges all expired refresh tokens',
 ];
@@ -81,16 +81,16 @@ const apiSecurity = [
     'Auth endpoints rate-limited: 10 req / 15 min per IP',
     'Global rate limit: 1000 req / 15 min per IP',
     'authMiddleware validates JWT before any handler runs',
-    'adminMiddleware — second layer check on all admin routes',
+    'adminMiddleware - second layer check on all admin routes',
     'WebSocket auth: first frame must carry a valid JWT',
 ];
 
 const dataSecurity = [
-    'Parameterized SQL queries throughout — SQL injection impossible',
+    'Parameterized SQL queries throughout - SQL injection impossible',
     'MIME-type file whitelist: JPEG, PNG, WebP only',
     'Sharp strips EXIF metadata (incl. GPS) on every upload',
     '8 MB upload cap enforced by Multer before processing',
-    'Files in Cloudflare R2 CDN — R2 objects deleted on post/avatar delete',
+    'Files in Cloudflare R2 CDN - R2 objects deleted on post/avatar delete',
 ];
 
 const GALLERY_COUNT = 9;
@@ -145,16 +145,16 @@ export default function ProjectApexRoads() {
                 }}
             >
                 <div>
-                    <h1>Apex Roads <span>— React Native Mobile App (WIP)</span></h1>
+                    <h1>Apex Roads <span>- React Native Mobile App (WIP)</span></h1>
                     <p>
                         A mobile-first social platform for driving and motorcycle enthusiasts.
                         Route planning, live navigation, XP progression, community challenges,
-                        and group ride coordination — all in one app.
+                        and group ride coordination - all in one app.
                     </p>
                     <div className='github-private-wrap'>
                         <span className='github-private-btn'>GitHub</span>
                         <div className='github-tooltip'>
-                            This repository is private. The source code is available for review upon request — feel free to get in touch.
+                            This repository is private. The source code is available for review upon request - feel free to get in touch.
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,7 @@ export default function ProjectApexRoads() {
                 <strong>Private Repository</strong>
                 <p>
                     The source code for this project is kept private to protect its security architecture and business logic.
-                    If you're interested in reviewing the codebase — for hiring, collaboration, or other professional purposes —
+                    If you're interested in reviewing the codebase - for hiring, collaboration, or other professional purposes -
                     please reach out directly and I'll be happy to arrange access.
                 </p>
             </div>
@@ -172,10 +172,10 @@ export default function ProjectApexRoads() {
             <div className='pd-section'>
                 <h2>About the project</h2>
                 <p>
-                    Apex Roads is built for road drivers and motorcycle enthusiasts — think Strava, but for cars and bikes.
+                    Apex Roads is built for road drivers and motorcycle enthusiasts - think Strava, but for cars and bikes.
                     Users log routes, earn XP, climb leaderboards, share photos, and organize group rides.
                     The app combines an interactive map engine powered by OSRM and Leaflet, a real-time social layer over
-                    WebSockets, a gamification system with geo-fenced quests, and live GPS tracking — all on a single
+                    WebSockets, a gamification system with geo-fenced quests, and live GPS tracking - all on a single
                     PostgreSQL-backed Node.js API with image delivery via Cloudflare R2.
                 </p>
             </div>

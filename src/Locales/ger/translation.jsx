@@ -77,6 +77,31 @@ export default {
       Moderne Full-Stack-Webanwendung mit <strong>React</strong> Frontend und <strong>Express.js</strong> Backend. Das Backend verwaltet API-Zugriffe und Datenfluss sicher. Bereitgestellt auf einem VPS mit <strong>Ubuntu</strong> und <strong>Nginx</strong>, zeigt praktische Erfahrungen in Full-Stack-Entwicklung, API-Integration, serverseitigem Rendering und Produktion Deployment.
     </>
   ),
+  projectpage_main2: (
+    <>
+      This is a work-in-progress application with separate login for managers and workers, using secure authentication (JWT) and password hashing (bcrypt).
+      Managers can create tasks and manage trucks, while workers can view their assigned tasks.
+    </>
+  ),
+  projectpage_main3: (
+    <>
+      iOS/Android Mobile app for car enthusiasts. Users can discover and navigate GPS routes on an interactive map, chat in real time, follow others and share posts with analytics. The app also supports organizing car meets and includes a full authentication flow.
+    </>
+  ),
+  projectpage_main4: (
+    <>
+      A custom IoT departure board with real-time transit data from Vienna, Graz, Berlin, and Bratislava.
+      Four independent codebases: ESP32-S3 C++ firmware with FreeRTOS, a Node.js GTFS backend,
+      a React Native BLE/Wi-Fi configurator app, and a Python font pipeline - all built from scratch.
+    </>
+  ),
+
+  easteregg1_name: "Useless Darkmode",
+  easteregg1_hint: "Found on the Projects page - click on the moon icon inside the WeatherApp mockup.",
+  easteregg2_name: "Tasks?",
+  easteregg2_hint: 'Found on the Projects page - click on "Tasks" in the TruckApp nav bar.',
+  easteregg3_name: "Donauzentrum?",
+  easteregg3_hint: 'Found on the Projects page - select the "26A / 94A → Kagran U" direction in the CityBoard phone mockup.',
 
   contactpage_main1: "Ich freue mich immer, in Kontakt zu treten und mögliche Karrierechancen zu besprechen. Wenn Sie mehr über meine Erfahrungen erfahren oder eine Zusammenarbeit erkunden möchten, können Sie sich gerne melden.",
   contactpage_form_empty: "Alle Felder müssen ausgefüllt sein!",

@@ -15,39 +15,39 @@ import cb9 from '../assets/cityboard/cityboard9.jpeg';
 import cb10 from '../assets/cityboard/cityboard10.jpeg';
 
 const firmware = [
-    'ESP32-S3 with PlatformIO / Arduino framework — SPI display, BLE 5.0, 802.11 Wi-Fi, LEDC PWM backlight',
-    'FreeRTOS dual-task architecture — fetch task and render/animation task run concurrently, synchronized via recursive mutex and binary semaphore',
-    'TFT_eSPI with sprite compositing and partial-region screen updates — eliminates flicker on a 40 ms animation loop',
+    'ESP32-S3 with PlatformIO / Arduino framework - SPI display, BLE 5.0, 802.11 Wi-Fi, LEDC PWM backlight',
+    'FreeRTOS dual-task architecture - fetch task and render/animation task run concurrently, synchronized via recursive mutex and binary semaphore',
+    'TFT_eSPI with sprite compositing and partial-region screen updates - eliminates flicker on a 40 ms animation loop',
     'BLE GATT peripheral with 14 custom characteristics: Wi-Fi credentials, stop IDs, direction filter, walk time, brightness, night mode, device ID, factory reset',
     'HTTP REST server (port 80) for fast LAN-based configuration with automatic BLE fallback',
-    'NVS flash (ESP32 Preferences) — all settings survive power cycles with no external storage',
+    'NVS flash (ESP32 Preferences) - all settings survive power cycles with no external storage',
     'City-specific departure board layouts, RGB565 color palettes, and rendering code for Vienna, Graz, Berlin, and Bratislava',
     'Animated imminent-departure indicator, marquee scrolling for long destination names and service disruptions, live HH:MM:SS clock in the header',
 ];
 
 const mobile = [
-    'React Native 0.81 + Expo SDK 54 — cross-platform iOS and Android',
+    'React Native 0.81 + Expo SDK 54 - cross-platform iOS and Android',
     '4-screen setup wizard: BLE scan → Wi-Fi configuration → Stop & direction selection → Live departure monitor',
     'BLE device scanning and GATT characteristic reads/writes (react-native-ble-plx)',
     'Dual-transport config sync: HTTP over Wi-Fi attempted first (3 s timeout), BLE GATT as automatic fallback, connection mode auto-detected with background polling',
     '4-city stop search: WienerLinien CSV index with platform merging, ÖBB transport.rest, BVG transport.rest, self-built DPB REST API',
-    'Fully custom PanResponder slider — drag-anchor fix eliminates position jump on grab, blocks native scroll in nested ScrollView',
+    'Fully custom PanResponder slider - drag-anchor fix eliminates position jump on grab, blocks native scroll in nested ScrollView',
     'Multi-device dashboard with full config persisted in AsyncStorage, duplicate-device detection by BLE ID and IP address',
     'Live monitor screen: 15 s auto-refresh, color-coded countdown (red / orange / yellow), inline brightness control while connected',
 ];
 
 const backend = [
     'Node.js + Express 5 REST API serving live departure data for Bratislava DPB from the official GTFS static feed',
-    'Full GTFS CSV parser (stops, routes, trips, stop_times, calendar, calendar_dates) into in-memory Maps — O(1) lookup, no database',
+    'Full GTFS CSV parser (stops, routes, trips, stop_times, calendar, calendar_dates) into in-memory Maps - O(1) lookup, no database',
     'CET/CEST timezone-aware schedule computation with correct after-midnight trip wrapping',
     'Geospatial stop search using the haversine formula',
-    'Response envelope mirrors WienerLinien Ogd API format — firmware needs zero city-specific parsing logic for Bratislava',
+    'Response envelope mirrors WienerLinien Ogd API format - firmware needs zero city-specific parsing logic for Bratislava',
     'Endpoints: stop search by name and by geo-radius, departure monitor with grouped directions, line list, full trip stop sequence',
 ];
 
 const tooling = [
     'Python script converting any .ttf font into Adafruit GFX PROGMEM bitmap format for TFT_eSPI on ESP32',
-    'Uses libfreetype6 via Python ctypes — no pip packages or C build toolchain required',
+    'Uses libfreetype6 via Python ctypes - no pip packages or C build toolchain required',
     'Generates glyphs for Unicode 0x0020–0x017E (Latin + Latin Extended-A): Slovak Š ľ č ž ť ď and other Central European characters',
     'Produces all 5 custom fonts compiled into firmware flash: Poppins Bold (20pt, 12pt), Doto Regular / Bold / Black (12pt)',
 ];
@@ -55,7 +55,7 @@ const tooling = [
 const engineeringLeft = [
     {
         title: 'No public API for Bratislava',
-        body: 'Built a complete GTFS static-feed parser from scratch — schedule computation, after-midnight trip wrapping, and CET/CEST timezone handling.',
+        body: 'Built a complete GTFS static-feed parser from scratch - schedule computation, after-midnight trip wrapping, and CET/CEST timezone handling.',
     },
     {
         title: 'Second-precision countdowns from minute-resolution data',
@@ -78,7 +78,7 @@ const engineeringMid = [
     },
     {
         title: 'Duplicate departures from multi-platform GTFS stops',
-        body: 'Post-sort O(n²) dedup pass comparing (line, towards, departEpoch) before filling display slots — catches platform-level duplicates that GTFS does not deduplicate.',
+        body: 'Post-sort O(n²) dedup pass comparing (line, towards, departEpoch) before filling display slots - catches platform-level duplicates that GTFS does not deduplicate.',
     },
 ];
 
@@ -142,11 +142,11 @@ export default function ProjectCityBoard() {
                 style={{ background: 'linear-gradient(135deg, #3d0410 0%, #0c080c 100%)' }}
             >
                 <div>
-                    <h1>CityBoard <span>— IoT Transit Display (WIP)</span></h1>
+                    <h1>CityBoard <span>- IoT Transit Display (WIP)</span></h1>
                     <p>
                         A custom-built smart departure board showing real-time transit from four cities.
-                        The project spans four independent codebases — embedded C++ firmware, a Node.js transit API,
-                        a React Native mobile configurator, and a Python font toolchain — built end-to-end by one developer.
+                        The project spans four independent codebases - embedded C++ firmware, a Node.js transit API,
+                        a React Native mobile configurator, and a Python font toolchain - built end-to-end by one developer.
                     </p>
                     <a
                         href='https://github.com/lukaslgit/CityBoard/'
@@ -162,7 +162,7 @@ export default function ProjectCityBoard() {
             <div className='pd-section pd-private-notice'>
                 <strong>Inspiration</strong>
                 <p>
-                    Inspired by <a href='https://github.com/coppermilk/wiener_linien_esp32_monitor' target='_blank' rel='noopener noreferrer' style={{ color: 'rgb(98,161,255)' }}>coppermilk/wiener_linien_esp32_monitor</a> —
+                    Inspired by <a href='https://github.com/coppermilk/wiener_linien_esp32_monitor' target='_blank' rel='noopener noreferrer' style={{ color: 'rgb(98,161,255)' }}>coppermilk/wiener_linien_esp32_monitor</a> -
                     an open-source Vienna-only departure monitor on the same T-Display S3 hardware. CityBoard took that concept and expanded it into a
                     multi-city system with a dedicated mobile configurator, a custom transit backend, and a full FreeRTOS concurrency model.
                 </p>
@@ -178,14 +178,14 @@ export default function ProjectCityBoard() {
                 </p>
                 <p style={{ marginTop: '1.2rem' }}>
                     The device is configured entirely over the air. A companion React Native app walks through
-                    a four-step wizard — BLE pairing, Wi-Fi setup, stop selection with direction filtering, and display preferences.
+                    a four-step wizard - BLE pairing, Wi-Fi setup, stop selection with direction filtering, and display preferences.
                     When the phone is on the same network, the app uses HTTP for speed, it falls back to BLE GATT automatically
                     when Wi-Fi is unavailable. All settings survive power cycles via NVS flash.
                 </p>
                 <p style={{ marginTop: '1.2rem' }}>
                     Because Bratislava's DPB transit agency publishes no public API, a dedicated Node.js service was built
                     to parse their official GTFS static feed and expose a REST API whose response format exactly mirrors
-                    the WienerLinien Ogd API — so the firmware requires zero city-specific parsing logic for that city.
+                    the WienerLinien Ogd API - so the firmware requires zero city-specific parsing logic for that city.
                 </p>
             </div>
 

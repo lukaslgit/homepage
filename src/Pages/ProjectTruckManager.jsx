@@ -35,7 +35,7 @@ export default function ProjectTruckManager() {
             >
                 <div>
                     <h1>
-                        TruckManager <span>— PERN Fullstack App (WIP)</span>
+                        TruckManager <span>- PERN Fullstack App (WIP)</span>
                     </h1>
                     <p>
                         A work-in-progress fleet management platform with separate
@@ -58,7 +58,7 @@ export default function ProjectTruckManager() {
                     TruckManager is a fullstack application designed to streamline
                     fleet and task management for small logistics teams. Authentication
                     is handled with JWT tokens and passwords are secured with bcrypt.
-                    The app separates concerns cleanly — managers get full control over
+                    The app separates concerns cleanly - managers get full control over
                     the fleet and task board, while workers see only what's relevant to them.
                 </p>
             </div>
@@ -103,8 +103,8 @@ export default function ProjectTruckManager() {
                     <div>
                         <h3>Security</h3>
                         <ul className='pd-list'>
-                            <li>JWT — stateless authentication</li>
-                            <li>bcrypt — password hashing</li>
+                            <li>JWT - stateless authentication</li>
+                            <li>bcrypt - password hashing</li>
                             <li>Role-based access control</li>
                         </ul>
                     </div>

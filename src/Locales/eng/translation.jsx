@@ -79,9 +79,35 @@ export default {
       The backend manages secure API integration and data flow. Deployed on a VPS with <strong>Ubuntu</strong> and <strong>Nginx</strong>, demonstrating hands-on experience with full-stack development, API integration, server-side rendering, and production deployment.
     </>
   ),
+  projectpage_main2: (
+    <>
+      This is a work-in-progress application with separate login for managers and workers, using secure authentication (JWT) and password hashing (bcrypt).
+      Managers can create tasks and manage trucks, while workers can view their assigned tasks.
+    </>
+  ),
+  projectpage_main3: (
+    <>
+      iOS/Android Mobile app for car enthusiasts. Users can discover and navigate GPS routes on an interactive map, chat in real time, follow others and share posts with analytics. The app also supports organizing car meets and includes a full authentication flow.
+    </>
+  ),
+  projectpage_main4: (
+    <>
+      A custom IoT departure board with real-time transit data from Vienna, Graz, Berlin, and Bratislava.
+      Four independent codebases: ESP32-S3 C++ firmware with FreeRTOS, a Node.js GTFS backend,
+      a React Native BLE/Wi-Fi configurator app, and a Python font pipeline - all built from scratch.
+    </>
+  ),
+
+  easteregg1_name: "Useless Darkmode",
+  easteregg1_hint: "Found on the Projects page - click on the moon icon inside the WeatherApp mockup.",
+  easteregg2_name: "Tasks?",
+  easteregg2_hint: 'Found on the Projects page - click on "Tasks" in the TruckApp nav bar.',
+  easteregg3_name: "Donauzentrum?",
+  easteregg3_hint: 'Found on the Projects page - select the "26A / 94A → Kagran U" direction in the CityBoard phone mockup.',
 
   contactpage_main1: "I’m always pleased to connect and discuss potential career opportunities. Feel free to reach out to learn more about my experience or explore collaboration.",
   contactpage_form_empty: "All fields must be filled!",
   contactpage_form_wrongmail: "Please enter a valid email!",
   contactpage_form_succes: "Email sent, thank you!"
+
 };

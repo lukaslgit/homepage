@@ -1,27 +1,35 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import translationConfig from "../Locales/translation-config";
+import { LanguageContext } from "../utils/LanguageContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock, faCheck } from '@fortawesome/free-solid-svg-icons';
 import '../Styles/eastereggs.css';
 
-const eggs = [
+
+export default function Eastereggs() {
+
+    const { lang, setLang } = useContext(LanguageContext);
+
+    const t = translationConfig[lang];
+
+    const eggs = [
     {
         key: 'weatherToggled',
-        name: 'Useless Darkmode',
-        hint: 'Found on the Projects page — click on the moon icon inside the WeatherApp mockup.',
+        name: `${t.easteregg1_name}`,
+        hint: `${t.easteregg1_hint}`
     },
     {
         key: 'tasksClicked',
-        name: 'Tasks?',
-        hint: 'Found on the Projects page — click on "Tasks" in the TruckApp nav bar.',
+        name: `${t.easteregg2_name}`,
+        hint: `${t.easteregg3_hint}`
     },
     {
         key: 'kagranClicked',
-        name: 'Donauzentrum?',
-        hint: 'Found on the Projects page — select the "26A / 94A → Kagran U" direction in the CityBoard phone mockup.',
+        name: `${t.easteregg3_name}`,
+        hint: `${t.easteregg3_hint}`
     },
 ];
 
-export default function Eastereggs() {
     const [unlocked, setUnlocked] = useState({});
 
     useEffect(() => {

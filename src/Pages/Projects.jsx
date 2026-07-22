@@ -212,9 +212,7 @@ export default function Projects(){
                                 <h2>Node.js + React Expo</h2>
                                 <p>(05/2026)</p>
                                 <p>
-                                    A custom IoT departure board with real-time transit data from Vienna, Graz, Berlin, and Bratislava.
-                                    Four independent codebases: ESP32-S3 C++ firmware with FreeRTOS, a Node.js GTFS backend,
-                                    a React Native BLE/Wi-Fi configurator app, and a Python font pipeline — all built from scratch.
+                                    {t.projectpage_main4}
                                 </p>
                                 <div className='project-links'>
                                     <Link to={'https://github.com/lukaslgit/CityBoard/'} target="_blank" rel="noopener noreferrer">GitHub</Link>
@@ -320,13 +318,13 @@ export default function Projects(){
                                 <h2>PERN + React Expo</h2>
                                 <p>(02/2026)</p>
                                 <p>
-                                    iOS/Android Mobile app for car enthusiasts. Users can discover and navigate GPS routes on an interactive map, chat in real time, follow others and share posts with analytics. The app also supports organizing car meets and includes a full authentication flow.
+                                    {t.projectpage_main3}
                                 </p>
                                 <div className='project-links'>
                                     <div className='github-private-wrap'>
                                         <span className='github-private-btn'>GitHub</span>
                                         <div className='github-tooltip'>
-                                            This repository is private. The source code is available for review upon request — feel free to get in touch.
+                                            This repository is private. The source code is available for review upon request - feel free to get in touch.
                                         </div>
                                     </div>
                                     <Link to={'/projects/details/apexroads'}>Details</Link>
@@ -387,8 +385,7 @@ export default function Projects(){
                                 <h2>PERN Fullstack</h2>
                                 <p>(11/2025)</p>
                                 <p>
-                                    This is a work-in-progress application with separate login for managers and workers, using secure authentication (JWT) and password hashing (bcrypt).
-                                    Managers can create tasks and manage trucks, while workers can view their assigned tasks.
+                                    {t.projectpage_main2}
                                 </p>
                                 <div className="project-links">
                                     <a className="live-btn" href={'https://lutonsky.eu/projects/truck_managment_app/'}>LIVE</a>

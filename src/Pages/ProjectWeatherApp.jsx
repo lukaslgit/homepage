@@ -7,7 +7,7 @@ export default function ProjectWeatherApp() {
             <div className='pd-hero pd-hero-weather'>
                 <div>
                     <h1>
-                        WeatherApp <span>— React + Express</span>
+                        WeatherApp <span>- React + Express</span>
                     </h1>
                     <p>
                         A weather application that fetches real-time data from an
@@ -29,8 +29,8 @@ export default function ProjectWeatherApp() {
                 <h2>About the project</h2>
                 <p>
                     WeatherApp lets users search for any city and instantly view
-                    current conditions — temperature, humidity, wind speed and
-                    visibility — alongside a 24-hour hourly forecast. The Express
+                    current conditions - temperature, humidity, wind speed and
+                    visibility - alongside a 24-hour hourly forecast. The Express
                     server acts as a proxy, keeping the API key off the client and
                     enabling server-side request handling.
                 </p>
@@ -40,11 +40,11 @@ export default function ProjectWeatherApp() {
                 <h2>Features</h2>
                 <ul className='pd-list'>
                     <li>City search with real-time weather data</li>
-                    <li>Current conditions — temperature, humidity, wind, visibility</li>
+                    <li>Current conditions - temperature, humidity, wind, visibility</li>
                     <li>24-hour hourly forecast view</li>
                     <li>Dark mode toggle</li>
                     <li>Responsive design</li>
-                    <li>Express proxy — API key never exposed to the client</li>
+                    <li>Express proxy - API key never exposed to the client</li>
                 </ul>
             </div>
 
@@ -66,7 +66,7 @@ export default function ProjectWeatherApp() {
                             <li>Node.js</li>
                             <li>Express.js</li>
                             <li>OpenWeather API</li>
-                            <li>dotenv — secret management</li>
+                            <li>dotenv - secret management</li>
                         </ul>
                     </div>
                 </div>
