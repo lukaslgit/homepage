@@ -81,7 +81,7 @@ export default {
   ),
   projectpage_main2: (
     <>
-      This is a work-in-progress application with separate login for managers and workers, using secure authentication (JWT) and password hashing (bcrypt).
+      Web application with separate login for managers and workers, using secure authentication (JWT) and password hashing (bcrypt).
       Managers can create tasks and manage trucks, while workers can view their assigned tasks.
     </>
   ),
@@ -94,7 +94,7 @@ export default {
     <>
       A custom IoT departure board with real-time transit data from Vienna, Graz, Berlin, and Bratislava.
       Four independent codebases: ESP32-S3 C++ firmware with FreeRTOS, a Node.js GTFS backend,
-      a React Native BLE/Wi-Fi configurator app, and a Python font pipeline - all built from scratch.
+      a React Native BLE/Wi-Fi configurator app, and a Python font pipeline.
     </>
   ),
 

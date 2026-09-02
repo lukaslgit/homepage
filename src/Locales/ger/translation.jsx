@@ -79,20 +79,22 @@ export default {
   ),
   projectpage_main2: (
     <>
-      This is a work-in-progress application with separate login for managers and workers, using secure authentication (JWT) and password hashing (bcrypt).
-      Managers can create tasks and manage trucks, while workers can view their assigned tasks.
+      Webanwendung mit separater Anmeldung für Manager und Mitarbeiter, die eine sichere Authentifizierung (JWT) und Passwort-Hashing (bcrypt) verwendet.
+      Manager können Aufgaben erstellen und Lkw verwalten, während Mitarbeiter ihre zugewiesenen Aufgaben einsehen können.
     </>
+
   ),
   projectpage_main3: (
     <>
-      iOS/Android Mobile app for car enthusiasts. Users can discover and navigate GPS routes on an interactive map, chat in real time, follow others and share posts with analytics. The app also supports organizing car meets and includes a full authentication flow.
+      Mobile iOS/Android-App für Autoenthusiasten. Nutzer können GPS-Routen auf einer interaktiven Karte entdecken und navigieren, in Echtzeit chatten, anderen Nutzern folgen und Beiträge mit Analytics teilen. Die App unterstützt außerdem die Organisation von Autotreffen und umfasst einen vollständigen Authentifizierungsprozess.
     </>
+
   ),
   projectpage_main4: (
     <>
-      A custom IoT departure board with real-time transit data from Vienna, Graz, Berlin, and Bratislava.
-      Four independent codebases: ESP32-S3 C++ firmware with FreeRTOS, a Node.js GTFS backend,
-      a React Native BLE/Wi-Fi configurator app, and a Python font pipeline - all built from scratch.
+      Eine maßgeschneiderte IoT-Abfahrtstafel mit Echtzeitdaten des öffentlichen Verkehrs aus Wien, Graz, Berlin und Bratislava.
+      Vier unabhängige Codebasen: ESP32-S3-Firmware in C++ mit FreeRTOS, ein Node.js-GTFS-Backend,
+      eine React-Native-Konfigurations-App mit BLE/Wi-Fi-Unterstützung und eine Python-Pipeline für die Schriftartenverarbeitung
     </>
   ),
 

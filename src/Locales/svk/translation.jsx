@@ -79,20 +79,21 @@ export default {
   ),
   projectpage_main2: (
     <>
-      This is a work-in-progress application with separate login for managers and workers, using secure authentication (JWT) and password hashing (bcrypt).
-      Managers can create tasks and manage trucks, while workers can view their assigned tasks.
+      Webová aplikácia s oddeleným prihlasovaním pre manažérov a pracovníkov, využívajúca bezpečnú autentifikáciu (JWT) a hashovanie hesiel (bcrypt).
+      Manažéri môžu vytvárať úlohy a spravovať nákladné vozidlá, zatiaľ čo pracovníci môžu zobrazovať im pridelené úlohy.
     </>
+
   ),
   projectpage_main3: (
     <>
-      iOS/Android Mobile app for car enthusiasts. Users can discover and navigate GPS routes on an interactive map, chat in real time, follow others and share posts with analytics. The app also supports organizing car meets and includes a full authentication flow.
+      Mobilná aplikácia pre iOS/Android pre automobilových nadšencov. Používatelia môžu objavovať a navigovať GPS trasy na interaktívnej mape, chatovať v reálnom čase, sledovať ostatných a zdieľať príspevky s analytikou. Aplikácia tiež podporuje organizovanie automobilových stretnutí a obsahuje kompletný autentifikačný proces.
     </>
   ),
   projectpage_main4: (
     <>
-      A custom IoT departure board with real-time transit data from Vienna, Graz, Berlin, and Bratislava.
-      Four independent codebases: ESP32-S3 C++ firmware with FreeRTOS, a Node.js GTFS backend,
-      a React Native BLE/Wi-Fi configurator app, and a Python font pipeline - all built from scratch.
+      Vlastná IoT odchodová tabuľa s údajmi o verejnej doprave v reálnom čase z Viedne, Grazu, Berlína a Bratislavy.
+      Štyri nezávislé kódové základne: firmvér pre ESP32-S3 v C++ s FreeRTOS, GTFS backend v Node.js,
+      konfiguračná aplikácia v React Native s podporou BLE/Wi-Fi a Python pipeline na spracovanie fontov.
     </>
   ),
 
