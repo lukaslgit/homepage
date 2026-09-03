@@ -8,6 +8,9 @@ export default {
   email: "E-Mail",
   msg: "Nachricht",
   send: "SENDEN",
+  gallery: "Galerie",
+  about_the_project: "Über das Projekt",
+  architecture: "Architektur",
 
   homepage_main1: (
     <>
@@ -108,5 +111,104 @@ export default {
   contactpage_main1: "Ich freue mich immer, in Kontakt zu treten und mögliche Karrierechancen zu besprechen. Wenn Sie mehr über meine Erfahrungen erfahren oder eine Zusammenarbeit erkunden möchten, können Sie sich gerne melden.",
   contactpage_form_empty: "Alle Felder müssen ausgefüllt sein!",
   contactpage_form_wrongmail: "Bitte eine gültige E-Mail-Adresse eingeben!",
-  contactpage_form_succes: "E-Mail gesendet, danke!"
+  contactpage_form_succes: "E-Mail gesendet, danke!",
+// CityBoard
+
+cb_p_firmware1: "ESP32-S3 mit PlatformIO / Arduino Framework - SPI-Display, BLE 5.0, 802.11 Wi-Fi, LEDC PWM-Hintergrundbeleuchtung",
+cb_p_firmware2: "FreeRTOS-Zwei-Task-Architektur - Fetch-Task und Render-/Animation-Task laufen parallel und werden über einen rekursiven Mutex und ein binäres Semaphor synchronisiert",
+cb_p_firmware3: "TFT_eSPI mit Sprite-Compositing und partiellen Bildschirmaktualisierungen - eliminiert Flackern bei einer 40-ms-Animationsschleife",
+cb_p_firmware4: "BLE-GATT-Peripheriegerät mit 14 benutzerdefinierten Characteristics: WLAN-Zugangsdaten, Haltestellen-IDs, Richtungsfilter, Gehzeit, Helligkeit, Nachtmodus, Geräte-ID, Zurücksetzen auf Werkseinstellungen",
+cb_p_firmware5: "HTTP-REST-Server (Port 80) für schnelle LAN-basierte Konfiguration mit automatischem BLE-Fallback",
+cb_p_firmware6: "NVS-Flash (ESP32 Preferences) - alle Einstellungen bleiben über Neustarts hinweg erhalten, ohne externen Speicher",
+cb_p_firmware7: "Stadtspezifische Abfahrtsanzeige-Layouts, RGB565-Farbpaletten und Rendering-Code für Wien, Graz, Berlin und Bratislava",
+cb_p_firmware8: "Animierter Indikator für unmittelbar bevorstehende Abfahrten, Lauftext für lange Zielnamen und Verkehrsstörungen, Live-HH:MM:SS-Uhr in der Kopfzeile",
+
+cb_p_app1: "React Native 0.81 + Expo SDK 54 - plattformübergreifend für iOS und Android",
+cb_p_app2: "4-Bildschirm-Einrichtungsassistent: BLE-Scan → WLAN-Konfiguration → Auswahl von Haltestelle und Richtung → Live-Abfahrtsmonitor",
+cb_p_app3: "BLE-Gerätesuche und Lesen/Schreiben von GATT-Characteristics (react-native-ble-plx)",
+cb_p_app4: "Dual-Transport-Konfigurationssync: Zuerst wird HTTP über WLAN versucht (3-s-Timeout), anschließend automatischer Fallback auf BLE GATT, der Verbindungsmodus wird per Hintergrund-Polling automatisch erkannt",
+cb_p_app5: "Haltestellensuche für 4 Städte: WienerLinien-CSV-Index mit Zusammenführung von Bahnsteigen, ÖBB transport.rest, BVG transport.rest, selbst entwickelte DPB REST API",
+cb_p_app6: "Vollständig eigener PanResponder-Slider - die Drag-Anchor-Korrektur verhindert den Positionssprung beim Greifen, onShouldBlockNativeResponder blockiert das native Scrollen in einem verschachtelten ScrollView",
+cb_p_app7: "Multi-Geräte-Dashboard mit vollständig in AsyncStorage gespeicherter Konfiguration, Erkennung von Duplikatgeräten anhand von BLE-ID und IP-Adresse",
+cb_p_app8: "Live-Monitor-Bildschirm: automatische Aktualisierung alle 15 s, farbcodierter Countdown (rot / orange / gelb), direkte Helligkeitssteuerung während der Verbindung",
+
+cb_p_backend1: "Node.js + Express 5 REST API für Live-Abfahrtsdaten der Bratislava DPB aus dem offiziellen statischen GTFS-Feed",
+cb_p_backend2: "Vollständiger GTFS-CSV-Parser (stops, routes, trips, stop_times, calendar, calendar_dates) in In-Memory-Maps - O(1)-Lookup, keine Datenbank",
+cb_p_backend3: "Zeitzonenbewusste Fahrplanberechnung für CET/CEST mit korrekter Verarbeitung von Fahrten über Mitternacht hinweg",
+cb_p_backend4: "Georäumliche Haltestellensuche mit der Haversine-Formel",
+cb_p_backend5: "Die Response-Envelope entspricht dem Format der WienerLinien-Ogd-API - die Firmware benötigt keine stadtspezifische Parsing-Logik für Bratislava",
+cb_p_backend6: "Endpunkte: Haltestellensuche nach Name und geografischem Radius, Abfahrtsmonitor mit gruppierten Richtungen, Linienliste, vollständige Haltestellenfolge einer Fahrt",
+
+cb_p_tooling1: "Python-Skript zur Konvertierung beliebiger .ttf-Schriften in das Adafruit-GFX-PROGMEM-Bitmap-Format für TFT_eSPI auf dem ESP32",
+cb_p_tooling2: "Verwendet libfreetype6 über Python ctypes - keine pip-Pakete oder C-Build-Toolchain erforderlich",
+cb_p_tooling3: "Generiert Glyphen für Unicode 0x0020–0x017E (Latin + Latin Extended-A): slowakische Š ľ č ž ť ď und weitere mitteleuropäische Zeichen",
+cb_p_tooling4: "Alle 5 benutzerdefinierten Schriftarten werden direkt in den Firmware-Flash kompiliert: Poppins Bold (20pt, 12pt), Doto Regular / Bold / Black (12pt)",
+
+cb_engineeringLeft_t1: "Keine öffentliche API für Bratislava",
+cb_engineeringLeft_b1: "Einen vollständigen Parser für den statischen GTFS-Feed von Grund auf entwickelt - Fahrplanberechnung, Verarbeitung von Fahrten über Mitternacht und CET/CEST-Zeitzonenunterstützung.",
+
+cb_engineeringLeft_t2: "Countdowns mit Sekundengenauigkeit aus minutengenauen Daten",
+cb_engineeringLeft_b2: "ISO-8601-Abfahrtszeitstempel werden mittels mktime() in Unix-Epoch-Zeit umgewandelt, die Firmware berechnet daraus live die exakt verbleibenden Sekunden.",
+
+cb_engineeringLeft_t3: "Gleichzeitiger Display-Zugriff von zwei FreeRTOS-Tasks",
+cb_engineeringLeft_b3: "Ein rekursiver tftMutex schützt alle TFT-Aufrufe, ein separater depsMutex schützt die Abfahrtsdaten und der Animation-Task verwendet trylock, um nicht blockierend zu bleiben.",
+
+cb_engineeringMid_t1: "Eigener Slider innerhalb eines ScrollView",
+cb_engineeringMid_b1: "Die PanResponder-Drag-Anchor (startXRef) verhindert den Positionssprung, der durch die Änderung des Koordinatenursprungs von locationX beim Greifen entsteht; onShouldBlockNativeResponder blockiert während des Ziehens die native Scroll-Ebene.",
+
+cb_engineeringMid_t2: "Koexistenz von BLE- und HTTP-Konfiguration",
+cb_engineeringMid_b2: "HTTP über WLAN wird zunächst mittels AbortController mit einem 3-s-Timeout versucht, BLE GATT dient als Fallback. Das Gerät überträgt seine IP-Adresse in einer BLE-Characteristic, sodass die App automatisch wieder eine Verbindung herstellen kann.",
+
+cb_engineeringMid_t3: "Doppelte Abfahrten von GTFS-Haltestellen mit mehreren Bahnsteigen",
+cb_engineeringMid_b3: "Nach dem Sortieren wird ein O(n²)-Deduplication-Pass durchgeführt, der (line, towards, departEpoch) vergleicht, bevor die Anzeigeplätze gefüllt werden - dadurch werden Duplikate auf Bahnsteigebene erkannt, die GTFS nicht selbst dedupliziert.",
+
+cb_engineeringRight_t1: "Vollbildflackern bei jedem Uhrentick",
+cb_engineeringRight_b1: "Ein partielles fillRect leert nur die Zeitspalte in der Kopfzeile; ein vollständiger Redraw erfolgt nur beim Moduswechsel. Ein clockOnly-Parameter steuert den Aktualisierungsumfang innerhalb der 40-ms-Render-Schleife.",
+
+cb_engineeringRight_t2: "Slowakische und tschechische Zeichen in den Firmware-Schriften",
+cb_engineeringRight_b2: "Die eigene Python-Font-Pipeline erweitert die Glyphenabdeckung auf Latin Extended-A (U+00A0–U+017E); außerdem wurde der UTF-8-Multibyte-Decoder-Pfad von TFT_eSPI in der Firmware für Glyphen oberhalb von U+007F korrigiert.",
+
+cb_inspiration: "Inspiration",
+cb_inspiration_desc: (
+
+  <p>
+      Inspiriert von <a href='https://github.com/coppermilk/wiener_linien_esp32_monitor' target='_blank' rel='noopener noreferrer' style={{ color: 'rgb(98,161,255)' }}>coppermilk/wiener_linien_esp32_monitor</a> -
+      einem Open-Source-Abfahrtsmonitor ausschließlich für Wien auf derselben T-Display-S3-Hardware. CityBoard hat dieses Konzept zu einem
+      Multistädte-System mit einem dedizierten mobilen Konfigurator, einem eigenen Transit-Backend und einem vollständigen FreeRTOS-Konkurrenzmodell erweitert.
+  </p>),
+
+cb_project_about: ( <span>
+
+  <p>
+      CityBoard ist ein physisches IoT-Gerät auf Basis des LilyGo T-Display S3 (ESP32-S3 mit integriertem 320×170-Pixel-TFT-Display).
+      Es verbindet sich mit WLAN, ruft Live-Abfahrtsdaten von offiziellen Verkehrs-APIs ab und rendert stadtspezifische Abfahrtsanzeige-Layouts
+      mit flüssigem Lauftext, Echtzeit-Countdowns mit Sekundengenauigkeit und einer Live-Uhr.
+      Unterstützte Städte sind Wien, Graz, Berlin und Bratislava.
+  </p>
+  <p style={{ marginTop: '1.2rem' }}>
+      Das Gerät wird vollständig drahtlos konfiguriert. Eine begleitende React-Native-App führt durch einen
+      vierstufigen Assistenten - BLE-Kopplung, WLAN-Einrichtung, Haltestellenauswahl mit Richtungsfilter und Display-Einstellungen.
+      Wenn sich das Smartphone im selben Netzwerk befindet, verwendet die App HTTP für eine höhere Geschwindigkeit; bei nicht verfügbarem WLAN
+      wechselt sie automatisch auf BLE GATT. Alle Einstellungen bleiben dank NVS-Flash auch nach einem Neustart erhalten.
+  </p>
+  <p style={{ marginTop: '1.2rem' }}>
+      Da die Bratislavaer Verkehrsgesellschaft DPB keine öffentliche API bereitstellt, wurde ein eigener Node.js-Dienst entwickelt,
+      der deren offiziellen statischen GTFS-Feed parst und eine REST API bereitstellt, deren Antwortformat exakt dem
+      WienerLinien Ogd API entspricht - dadurch benötigt die Firmware für diese Stadt keinerlei stadtspezifische Parsing-Logik.
+  </p>
+  </span>
+  ),
+
+cb_project_desc: (
+
+  <p>
+      Eine individuell entwickelte intelligente Abfahrtstafel mit Echtzeit-ÖPNV-Daten aus vier Städten.
+      Das Projekt umfasst vier unabhängige Codebasen - Embedded-C++-Firmware, eine Node.js-Transit-API,
+      einen React-Native-Mobilkonfigurator und eine Python-Font-Toolchain - vollständig von einem Entwickler umgesetzt.
+  </p>
+  ),
+
+cb_engineering_challenges: "Technische Herausforderungen",
+
 };
+
