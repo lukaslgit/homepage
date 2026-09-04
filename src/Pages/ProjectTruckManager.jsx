@@ -1,24 +1,30 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import truckbg from '../assets/truckbg.jpg';
 import '../Styles/project-detail.css';
+import translationConfig from "../Locales/translation-config";
+import { LanguageContext } from "../utils/LanguageContext";
 
 export default function ProjectTruckManager() {
+    
+    const { lang, setLang } = useContext(LanguageContext);
+    const t = translationConfig[lang];
+
     const [role, setRole] = useState('manager');
 
     const managerFeatures = [
-        'Create and assign tasks to workers',
-        'Add, edit and remove trucks from the fleet',
-        'Manage worker accounts',
-        'Overview of all active and completed tasks',
-        'Track truck availability and status',
+        t.truckapp_managerFeatures1,
+        t.truckapp_managerFeatures2,
+        t.truckapp_managerFeatures3,
+        t.truckapp_managerFeatures4,
+        t.truckapp_managerFeatures5,
     ];
 
     const workerFeatures = [
-        'View assigned tasks with details',
-        'Update task status (in progress / done)',
-        'Access truck information for assigned tasks',
-        'Simple and clean task dashboard',
+        t.truckapp_workerFeatures1,
+        t.truckapp_workerFeatures2,
+        t.truckapp_workerFeatures3,
+        t.truckapp_workerFeatures4,
     ];
 
     const techStack = ['PostgreSQL', 'Express.js', 'React', 'Node.js'];
@@ -38,8 +44,7 @@ export default function ProjectTruckManager() {
                         TruckManager <span>- PERN Fullstack App (WIP)</span>
                     </h1>
                     <p>
-                        A work-in-progress fleet management platform with separate
-                        dashboards for managers and workers, built on the PERN stack.
+                        {t.truckapp_desc}
                     </p>
                     <a
                         href='https://lutonsky.eu/projects/truck_managment_app/'
@@ -47,24 +52,18 @@ export default function ProjectTruckManager() {
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        View Live
+                        {t.viewLive}
                     </a>
                 </div>
             </div>
 
             <div className='pd-section'>
-                <h2>About the project</h2>
-                <p>
-                    TruckManager is a fullstack application designed to streamline
-                    fleet and task management for small logistics teams. Authentication
-                    is handled with JWT tokens and passwords are secured with bcrypt.
-                    The app separates concerns cleanly - managers get full control over
-                    the fleet and task board, while workers see only what's relevant to them.
-                </p>
+                <h2>{t.about_the_project}</h2>
+                {t.truckapp_about_desc}
             </div>
 
             <div className='pd-section pd-dark'>
-                <h2>Features</h2>
+                <h2>{t.features}</h2>
                 <div className='pd-tabs'>
                     <button
                         className={role === 'manager' ? 'active' : ''}

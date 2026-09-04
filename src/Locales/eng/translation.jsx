@@ -12,6 +12,10 @@ export default {
   gallery: "Gallery",
   about_the_project: "About the project",
   architecture: "Architecture",
+  features: "Features",
+  security: "Security",
+  private_repository: "Private Repository",
+  viewLive: "View Live",
 
   homepage_main1: (
     <>
@@ -209,4 +213,114 @@ export default {
 
   cb_engineering_challenges: "Engineering challenges",
 
+// Apex
+
+  apex_features_routes1: "Plot A-to-B routes on an interactive map using OSRM routing engine",
+  apex_features_routes2: "Preview routes as a polyline before driving - navigate turn-by-turn inside the app",
+  apex_features_routes3: "Save routes with a title, description, and photos after a drive",
+  apex_features_routes4: "Make routes public to share with the community or keep them private",
+
+  apex_features_social1: "Instagram-style image feed - post photos with captions, like, comment, and share via DMs",
+  apex_features_social2: "Full real-time DM system with typing indicators, read receipts, and online presence",
+  apex_features_social3: "Follow / unfollow users, view follower and following lists, block accounts",
+  apex_features_social4: "Report inappropriate content - reviewed in the admin web panel",
+
+  apex_features_xp1: "Claim geo-located XP spots (fuel stations, parking) sourced live from OpenStreetMap via Overpass API",
+  apex_features_xp2: "Season-based quests with geo-fenced checkpoints - app auto-checks GPS and awards XP on arrival",
+  apex_features_xp3: "Earn XP by attending group meetups within 500 m of the pin location",
+  apex_features_xp4: "Global and friends-only leaderboard, filterable by 7 days, 30 days, or all-time",
+
+  apex_features_meets1: "Drop a pin on the map to create a scheduled group meetup with a date and description",
+  apex_features_meets2: "Other users browse and join upcoming meets from the community tab",
+  apex_features_meets3: "Attendees within 500 m of the location automatically claim +100 XP when the meet starts",
+  apex_features_meets4: "Expired meets and past events are auto-cleaned by a nightly cron job",
+
+  apex_mobileStack1: "React Native (Expo SDK 54)",
+  apex_mobileStack2: "React Navigation v7 - Stack + Bottom Tabs",
+  apex_mobileStack3: "Leaflet.js inside a WebView (map rendering)",
+  apex_mobileStack4: "OSRM - route calculation & turn-by-turn",
+  apex_mobileStack5: "OpenStreetMap Overpass API (XP spots)",
+  apex_mobileStack6: "expo-location - real-time GPS tracking",
+  apex_mobileStack7: "Axios with JWT interceptors & auto token refresh",
+
+  apex_backendStack1: "Node.js + Express.js",
+  apex_backendStack2: "PostgreSQL - connection pooling via pg",
+  apex_backendStack3: "WebSocket (ws) - real-time DMs on same HTTP server",
+  apex_backendStack4: "JWT (1-day access) + bcryptjs (12 salt rounds)",
+  apex_backendStack5: "Multer + Sharp + Cloudflare R2 (image storage)",
+  apex_backendStack6: "node-cron - nightly scheduled cleanup jobs",
+  apex_backendStack7: "express-rate-limit - brute-force & abuse protection",
+
+  apex_adminStack1: "React (Vite) - standalone web app",
+  apex_adminStack2: "Axios - same backend API",
+  apex_adminStack3: "JWT auth (7-day token) + separate admin endpoint",
+  apex_adminStack4: "adminMiddleware - second auth layer on all admin routes",
+  apex_adminStack5: "Content moderation dashboard - review reports, take down posts'",
+
+  apex_authSecurity1: "bcrypt password hashing - 12 salt rounds",
+  apex_authSecurity2: "JWT access tokens - 1-day expiry, never stored in DB",
+  apex_authSecurity3: "Refresh token rotation - old token deleted on every refresh",
+  apex_authSecurity4: "80-char cryptographically random refresh tokens (crypto.randomBytes)",
+  apex_authSecurity5: "Nightly cron purges all expired refresh tokens",
+
+  apex_apiSecurity1: "Auth endpoints rate-limited: 10 req / 15 min per IP",
+  apex_apiSecurity2: "Global rate limit: 1000 req / 15 min per IP",
+  apex_apiSecurity3: "authMiddleware validates JWT before any handler runs",
+  apex_apiSecurity4: "adminMiddleware - second layer check on all admin routes",
+  apex_apiSecurity5: "WebSocket auth: first frame must carry a valid JWT",
+
+  apex_dataSecurity1: "Parameterized SQL queries throughout - SQL injection impossible",
+  apex_dataSecurity2: "MIME-type file whitelist: JPEG, PNG, WebP only",
+  apex_dataSecurity3: "Sharp strips EXIF metadata (incl. GPS) on every upload'",
+  apex_dataSecurity4: "8 MB upload cap enforced by Multer before processing",
+  apex_dataSecurity5: "Files in Cloudflare R2 CDN - R2 objects deleted on post/avatar delete",
+
+  apex_desc: (
+    <p>
+        A mobile-first social platform for driving and motorcycle enthusiasts.
+        Route planning, live navigation, XP progression, community challenges,
+        and group ride coordination - all in one app.
+    </p>
+  ),
+
+  apex_private_desc: "The source code for this project is kept private to protect its security architecture and business logic. If you're interested in reviewing the codebase - for hiring, collaboration, or other professional purposes - please reach out directly and I'll be happy to arrange access.",
+
+  apex_private_tooltip: "This repository is private. The source code is available for review upon request - feel free to get in touch.",
+
+  apex_about_desc: (
+    <p>
+        Apex Roads is built for road drivers and motorcycle enthusiasts - think Strava, but for cars and bikes.
+        Users log routes, earn XP, climb leaderboards, share photos, and organize group rides.
+        The app combines an interactive map engine powered by OSRM and Leaflet, a real-time social layer over
+        WebSockets, a gamification system with geo-fenced quests, and live GPS tracking - all on a single
+        PostgreSQL-backed Node.js API with image delivery via Cloudflare R2.
+    </p>
+  ),
+
+// TruckApp
+
+  truckapp_managerFeatures1: "Create and assign tasks to workers",
+  truckapp_managerFeatures2: "Add, edit and remove trucks from the fleet",
+  truckapp_managerFeatures3: "Manage worker accounts",
+  truckapp_managerFeatures4: "Overview of all active and completed tasks",
+  truckapp_managerFeatures5: "Track truck availability and status",
+
+  truckapp_workerFeatures1: "View assigned tasks with details",
+  truckapp_workerFeatures2: "Update task status (in progress / done)",
+  truckapp_workerFeatures3: "Access truck information for assigned tasks",
+  truckapp_workerFeatures4: "Simple and clean task dashboard",
+
+  truckapp_desc: "A work-in-progress fleet management platform with separate dashboards for managers and workers, built on the PERN stack.",
+
+  truckapp_about_desc: (
+    <p>
+        TruckManager is a fullstack application designed to streamline
+        fleet and task management for small logistics teams. Authentication
+        is handled with JWT tokens and passwords are secured with bcrypt.
+        The app separates concerns cleanly - managers get full control over
+        the fleet and task board, while workers see only what's relevant to them.
+    </p>
+  )
+
 };
+

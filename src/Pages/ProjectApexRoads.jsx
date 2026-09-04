@@ -1,7 +1,9 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import translationConfig from "../Locales/translation-config";
+import { LanguageContext } from "../utils/LanguageContext";
 import apexbg from '../assets/apexbg.jpg';
 import apex1 from '../assets/apex/apex1.png';
 import apex2 from '../assets/apex/apex2.png';
@@ -14,88 +16,96 @@ import apex8 from '../assets/apex/apex8.png';
 import apex9 from '../assets/apex/apex9.png';
 import '../Styles/project-detail.css';
 
-const features = {
-    routes: [
-        'Plot A-to-B routes on an interactive map using OSRM routing engine',
-        'Preview routes as a polyline before driving - navigate turn-by-turn inside the app',
-        'Save routes with a title, description, and photos after a drive',
-        'Make routes public to share with the community or keep them private',
-    ],
-    social: [
-        'Instagram-style image feed - post photos with captions, like, comment, and share via DMs',
-        'Full real-time DM system with typing indicators, read receipts, and online presence',
-        'Follow / unfollow users, view follower and following lists, block accounts',
-        'Report inappropriate content - reviewed in the admin web panel',
-    ],
-    xp: [
-        'Claim geo-located XP spots (fuel stations, parking) sourced live from OpenStreetMap via Overpass API',
-        'Season-based quests with geo-fenced checkpoints - app auto-checks GPS and awards XP on arrival',
-        'Earn XP by attending group meetups within 500 m of the pin location',
-        'Global and friends-only leaderboard, filterable by 7 days, 30 days, or all-time',
-    ],
-    meets: [
-        'Drop a pin on the map to create a scheduled group meetup with a date and description',
-        'Other users browse and join upcoming meets from the community tab',
-        'Attendees within 500 m of the location automatically claim +100 XP when the meet starts',
-        'Expired meets and past events are auto-cleaned by a nightly cron job',
-    ],
-};
-
-const mobileStack = [
-    'React Native (Expo SDK 54)',
-    'React Navigation v7 - Stack + Bottom Tabs',
-    'Leaflet.js inside a WebView (map rendering)',
-    'OSRM - route calculation & turn-by-turn',
-    'OpenStreetMap Overpass API (XP spots)',
-    'expo-location - real-time GPS tracking',
-    'Axios with JWT interceptors & auto token refresh',
-];
-
-const backendStack = [
-    'Node.js + Express.js',
-    'PostgreSQL - connection pooling via pg',
-    'WebSocket (ws) - real-time DMs on same HTTP server',
-    'JWT (1-day access) + bcryptjs (12 salt rounds)',
-    'Multer + Sharp + Cloudflare R2 (image storage)',
-    'node-cron - nightly scheduled cleanup jobs',
-    'express-rate-limit - brute-force & abuse protection',
-];
-
-const adminStack = [
-    'React (Vite) - standalone web app',
-    'Axios - same backend API',
-    'JWT auth (7-day token) + separate admin endpoint',
-    'adminMiddleware - second auth layer on all admin routes',
-    'Content moderation dashboard - review reports, take down posts',
-];
-
-const authSecurity = [
-    'bcrypt password hashing - 12 salt rounds',
-    'JWT access tokens - 1-day expiry, never stored in DB',
-    'Refresh token rotation - old token deleted on every refresh',
-    '80-char cryptographically random refresh tokens (crypto.randomBytes)',
-    'Nightly cron purges all expired refresh tokens',
-];
-
-const apiSecurity = [
-    'Auth endpoints rate-limited: 10 req / 15 min per IP',
-    'Global rate limit: 1000 req / 15 min per IP',
-    'authMiddleware validates JWT before any handler runs',
-    'adminMiddleware - second layer check on all admin routes',
-    'WebSocket auth: first frame must carry a valid JWT',
-];
-
-const dataSecurity = [
-    'Parameterized SQL queries throughout - SQL injection impossible',
-    'MIME-type file whitelist: JPEG, PNG, WebP only',
-    'Sharp strips EXIF metadata (incl. GPS) on every upload',
-    '8 MB upload cap enforced by Multer before processing',
-    'Files in Cloudflare R2 CDN - R2 objects deleted on post/avatar delete',
-];
-
-const GALLERY_COUNT = 9;
 
 export default function ProjectApexRoads() {
+
+    const { lang, setLang } = useContext(LanguageContext);
+    
+    const t = translationConfig[lang];
+
+    const features = {
+        routes: [
+            t.apex_features_routes1,
+            t.apex_features_routes2,
+            t.apex_features_routes3,
+            t.apex_features_routes4,
+        ],
+        social: [
+            t.apex_features_social1,
+            t.apex_features_social2,
+            t.apex_features_social3,
+            t.apex_features_social4,
+        ],
+        xp: [
+            t.apex_features_xp1,
+            t.apex_features_xp2,
+            t.apex_features_xp3,
+            t.apex_features_xp4,
+        ],
+        meets: [
+            t.apex_features_meets1,
+            t.apex_features_meets2,
+            t.apex_features_meets3,
+            t.apex_features_meets4,
+        ],
+    };
+
+    const mobileStack = [
+        t.apex_mobileStack1,
+        t.apex_mobileStack2,
+        t.apex_mobileStack3,
+        t.apex_mobileStack4,
+        t.apex_mobileStack5,
+        t.apex_mobileStack6,
+        t.apex_mobileStack7,
+    ];
+
+    const backendStack = [
+        t.apex_backendStack1,
+        t.apex_backendStack2,
+        t.apex_backendStack3,
+        t.apex_backendStack4,
+        t.apex_backendStack5,
+        t.apex_backendStack6,
+        t.apex_backendStack7,
+    ];
+
+    const adminStack = [
+        t.apex_adminStack1,
+        t.apex_adminStack2,
+        t.apex_adminStack3,
+        t.apex_adminStack4,
+        t.apex_adminStack5,
+    ];
+
+    const authSecurity = [
+        t.apex_authSecurity1,
+        t.apex_authSecurity2,
+        t.apex_authSecurity3,
+        t.apex_authSecurity4,
+        t.apex_authSecurity5,
+    ];
+
+    const apiSecurity = [
+        t.apex_apiSecurity1,
+        t.apex_apiSecurity2,
+        t.apex_apiSecurity3,
+        t.apex_apiSecurity4,
+        t.apex_apiSecurity5,
+    ];
+
+    const dataSecurity = [
+        t.apex_dataSecurity1,
+        t.apex_dataSecurity2,
+        t.apex_dataSecurity3,
+        t.apex_dataSecurity4,
+        t.apex_dataSecurity5,
+    ];
+
+    const GALLERY_COUNT = 9;
+
+
+
     const [activeFeature, setActiveFeature] = useState('routes');
 
     const galleryImages = [apex1, apex2, apex3, apex4, apex5, apex6, apex7, apex8, apex9];
@@ -134,6 +144,8 @@ export default function ProjectApexRoads() {
         return () => { document.body.style.overflow = ''; };
     }, [lightboxIndex]);
 
+    
+
     return (
         <div className='project-detail'>
             <div
@@ -146,42 +158,30 @@ export default function ProjectApexRoads() {
             >
                 <div>
                     <h1>Apex Roads <span>- React Native Mobile App (WIP)</span></h1>
-                    <p>
-                        A mobile-first social platform for driving and motorcycle enthusiasts.
-                        Route planning, live navigation, XP progression, community challenges,
-                        and group ride coordination - all in one app.
-                    </p>
+                    {t.apex_desc}
                     <div className='github-private-wrap'>
                         <span className='github-private-btn'>GitHub</span>
                         <div className='github-tooltip'>
-                            This repository is private. The source code is available for review upon request - feel free to get in touch.
+                            {t.apex_private_tooltip}
                         </div>
                     </div>
                 </div>
             </div>
 
             <div className='pd-section pd-private-notice'>
-                <strong>Private Repository</strong>
+                <strong>{t.private_repository}</strong>
                 <p>
-                    The source code for this project is kept private to protect its security architecture and business logic.
-                    If you're interested in reviewing the codebase - for hiring, collaboration, or other professional purposes -
-                    please reach out directly and I'll be happy to arrange access.
+                    {t.apex_private_desc}
                 </p>
             </div>
 
             <div className='pd-section'>
-                <h2>About the project</h2>
-                <p>
-                    Apex Roads is built for road drivers and motorcycle enthusiasts - think Strava, but for cars and bikes.
-                    Users log routes, earn XP, climb leaderboards, share photos, and organize group rides.
-                    The app combines an interactive map engine powered by OSRM and Leaflet, a real-time social layer over
-                    WebSockets, a gamification system with geo-fenced quests, and live GPS tracking - all on a single
-                    PostgreSQL-backed Node.js API with image delivery via Cloudflare R2.
-                </p>
+                <h2>{t.about_the_project}</h2>
+                {t.apex_about_desc}
             </div>
 
             <div className='pd-section pd-dark'>
-                <h2>Features</h2>
+                <h2>{t.features}</h2>
                 <div className='pd-tabs'>
                     <button className={activeFeature === 'routes' ? 'active' : ''} onClick={() => setActiveFeature('routes')}>Routes & Nav</button>
                     <button className={activeFeature === 'social' ? 'active' : ''} onClick={() => setActiveFeature('social')}>Social</button>
@@ -229,7 +229,7 @@ export default function ProjectApexRoads() {
             </div>
 
             <div className='pd-section pd-dark'>
-                <h2>Security</h2>
+                <h2>{t.security}</h2>
                 <div className='pd-features'>
                     <div>
                         <h3>Auth & Sessions</h3>
@@ -253,7 +253,7 @@ export default function ProjectApexRoads() {
             </div>
 
             <div className='pd-section'>
-                <h2 id='gallery'>Gallery</h2>
+                <h2 id='gallery'>{t.gallery}</h2>
                 {isLoading && (
                     <div className='pd-gallery-spinner'>
                         <div className='pd-spinner-ring'></div>
@@ -299,7 +299,7 @@ export default function ProjectApexRoads() {
             )}
 
             <div className='pd-page-links'>
-                <Link to='/projects'>← Projects</Link>
+                <Link to='/projects'>← {t.projects}</Link>
             </div>
         </div>
     );

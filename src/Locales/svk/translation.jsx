@@ -11,6 +11,10 @@ export default {
   gallery: "Galéria",
   about_the_project: "O projekte",
   architecture: "Architektúra",
+  features: "Funkcie",
+  security: "Bezpečnosť",
+  private_repository: "Súkromný repozitár",
+  viewLive: "Zobraziť live demo",
 
   homepage_main1: (
     <>
@@ -208,6 +212,118 @@ cb_project_desc: (
   ),
 
 cb_engineering_challenges: "Technické výzvy",
+
+// Apex
+
+  apex_features_routes1: "Vykresľovanie trás z bodu A do bodu B na interaktívnej mape pomocou routovacieho enginu OSRM",
+  apex_features_routes2: "Náhľad trasy ako polylínie pred jazdou - navigácia krok za krokom priamo v aplikácii",
+  apex_features_routes3: "Uloženie trás s názvom, popisom a fotografiami po jazde",
+  apex_features_routes4: "Nastavenie trás ako verejných na zdieľanie s komunitou alebo ich ponechanie ako súkromných",
+
+  apex_features_social1: "Obrazový feed v štýle Instagramu - pridávanie fotografií s popisom, lajkovanie, komentovanie a zdieľanie cez DM",
+  apex_features_social2: "Plnohodnotný systém DM v reálnom čase s indikátorom písania, potvrdeniami o prečítaní a online stavom",
+  apex_features_social3: "Sledovanie / zrušenie sledovania používateľov, zobrazenie zoznamu sledovateľov a sledovaných, blokovanie účtov",
+  apex_features_social4: "Nahlasovanie nevhodného obsahu - kontrola prebieha vo webovom admin paneli",
+
+  apex_features_xp1: "Získavanie geolokalizovaných XP bodov (čerpacie stanice, parkoviská) načítavaných naživo z OpenStreetMap cez Overpass API",
+  apex_features_xp2: "Sezónne questy s geofencovanými checkpointmi - aplikácia automaticky kontroluje GPS a po príchode pridelí XP",
+  apex_features_xp3: "Získavanie XP účasťou na skupinových stretnutiach do 500 m od miesta označeného pinom",
+  apex_features_xp4: "Globálny rebríček a rebríček iba pre priateľov, filtrovanie podľa 7 dní, 30 dní alebo celého obdobia",
+
+  apex_features_meets1: "Pridanie pinu na mapu na vytvorenie plánovaného skupinového stretnutia s dátumom a popisom",
+  apex_features_meets2: "Ostatní používatelia môžu prehliadať a pripájať sa k nadchádzajúcim stretnutiam cez kartu komunity",
+  apex_features_meets3: "Účastníci do 500 m od miesta automaticky získajú +100 XP po začatí stretnutia",
+  apex_features_meets4: "Expirované stretnutia a minulé udalosti sa automaticky čistia pomocou nočného cron jobu",
+
+  apex_mobileStack1: "React Native (Expo SDK 54)",
+  apex_mobileStack2: "React Navigation v7 - Stack + Bottom Tabs",
+  apex_mobileStack3: "Leaflet.js vo WebView (vykresľovanie mapy)",
+  apex_mobileStack4: "OSRM - výpočet trás a navigácia krok za krokom",
+  apex_mobileStack5: "OpenStreetMap Overpass API (XP body)",
+  apex_mobileStack6: "expo-location - GPS sledovanie v reálnom čase",
+  apex_mobileStack7: "Axios s JWT interceptormi a automatickou obnovou tokenu",
+
+  apex_backendStack1: "Node.js + Express.js",
+  apex_backendStack2: "PostgreSQL - connection pooling cez pg",
+  apex_backendStack3: "WebSocket (ws) - DM v reálnom čase na rovnakom HTTP serveri",
+  apex_backendStack4: "JWT (prístup na 1 deň) + bcryptjs (12 salt kôl)",
+  apex_backendStack5: "Multer + Sharp + Cloudflare R2 (ukladanie obrázkov)",
+  apex_backendStack6: "node-cron - nočné plánované čistiace úlohy",
+  apex_backendStack7: "express-rate-limit - ochrana proti brute-force útokom a zneužitiu",
+
+  apex_adminStack1: "React (Vite) - samostatná webová aplikácia",
+  apex_adminStack2: "Axios - rovnaké backendové API",
+  apex_adminStack3: "JWT autentifikácia (7-dňový token) + samostatný admin endpoint",
+  apex_adminStack4: "adminMiddleware - druhá autentifikačná vrstva na všetkých admin routách",
+  apex_adminStack5: "Dashboard moderovania obsahu - kontrola nahlásení, odstránenie príspevkov",
+
+  apex_authSecurity1: "Hashovanie hesiel pomocou bcrypt - 12 salt kôl",
+  apex_authSecurity2: "JWT access tokeny - platnosť 1 deň, nikdy sa neukladajú do DB",
+  apex_authSecurity3: "Rotácia refresh tokenov - starý token sa pri každom refreshi odstráni",
+  apex_authSecurity4: "Kryptograficky náhodné refresh tokeny s dĺžkou 80 znakov (crypto.randomBytes)",
+  apex_authSecurity5: "Nočný cron job odstraňuje všetky expirované refresh tokeny",
+
+  apex_apiSecurity1: "Auth endpointy s rate limitom: 10 požiadaviek / 15 min. na IP",
+  apex_apiSecurity2: "Globálny rate limit: 1000 požiadaviek / 15 min. na IP",
+  apex_apiSecurity3: "authMiddleware overuje JWT pred spustením akéhokoľvek handlera",
+  apex_apiSecurity4: "adminMiddleware - druhá vrstva kontroly na všetkých admin routách",
+  apex_apiSecurity5: "WebSocket autentifikácia: prvý frame musí obsahovať platný JWT",
+
+  apex_dataSecurity1: "Parametrizované SQL dotazy v celom projekte - SQL injection je eliminovaný",
+  apex_dataSecurity2: "Whitelist MIME typov súborov: iba JPEG, PNG a WebP",
+  apex_dataSecurity3: "Sharp odstraňuje EXIF metadáta (vrátane GPS) pri každom uploade",
+  apex_dataSecurity4: "Limit uploadu 8 MB vynucovaný Multerom pred spracovaním",
+  apex_dataSecurity5: "Súbory v Cloudflare R2 CDN - R2 objekty sa pri odstránení príspevku/avataru vymažú",
+
+  apex_desc: (
+    <p>
+        Mobilná sociálna platforma pre nadšencov jazdy autom a na motocykli.
+        Plánovanie trás, živá navigácia, XP progres, komunitné výzvy
+        a koordinácia skupinových jázd - všetko v jednej aplikácii.
+    </p>
+  ),
+
+  apex_private_desc: "Zdrojový kód tohto projektu je súkromný, aby bola chránená jeho bezpečnostná architektúra a biznis logika. Ak máte záujem o nahliadnutie do codebase - napríklad kvôli zamestnaniu, spolupráci alebo iným profesionálnym účelom - pokojne ma kontaktujte priamo a rád vám zabezpečím prístup.",
+
+  apex_private_tooltip: "Tento repozitár je súkromný. Zdrojový kód je dostupný na nahliadnutie na požiadanie - pokojne ma kontaktujte.",
+
+  apex_about_desc: (
+    <p>
+        Apex Roads je vytvorený pre vodičov a nadšencov motocyklov - predstavte si Stravu pre autá a motorky.
+        Používatelia zaznamenávajú trasy, získavajú XP, stúpajú v rebríčkoch, zdieľajú fotografie a organizujú skupinové jazdy.
+        Aplikácia kombinuje interaktívny mapový engine poháňaný OSRM a Leafletom, sociálnu vrstvu v reálnom čase
+        cez WebSockets, gamifikačný systém s geofencovanými questami a živé GPS sledovanie - to všetko na jednom
+        PostgreSQL-backed Node.js API s doručovaním obrázkov cez Cloudflare R2.
+    </p>
+  ),
+
+
+// TruckApp
+
+  truckapp_managerFeatures1: "Vytváranie a prideľovanie úloh pracovníkom",
+  truckapp_managerFeatures2: "Pridávanie, úprava a odstraňovanie nákladných vozidiel z vozového parku",
+  truckapp_managerFeatures3: "Správa účtov pracovníkov",
+  truckapp_managerFeatures4: "Prehľad všetkých aktívnych a dokončených úloh",
+  truckapp_managerFeatures5: "Sledovanie dostupnosti a stavu nákladných vozidiel",
+
+  truckapp_workerFeatures1: "Zobrazenie pridelených úloh s podrobnosťami",
+  truckapp_workerFeatures2: "Aktualizácia stavu úlohy (prebieha / dokončená)",
+  truckapp_workerFeatures3: "Prístup k informáciám o nákladnom vozidle pre pridelené úlohy",
+  truckapp_workerFeatures4: "Jednoduchý a prehľadný dashboard úloh",
+
+  truckapp_desc: "Fleet management platforma vo vývoji so samostatnými dashboardmi pre manažérov a pracovníkov, vytvorená na PERN stacku.",
+
+  truckapp_about_desc: (
+    <p>
+        TruckManager je fullstack aplikácia navrhnutá na zjednodušenie
+        správy vozového parku a úloh pre malé logistické tímy. Autentifikácia
+        je riešená pomocou JWT tokenov a heslá sú zabezpečené pomocou bcrypt.
+        Aplikácia jasne oddeľuje jednotlivé úrovne prístupu - manažéri majú
+        plnú kontrolu nad vozovým parkom a úlohami, zatiaľ čo pracovníci
+        vidia iba informácie, ktoré sú pre nich relevantné.
+    </p>
+  )
+
 
 };
 

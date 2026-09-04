@@ -11,6 +11,10 @@ export default {
   gallery: "Galerie",
   about_the_project: "Über das Projekt",
   architecture: "Architektur",
+  features: "Funktionen",
+  security: "Sicherheit",
+  private_repository: "Privates Repository",
+  viewLive: "Live-Demo ansehen",
 
   homepage_main1: (
     <>
@@ -209,6 +213,117 @@ cb_project_desc: (
   ),
 
 cb_engineering_challenges: "Technische Herausforderungen",
+
+
+// Apex
+
+  apex_features_routes1: "A-to-B-Routen auf einer interaktiven Karte mit der OSRM-Routing-Engine erstellen",
+  apex_features_routes2: "Routen vor der Fahrt als Polylinie anzeigen - Turn-by-Turn-Navigation direkt in der App",
+  apex_features_routes3: "Routen nach einer Fahrt mit Titel, Beschreibung und Fotos speichern",
+  apex_features_routes4: "Routen öffentlich mit der Community teilen oder privat halten",
+
+  apex_features_social1: "Instagram-ähnlicher Bilder-Feed - Fotos mit Bildunterschriften posten, liken, kommentieren und per DM teilen",
+  apex_features_social2: "Vollständiges Echtzeit-DM-System mit Tippanzeigen, Lesebestätigungen und Online-Status",
+  apex_features_social3: "Nutzern folgen / nicht mehr folgen, Follower- und Following-Listen anzeigen, Konten blockieren",
+  apex_features_social4: "Unangemessene Inhalte melden - Überprüfung im webbasierten Admin-Panel",
+
+  apex_features_xp1: "Geolokalisierte XP-Spots (Tankstellen, Parkplätze) beanspruchen, live über die Overpass API aus OpenStreetMap abgerufen",
+  apex_features_xp2: "Saisonale Quests mit Geofencing-Checkpoints - die App prüft automatisch das GPS und vergibt bei Ankunft XP",
+  apex_features_xp3: "XP durch die Teilnahme an Gruppentreffen innerhalb von 500 m vom Standort-Pin verdienen",
+  apex_features_xp4: "Globale und nur für Freunde sichtbare Bestenliste, filterbar nach 7 Tagen, 30 Tagen oder Gesamtzeit",
+
+  apex_features_meets1: "Einen Pin auf der Karte setzen, um ein geplantes Gruppentreffen mit Datum und Beschreibung zu erstellen",
+  apex_features_meets2: "Andere Nutzer können bevorstehende Treffen über den Community-Tab durchsuchen und ihnen beitreten",
+  apex_features_meets3: "Teilnehmer innerhalb von 500 m des Standorts erhalten automatisch +100 XP, sobald das Treffen beginnt",
+  apex_features_meets4: "Abgelaufene Treffen und vergangene Events werden durch einen nächtlichen Cronjob automatisch bereinigt",
+
+  apex_mobileStack1: "React Native (Expo SDK 54)",
+  apex_mobileStack2: "React Navigation v7 - Stack + Bottom Tabs",
+  apex_mobileStack3: "Leaflet.js innerhalb einer WebView (Kartendarstellung)",
+  apex_mobileStack4: "OSRM - Routenberechnung & Turn-by-Turn-Navigation",
+  apex_mobileStack5: "OpenStreetMap Overpass API (XP-Spots)",
+  apex_mobileStack6: "expo-location - Echtzeit-GPS-Tracking",
+  apex_mobileStack7: "Axios mit JWT-Interceptoren & automatischer Token-Erneuerung",
+
+  apex_backendStack1: "Node.js + Express.js",
+  apex_backendStack2: "PostgreSQL - Connection Pooling über pg",
+  apex_backendStack3: "WebSocket (ws) - Echtzeit-DMs auf demselben HTTP-Server",
+  apex_backendStack4: "JWT (1 Tag Zugriff) + bcryptjs (12 Salt-Runden)",
+  apex_backendStack5: "Multer + Sharp + Cloudflare R2 (Bildspeicher)",
+  apex_backendStack6: "node-cron - nächtliche geplante Bereinigungsjobs",
+  apex_backendStack7: "express-rate-limit - Schutz vor Brute-Force-Angriffen & Missbrauch",
+
+  apex_adminStack1: "React (Vite) - eigenständige Web-App",
+  apex_adminStack2: "Axios - dieselbe Backend-API",
+  apex_adminStack3: "JWT-Authentifizierung (7-Tage-Token) + separater Admin-Endpunkt",
+  apex_adminStack4: "adminMiddleware - zweite Authentifizierungsebene für alle Admin-Routen",
+  apex_adminStack5: "Content-Moderation-Dashboard - Meldungen überprüfen, Beiträge entfernen",
+
+  apex_authSecurity1: "bcrypt-Passwort-Hashing - 12 Salt-Runden",
+  apex_authSecurity2: "JWT-Access-Tokens - 1 Tag gültig, niemals in der Datenbank gespeichert",
+  apex_authSecurity3: "Refresh-Token-Rotation - alter Token wird bei jedem Refresh gelöscht",
+  apex_authSecurity4: "80 Zeichen lange kryptografisch zufällige Refresh-Tokens (crypto.randomBytes)",
+  apex_authSecurity5: "Nächtlicher Cronjob löscht alle abgelaufenen Refresh-Tokens",
+
+  apex_apiSecurity1: "Auth-Endpunkte mit Rate-Limit: 10 Anfragen / 15 Min. pro IP",
+  apex_apiSecurity2: "Globales Rate-Limit: 1000 Anfragen / 15 Min. pro IP",
+  apex_apiSecurity3: "authMiddleware validiert das JWT, bevor irgendein Handler ausgeführt wird",
+  apex_apiSecurity4: "adminMiddleware - zweite Prüfebene für alle Admin-Routen",
+  apex_apiSecurity5: "WebSocket-Authentifizierung: Der erste Frame muss ein gültiges JWT enthalten",
+
+  apex_dataSecurity1: "Parametrisierte SQL-Abfragen durchgehend - SQL-Injection verhindert",
+  apex_dataSecurity2: "MIME-Type-Whitelist für Dateien: nur JPEG, PNG und WebP",
+  apex_dataSecurity3: "Sharp entfernt EXIF-Metadaten (einschließlich GPS) bei jedem Upload",
+  apex_dataSecurity4: "Upload-Limit von 8 MB wird von Multer vor der Verarbeitung durchgesetzt",
+  apex_dataSecurity5: "Dateien im Cloudflare-R2-CDN - R2-Objekte werden beim Löschen von Beiträgen/Avataren entfernt",
+
+  apex_desc: (
+    <p>
+        Eine Mobile-First-Social-Plattform für Auto- und Motorradbegeisterte.
+        Routenplanung, Live-Navigation, XP-Fortschritt, Community-Herausforderungen
+        und die Koordination gemeinsamer Fahrten - alles in einer App.
+    </p>
+  ),
+
+  apex_private_desc: "Der Quellcode dieses Projekts bleibt privat, um seine Sicherheitsarchitektur und Geschäftslogik zu schützen. Wenn Sie Interesse daran haben, die Codebasis zu prüfen - beispielsweise für eine Einstellung, Zusammenarbeit oder andere berufliche Zwecke - kontaktieren Sie mich gerne direkt. Ich arrangiere dann gerne einen entsprechenden Zugriff.",
+
+  apex_private_tooltip: "Dieses Repository ist privat. Der Quellcode kann auf Anfrage eingesehen werden - kontaktieren Sie mich gerne.",
+
+  apex_about_desc: (
+    <p>
+        Apex Roads wurde für Autofahrer und Motorradbegeisterte entwickelt - quasi Strava für Autos und Motorräder.
+        Nutzer zeichnen Routen auf, sammeln XP, steigen in Bestenlisten auf, teilen Fotos und organisieren gemeinsame Fahrten.
+        Die App kombiniert eine interaktive Karten-Engine mit OSRM und Leaflet, eine Echtzeit-Social-Ebene über
+        WebSockets, ein Gamification-System mit Geofencing-Quests und Live-GPS-Tracking - alles über eine einzige
+        PostgreSQL-basierte Node.js-API mit Bildbereitstellung über Cloudflare R2.
+    </p>
+  ),
+
+// TruckApp
+
+  truckapp_managerFeatures1: "Aufgaben erstellen und Mitarbeitern zuweisen",
+  truckapp_managerFeatures2: "Lkw zur Flotte hinzufügen, bearbeiten und entfernen",
+  truckapp_managerFeatures3: "Mitarbeiterkonten verwalten",
+  truckapp_managerFeatures4: "Übersicht über alle aktiven und abgeschlossenen Aufgaben",
+  truckapp_managerFeatures5: "Verfügbarkeit und Status der Lkw verfolgen",
+
+  truckapp_workerFeatures1: "Zugewiesene Aufgaben mit Details anzeigen",
+  truckapp_workerFeatures2: "Aufgabenstatus aktualisieren (in Bearbeitung / erledigt)",
+  truckapp_workerFeatures3: "Auf Lkw-Informationen für zugewiesene Aufgaben zugreifen",
+  truckapp_workerFeatures4: "Einfaches und übersichtliches Aufgaben-Dashboard",
+
+  truckapp_desc: "Eine Fleet-Management-Plattform in Entwicklung mit separaten Dashboards für Manager und Mitarbeiter, entwickelt mit dem PERN-Stack.",
+
+  truckapp_about_desc: (
+    <p>
+        TruckManager ist eine Fullstack-Anwendung, die darauf ausgelegt ist,
+        die Flotten- und Aufgabenverwaltung für kleine Logistikteams zu vereinfachen.
+        Die Authentifizierung erfolgt über JWT-Tokens und Passwörter werden mit bcrypt
+        geschützt. Die Anwendung trennt die Zuständigkeiten klar - Manager erhalten
+        die vollständige Kontrolle über die Flotte und das Aufgabenboard, während
+        Mitarbeiter nur die für sie relevanten Informationen sehen.
+    </p>
+  ),
 
 };
 
