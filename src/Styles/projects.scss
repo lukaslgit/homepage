@@ -10,7 +10,6 @@
 }
 
 .top-section {
-    margin-top: 15rem;
     width: 100%;
 
     p {
@@ -1401,9 +1400,42 @@
                 min-width: 30rem;
                 margin-left: 1rem;
 
+                .dev-icons {
+                    display: flex;
+                    justify-content: center;
+                    gap: 2rem;
+
+                    span p{
+                        font-weight: 600;
+                        text-align: center;
+                        font-size: 1rem;
+                    }
+
+                    span {
+                        text-align: center;
+                        min-width: 5rem;
+                    }
+
+                    span svg {
+                        width: 3rem;
+                    }
+                }
+
+                p {
+                    margin-top: 0;
+                    margin-bottom: 1rem;
+                }
+
                 h2 {
                     font-weight: 600;
-                    margin-bottom: 0.5rem;
+                    font-size: 1.5rem;
+                    background-color: $secColor;
+                    color: white;
+                    width: fit-content;
+                    margin: auto;
+                    padding: 0.3rem 0.7rem;
+                    margin-bottom: 1rem;
+                    border-radius: 0.5rem;
                 }
 
                 div {

@@ -22,6 +22,7 @@ export default function Homepage(){
                     <h1>Full-Stack Developer</h1>
                     <p>{t.homepage_main1}</p>
                     <p>{t.homepage_main2}</p>
+                    <p>{t.homepage_main3}</p>
                 </div>
             </section>
             <section className='mid-section'>

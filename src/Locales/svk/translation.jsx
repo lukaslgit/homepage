@@ -18,18 +18,36 @@ export default {
 
   homepage_main1: (
     <>
-      <strong>Full-Stack Developer (PERN + Next.js)</strong> so zameraním na tvorbu škálovateľných, bezpečných a užívateľsky prívetivých webových aplikácií. Skúsenosti s{" "}
-      <strong>PostgreSQL, Express.js, Node.js, React a Next.js</strong> a zručnosti v{" "}
+      <strong>Junior Full-Stack Developer (PERN)</strong> so zameraním na vývoj
+      škálovateľných, bezpečných a používateľsky prívetivých webových aplikácií.
+      Mám skúsenosti s technológiami{" "}
+      <strong>PostgreSQL, Express.js, Node.js a React</strong> a praktické
+      znalosti{" "}
       <strong>
-        JavaScript/TypeScript, Tailwind CSS, CSS/Sass, REST API, Redux/Context,
-        komponentovej architektúre, server-side renderingu, návrhu API,
-        autentifikácii pomocou cookies a JWT a bezpečnom ukladaní hesiel s bcrypt
+        JavaScriptu/TypeScriptu, Tailwind CSS, CSS/Sass, REST API a komponentovej
+        architektúry
       </strong>.
     </>
   ),
+
   homepage_main2: (
     <>
-      Praktické skúsenosti s <strong>Ubuntu, Nginx, Git deploymentom a nastavením produkčných serverov</strong>. Vášeň pre čistý kód, optimalizáciu výkonu, bezpečnosť a moderné postupy vo webovom vývoji.
+      Mám znalosti v oblasti <strong>návrhu API, autentifikácie pomocou cookies
+      a JWT a zabezpečenia hesiel pomocou bcrypt</strong>. Mám skúsenosti
+      s testovaním API pomocou <strong>Postman</strong> a základné znalosti
+      automatizovaného end-to-end testovania pomocou <strong>Playwright</strong>.
+    </>
+  ),
+
+  homepage_main3: (
+    <>
+      Praktické skúsenosti s{" "}
+      <strong>
+        Ubuntu, Nginx, nasadzovaním aplikácií pomocou Gitu a konfiguráciou
+        produkčných serverov
+      </strong>. Zameriavam sa na čistý kód, optimalizáciu výkonu,
+      bezpečnostné štandardy a vývoj spoľahlivých a ľahko udržiavateľných
+      aplikácií.
     </>
   ),
 

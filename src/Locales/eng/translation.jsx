@@ -19,20 +19,33 @@ export default {
 
   homepage_main1: (
     <>
-      <strong>Full-Stack Developer (PERN + Next.js)</strong> focused on building scalable,
-      secure, and user-friendly web applications. Experienced with{" "}
-      <strong>PostgreSQL, Express.js, Node.js, React, and Next.js</strong>, and skilled in{" "}
+      <strong>Junior Full-Stack Developer (PERN)</strong> focused on building
+      scalable, secure, and user-friendly web applications. Experienced with{" "}
+      <strong>PostgreSQL, Express.js, Node.js, and React</strong>, with practical
+      knowledge of{" "}
       <strong>
-        JavaScript/TypeScript, Tailwind CSS, CSS/Sass, REST APIs, Redux/Context,
-        component-based architecture, server-side rendering, API design,
-        authentication with cookies and JWT, and password security using bcrypt
+        JavaScript/TypeScript, Tailwind CSS, CSS/Sass, REST APIs, and
+        component-based architecture
       </strong>.
     </>
   ),
+
   homepage_main2: (
     <>
-      Hands-on experience in <strong>Ubuntu, Nginx, Git-based deployment, and production server setup</strong>. 
-      Passionate about clean code, performance optimization, security, and modern web development best practices.
+      Familiar with <strong>API design, authentication using cookies and JWT,
+      and password security with bcrypt</strong>. Experienced in API testing
+      with <strong>Postman</strong> and familiar with automated end-to-end
+      testing using <strong>Playwright</strong>.
+    </>
+  ),
+
+  homepage_main3: (
+    <>
+      Hands-on experience with{" "}
+      <strong>
+        Ubuntu, Nginx, Git-based deployment, and production server configuration
+      </strong>. Focused on writing clean code, improving performance, following
+      security best practices, and building reliable, maintainable applications.
     </>
   ),
 

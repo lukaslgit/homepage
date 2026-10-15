@@ -18,18 +18,35 @@ export default {
 
   homepage_main1: (
     <>
-      <strong>Full-Stack Entwickler (PERN + Next.js)</strong> mit Fokus auf skalierbare, sichere und benutzerfreundliche Webanwendungen. Erfahrung mit{" "}
-      <strong>PostgreSQL, Express.js, Node.js, React und Next.js</strong> und Kenntnisse in{" "}
+      <strong>Junior Full-Stack-Entwickler (PERN)</strong> mit Fokus auf die
+      Entwicklung skalierbarer, sicherer und benutzerfreundlicher Webanwendungen.
+      Erfahrung mit <strong>PostgreSQL, Express.js, Node.js und React</strong>
+      sowie praktische Kenntnisse in{" "}
       <strong>
-        JavaScript/TypeScript, Tailwind CSS, CSS/Sass, REST APIs, Redux/Context,
-        komponentenbasierter Architektur, serverseitigem Rendering, API-Design,
-        Authentifizierung mit Cookies und JWT sowie sicherer Passwortverwaltung mit bcrypt
+        JavaScript/TypeScript, Tailwind CSS, CSS/Sass, REST-APIs und
+        komponentenbasierter Architektur
       </strong>.
     </>
   ),
+
   homepage_main2: (
     <>
-      Praktische Erfahrung mit <strong>Ubuntu, Nginx, Git-basiertem Deployment und Produktionserver-Setup</strong>. Leidenschaft für sauberen Code, Performance-Optimierung, Sicherheit und moderne Webentwicklung.
+      Vertraut mit <strong>API-Design, Authentifizierung mit Cookies und JWT
+      sowie Passwortsicherheit mit bcrypt</strong>. Erfahrung mit API-Tests
+      mithilfe von <strong>Postman</strong> und Grundkenntnisse in automatisierten
+      End-to-End-Tests mit <strong>Playwright</strong>.
+    </>
+  ),
+
+  homepage_main3: (
+    <>
+      Praktische Erfahrung mit{" "}
+      <strong>
+        Ubuntu, Nginx, Git-basierten Deployment-Prozessen und der Konfiguration
+        von Produktionsservern
+      </strong>. Fokus auf sauberen Code, Performance-Optimierung,
+      Sicherheitsstandards sowie die Entwicklung zuverlässiger und wartbarer
+      Anwendungen.
     </>
   ),
 

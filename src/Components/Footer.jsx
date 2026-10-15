@@ -25,7 +25,7 @@ export default function(){
             </div>
             
             <div className='footerInfo'>
-                <p>© 2025 Lukas Lutonsky. All rights reserved.</p>
+                <p>© 2025-2026 Lukas Lutonsky. All rights reserved.</p>
 
                 <ul>
                     <li><a href='https://github.com/lukaslgit' target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a></li>
