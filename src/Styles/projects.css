@@ -1300,6 +1300,11 @@
 .top-section .content .project .project-desc .project-links .live-btn {
   background-color: red;
   color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+}
+.top-section .content .project .project-desc .project-links .live-btn:hover {
+  background-color: rgb(190, 0, 0);
 }
 .top-section .content .project .project-desc .project-links a {
   background-color: #90cfff;
