@@ -9,6 +9,12 @@
     50%, 100% { opacity: 1; }
 }
 
+.wip {
+    text-align: center;
+    height: 100%;
+    align-content: center;
+}
+
 .top-section {
     width: 100%;
 
@@ -603,6 +609,7 @@
                 &.cityboardIcon svg { background-color: #e53935; color: white;}
                 &.truckIcon svg   { background-color: #1f2937; }
                 &.weatherIcon svg { background-color: $thirdColor; }
+                &.vecIcon svg { background-color: #002880; color: white; }
 
                 &.cityboardIcon {
                     top: -6.5rem;

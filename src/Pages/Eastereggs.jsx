@@ -21,7 +21,7 @@ export default function Eastereggs() {
     {
         key: 'tasksClicked',
         name: `${t.easteregg2_name}`,
-        hint: `${t.easteregg3_hint}`
+        hint: `${t.easteregg2_hint}`
     },
     {
         key: 'kagranClicked',

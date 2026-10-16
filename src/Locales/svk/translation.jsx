@@ -121,6 +121,14 @@ export default {
       konfiguračná aplikácia v React Native s podporou BLE/Wi-Fi a Python pipeline na spracovanie fontov.
     </>
   ),
+  projectpage_main5: (
+    <>
+      I am developing vectorizer with my own custom deep learning model using PyTorch and my own dataset to detect shapes, junctions, text, and gradients in images.
+      <br></br>
+      <br></br>
+      The model is currently deployed on a low-spec VPS without a GPU, so inference on the CPU is quite slow. With GPU acceleration, the entire process would take less than a second.
+    </>
+  ),
 
   easteregg1_name: "Useless Darkmode",
   easteregg1_hint: "Found on the Projects page - click on the moon icon inside the WeatherApp mockup.",

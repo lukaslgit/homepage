@@ -14,6 +14,12 @@
     opacity: 1;
   }
 }
+.wip {
+  text-align: center;
+  height: 100%;
+  align-content: center;
+}
+
 .top-section {
   width: 100%;
 }
@@ -536,6 +542,10 @@
 }
 .top-section .content .project .wrapImg .icon.weatherIcon svg {
   background-color: rgb(98, 161, 255);
+}
+.top-section .content .project .wrapImg .icon.vecIcon svg {
+  background-color: #002880;
+  color: white;
 }
 .top-section .content .project .wrapImg .icon.cityboardIcon {
   top: -6.5rem;

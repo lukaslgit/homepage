@@ -5,7 +5,7 @@ import { LanguageContext } from "../utils/LanguageContext";
 import { useNotificationContext } from "../utils/NotificationContext";
 
 import '../Styles/projects.css';
-import { faCloud, faMagnifyingGlass, faCar, faMoon, faSun, faTruck, faBolt, faHouse, faComments, faMap, faUsers, faUser, faBus } from '@fortawesome/free-solid-svg-icons';
+import { faCloud, faMagnifyingGlass, faCar, faMoon, faSun, faTruck, faBolt, faHouse, faComments, faMap, faUsers, faUser, faBus, faV } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import sun from '../assets/weatherSun.png';
 import truckbg from '../assets/truckbg.jpg';
@@ -56,6 +56,31 @@ export default function Projects(){
                 </div>
                 <div>
                     <ul>
+                        <li className='project'>
+                            <div className='wrapImg'>
+                                <div className='monitorImg'>
+                                    <h2 className="wip">WIP</h2>
+                                </div>
+                                <div className='icon vecIcon'>
+                                    <FontAwesomeIcon icon={faV} />
+                                    <h2>Vectorizer</h2>
+                                </div>
+                                <div className='monitorStand'>
+                                    <div className='leg'></div>
+                                    <div className='support'></div>
+                                </div>
+                            </div>
+                            <div className='project-desc'>
+                                <h2>Claude Code</h2>       
+                                <p>(09/2026)</p>
+                                <p>
+                                    {t.projectpage_main5}
+                                </p>
+                                <div className="project-links">
+                                    <a className="live-btn" href={'https://lutonsky.eu/test/vectorizer'}>LIVE</a>
+                                </div>
+                            </div>
+                        </li>
                         <li className='project'>
                             <div className='wrapImg'>
                                 <div className='mockupGroup'>
