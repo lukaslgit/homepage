@@ -3,20 +3,64 @@ import { Suspense, lazy } from "react";
 
 import './Styles/main.css';
 
-const Homepage = lazy(() => import('./Pages/Homepage'));
-const Projects = lazy(() => import('./Pages/Projects'));
-const ProjectApexRoads = lazy(() => import('./Pages/ProjectApexRoads'));
-const ProjectTruckManager = lazy(() => import('./Pages/ProjectTruckManager'));
-const ProjectWeatherApp = lazy(() => import('./Pages/ProjectWeatherApp'));
-const ProjectCityBoard = lazy(() => import('./Pages/ProjectCityBoard'));
-const Contact = lazy(() => import('./Pages/Contact'));
-const NotFound = lazy(() => import('./Pages/NotFound'));
-const Eastereggs = lazy(() => import('./Pages/Eastereggs'));
+const loaders = {
+    Homepage: () => import('./Pages/Homepage'),
+    Projects: () => import('./Pages/Projects'),
+    ProjectApexRoads: () => import('./Pages/ProjectApexRoads'),
+    ProjectTruckManager: () => import('./Pages/ProjectTruckManager'),
+    ProjectWeatherApp: () => import('./Pages/ProjectWeatherApp'),
+    ProjectCityBoard: () => import('./Pages/ProjectCityBoard'),
+    Contact: () => import('./Pages/Contact'),
+    NotFound: () => import('./Pages/NotFound'),
+    Eastereggs: () => import('./Pages/Eastereggs'),
+    Layout: () => import('./Components/Layout'),
+};
 
-const Layout = lazy(() => import('./Components/Layout'));
+// Modules fetched by preloadRoute; components found here render synchronously instead of suspending
+const loaded = {};
 
-export default function App() {
-    const router = createBrowserRouter([
+function lazyRoute(name) {
+    const Lazy = lazy(loaders[name]);
+    return function LazyRoute(props) {
+        const Loaded = loaded[name];
+        return Loaded ? <Loaded {...props} /> : <Lazy {...props} />;
+    };
+}
+
+const Homepage = lazyRoute('Homepage');
+const Projects = lazyRoute('Projects');
+const ProjectApexRoads = lazyRoute('ProjectApexRoads');
+const ProjectTruckManager = lazyRoute('ProjectTruckManager');
+const ProjectWeatherApp = lazyRoute('ProjectWeatherApp');
+const ProjectCityBoard = lazyRoute('ProjectCityBoard');
+const Contact = lazyRoute('Contact');
+const NotFound = lazyRoute('NotFound');
+const Eastereggs = lazyRoute('Eastereggs');
+
+const Layout = lazyRoute('Layout');
+
+const routePages = {
+    '/': 'Homepage',
+    '/projects': 'Projects',
+    '/projects/details/cityboard': 'ProjectCityBoard',
+    '/projects/details/apexroads': 'ProjectApexRoads',
+    '/projects/details/truckmanager': 'ProjectTruckManager',
+    '/projects/details/weatherapp': 'ProjectWeatherApp',
+    '/contact': 'Contact',
+    '/eastereggs': 'Eastereggs',
+};
+
+// Loads the chunks the current route needs before the first render, so the
+// prerendered page is replaced in one step instead of going blank while chunks load
+export async function preloadRoute(pathname) {
+    const path = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
+    const page = routePages[path] ?? 'NotFound';
+    await Promise.all([page, 'Layout'].map(async (name) => {
+        loaded[name] = (await loaders[name]()).default;
+    }));
+}
+
+const router = createBrowserRouter([
         {
             path: '/',
             element: (
@@ -104,7 +148,8 @@ export default function App() {
                 </Suspense>
             ),
         },
-    ]);
+]);
 
+export default function App() {
     return <RouterProvider router={router} />;
 }

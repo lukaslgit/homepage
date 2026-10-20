@@ -34,6 +34,10 @@ async function prerender() {
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
 
+    // Write only after every route is captured: the preview server falls back to dist/index.html,
+    // which must stay the empty app shell while pages are being rendered
+    const results = [];
+
     for (const route of routes) {
         process.stdout.write(`Prerendering ${route} ...`);
 
@@ -48,18 +52,23 @@ async function prerender() {
 
         const html = await page.content();
 
-        const outDir = route === '/'
-            ? distDir
-            : join(distDir, ...route.split('/').filter(Boolean));
-
-        mkdirSync(outDir, { recursive: true });
-        writeFileSync(join(outDir, 'index.html'), html, 'utf-8');
+        results.push({ route, html });
 
         await page.close();
         console.log(' ✓');
     }
 
     await browser.close();
+
+    for (const { route, html } of results) {
+        const outDir = route === '/'
+            ? distDir
+            : join(distDir, ...route.split('/').filter(Boolean));
+
+        mkdirSync(outDir, { recursive: true });
+        writeFileSync(join(outDir, 'index.html'), html, 'utf-8');
+    }
+
     server.httpServer.close();
 
     console.log('\nPrerendering complete.');
