@@ -168,13 +168,6 @@ export default function ProjectApexRoads() {
                 </div>
             </div>
 
-            <div className='pd-section pd-private-notice'>
-                <strong>{t.private_repository}</strong>
-                <p>
-                    {t.apex_private_desc}
-                </p>
-            </div>
-
             <div className='pd-section'>
                 <h2>{t.about_the_project}</h2>
                 {t.apex_about_desc}
