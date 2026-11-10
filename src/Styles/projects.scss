@@ -1420,7 +1420,7 @@
 
                     span {
                         text-align: center;
-                        min-width: 5rem;
+                        width: 5rem;
                     }
 
                     span svg {
@@ -1629,6 +1629,21 @@
             min-width: unset;
             text-align: center;
             padding: 0 1rem;
+
+        .dev-icons {
+            gap: 0;
+            width: fit-content;
+            margin: auto;
+                span {
+                    width: 3.5rem;
+                }
+                span svg {
+                    width: 2.5rem;
+                }
+                span p {
+                    display: none;
+                }
+        }
 
             h2 {
                 font-size: 1.6rem;

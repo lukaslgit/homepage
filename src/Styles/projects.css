@@ -1265,7 +1265,7 @@
 }
 .top-section .content .project .project-desc .dev-icons span {
   text-align: center;
-  min-width: 5rem;
+  width: 5rem;
 }
 .top-section .content .project .project-desc .dev-icons span svg {
   width: 3rem;
@@ -1443,6 +1443,21 @@
     min-width: unset;
     text-align: center;
     padding: 0 1rem;
+  }
+  .top-section .content .project .project-desc .dev-icons {
+    gap: 0;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+  }
+  .top-section .content .project .project-desc .dev-icons span {
+    width: 3.5rem;
+  }
+  .top-section .content .project .project-desc .dev-icons span svg {
+    width: 2.5rem;
+  }
+  .top-section .content .project .project-desc .dev-icons span p {
+    display: none;
   }
   .top-section .content .project .project-desc h2 {
     font-size: 1.6rem;
